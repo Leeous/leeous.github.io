@@ -1,0 +1,22 @@
+{
+    "projects": {
+        "medic_kiosk": {
+            "id": "medic_kiosk",
+            "name": "Medic Kiosk",
+            "desc": "An addon for Garry's Mod.",
+            "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/Leeous/medic-kiosk'>Github</a>",
+            "steam_link": "<a target='_blank' style='color: white' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
+            "images": {
+                "1": ""
+            }
+        },
+
+        "re4_ammo_packs": {
+            "id": "re4_ammo_packs",
+            "name": "RE4 Ammo Packs",
+            "desc": "RE4 ammo packs modelled into Garry's Mod.",
+            "github_link": "",
+            "steam_link": "<a target='_blank' style='color: white' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>"
+        }
+    }
+}
