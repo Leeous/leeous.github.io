@@ -2,7 +2,7 @@ $(document).ready(() => {
     // Load our projects from data.json
     $.ajax({
         type: "GET",
-        url: "data.json",
+        url: "https://raw.githubusercontent.com/Leeous/Leeous.github.io/master/resource/js/data.json",
         dataType: "JSON",
         success: function(response) {
             postData = response.projects;
