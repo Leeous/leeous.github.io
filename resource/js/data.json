@@ -22,7 +22,7 @@
 		"garrysmodaddontool": {
             "id": "garrysmodaddontool",
             "name": "Garry's Mod Addon Tool",
-            "desc": "A simple web app meant to allow users to create/update their addons via the web.",
+            "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
             "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>",
             "steam_link": ""
         }
