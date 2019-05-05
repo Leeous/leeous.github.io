@@ -23,7 +23,7 @@
             "id": "garrysmodaddonuploader",
             "name": "Garry's Mod Addon Uploader",
             "desc": "A simple web app meant to allow users to create/update their addons via the web.",
-            "github_link": "https://github.com/Leeous/gmod-addon-tool",
+            "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>",
             "steam_link": ""
         }
     }
