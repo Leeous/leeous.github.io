@@ -1,5 +1,22 @@
 {
     "projects": {
+        "joystickmousecontrol": {
+            "id": "joystick_mouse_control",
+            "name": "Joystick Mouse Control",
+            "desc": "A lightweight Electron app that let's you control your cusor with gamepads.",
+            "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>Github</a>",
+            "steam_link": ""
+        },
+
+		
+		"garrysmodaddontool": {
+            "id": "garrys_mod_addon_tool",
+            "name": "Garry's Mod Addon Tool",
+            "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
+            "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>",
+            "steam_link": ""
+        },
+        
         "medic_kiosk": {
             "id": "medic_kiosk",
             "name": "Medic Kiosk",
@@ -18,21 +35,5 @@
             "github_link": "",
             "steam_link": "<a target='_blank' style='color: white' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>"
         },
-		
-		"garrysmodaddontool": {
-            "id": "garrys_mod_addon_tool",
-            "name": "Garry's Mod Addon Tool",
-            "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
-            "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>",
-            "steam_link": ""
-        },
-
-        "joystickmousecontrol": {
-            "id": "joystick_mouse_control",
-            "name": "Joystick Mouse Control",
-            "desc": "A lightweight Electron app that let's you control your cusor with gamepads.",
-            "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>Github</a>",
-            "steam_link": ""
-        }
     }
 }
