@@ -1,13 +1,13 @@
 {
     "projects": {
-        "joystickmousecontrol": {
+        "joystick_mouse_control": {
             "id": "joystick_mouse_control",
             "name": "Joystick Mouse Control",
             "desc": "A lightweight Electron app that let's you control your cusor with gamepads.",
             "github_link": "<a target='_blank' style='color: #4078c0;' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>Github</a>",
             "steam_link": ""
         },
-		"garrysmodaddontool": {
+		"garrys_mod_addon_tool": {
             "id": "garrys_mod_addon_tool",
             "name": "Garry's Mod Addon Tool",
             "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
