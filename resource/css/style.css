@@ -1,0 +1,321 @@
+@font-face {
+    font-family: MPlusRoundedBold;
+    src: url(fonts/MPLUSRounded1c-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #0A0A0B;
+    --secondary-color: #383838;
+    --third-color: #595959;
+    --fourth-color: #777677;
+    --fifth-color: #989798;
+}
+
+body {
+    background: rgb(27, 27, 27);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ############## */
+/* #   Header   # */
+/* ############## */
+
+/* "Leeous" */
+#index_header .title {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: .3em;
+}
+
+#index_header .title a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navagation - Menu */
+#index_header .nav .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+/* Navagation - Link */
+#index_header .nav .menu .nav_item .nav_link {
+    color: grey;
+    margin: 5px;
+    padding: 4px 10px;
+    font-size: 1.3em;
+    text-decoration: none;
+    border-bottom: solid 0 black;
+    transition: ease-in-out .2s all;
+}
+
+#index_header .nav .menu .nav_item .nav_link:hover {
+    color: white;
+    border-bottom: solid 3px white;
+
+}
+
+/* Navagation - Active link highlight */
+#index_header .nav .menu .nav_item .active_page {
+    color: white;
+    border-bottom: solid 1.5px white;
+}
+
+/* ########## */
+/* #  Main  # */
+/* ########## */
+
+/* Page margin */
+#index_main, #index_footer {
+    margin: 10% 5%;
+}
+
+/* Main container */
+#index_main {
+    display: flex;
+    flex-direction: column;
+}
+
+#index_main aside {
+    margin-right: 5%
+}
+
+/* Pages */
+#about, #projects, #blog {
+    display: none;
+}
+
+.page {
+    border-radius: 0;
+    /* box-shadow: var(--secondary-color) -4px 4px 0 4px; */
+}
+
+.page_title {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+.page_subtitle {
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+#about {
+    text-align: center;
+}
+
+#about p {
+    margin: 5% 10%; 
+    text-indent: 20px;
+    text-align: left;
+}
+
+#about #pfp {
+    width: 80%;
+    border: solid 2px white;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.buy_me_a_coffee {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.buy_me_a_coffee img {
+    border-radius: 12px;
+    border-bottom: 5px var(--main-color) solid;
+    width: 100%;
+}
+
+#about nav {
+    margin-top: 25px;
+}
+
+#about nav ul {
+    display: grid;
+    grid-template-columns: 46% 46%;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+#about nav ul li {
+    margin: .5em;
+}
+
+#about nav li.double_button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#about nav ul li:nth-child(4) a:nth-child(4) {
+    color: red;
+}
+
+#about nav ul li.social_button a {
+    display: block;
+    font-family: MPlusRoundedBold;
+    border-radius: 12px;
+    border: none;
+    user-select: none;
+    background: var(--main-color);
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    text-decoration: none;
+}
+
+#about nav ul li.social_button a span {
+    display: block;
+    border-radius: 12px;
+    padding: 10px 5px;
+    font-size: 1.25rem;
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-6px);
+    will-change: transform;
+    transition: transform .1s ease;
+}
+
+#about nav ul li.social_button a:hover span {
+    transform: translateY(-8px);
+}
+
+#about nav ul li.social_button a:active span {
+    transform: translateY(-2px);
+}
+
+#about nav ul li.social_button a.steam span {
+    background: #2e3746;
+}
+#about nav ul li.social_button a.discord span {
+    background: #5865f2;
+}
+#about nav ul li.social_button a.github span {
+    background: #4078c0;
+}
+
+#about nav ul li.social_button a.twitter span {
+    background: #1da1f2;
+
+}
+
+#about nav ul li.social_button a.email span {
+    background: var(--secondary-color);
+}
+
+/* Projects */
+
+#projects .page {
+
+}
+
+#projects div:first-child {
+    margin-top: 0;
+}
+
+.project {
+    margin: 10px 0;
+    border: solid 1px white;
+}
+
+.project_title {
+    margin: .5em 0 3px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.project_last_update {
+    color: grey;
+    font-size: .8em;
+    text-align: center;
+}
+
+.project_desc {
+    margin: 15px 13px 15px 14px; 
+    text-align: center;
+    word-spacing: 1px;
+}
+
+.project_links {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.project_links li {
+    width: 100%;
+}
+
+.project_link {
+    display: block;
+    padding: 7.5px;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.github {
+    background-color: #4078c0;
+    color: white;
+}
+
+.steam {
+    color: white;
+    background-color: var(--secondary-color);
+}
+
+/* Blog */
+
+.post {
+    border: solid 1px white;
+}
+
+.post div {
+    padding: 15px;
+}
+
+.post h1 {
+}
+.post p {
+}
+.post p::after {
+    content: "...";
+}
+.post h4 {
+    margin: 10px 0 10px 0;
+    color: grey;
+    font-size: 1em;
+}
+
+.post button {
+    display: block;
+    font-family: MPlusRoundedBold;
+    border: none;
+    user-select: none;
+    background: var(--main-color);
+    width: 100%;
+    color: white;
+    font-size: 1.3em;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* ############ */
+/* #  Footer  # */
+/* ############ */

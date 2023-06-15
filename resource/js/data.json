@@ -1,0 +1,53 @@
+{
+    "projects": {
+        "garrys_mod_addon_tool": {
+            "id": "garrys_mod_addon_tool",
+            "date": "December 9th, 2020",
+            "name": "Garry's Mod Addon Tool",
+            "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
+            "links": {
+                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"
+            }
+        },
+        "joystick_mouse_control": {
+            "id": "joystick_mouse_control",
+            "date": "August 12th, 2020",
+            "name": "Joystick Mouse Control",
+            "desc": "A lightweight Electron app that lets you control your cusor with gamepads.",
+            "links": {
+                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>"
+            }
+        }
+    },
+    "addons": {
+        "mine_thrower": {
+            "id": "mine_thrower",
+            "date": "March 30th, 2020",
+            "name": "Mine Thrower",
+            "desc": "Mine thrower inside Garry's Mod!",
+            "links": {
+                "github": "<li><a class='project_link github' target='_blank' href=https://github.com/Leeous/medic-kiosk'>Github</a>"
+            }
+        },
+        "medic_kiosk": {
+            "id": "medic_kiosk",
+            "date": "June 12th, 2017",
+            "name": "Medic Kiosk",
+            "desc": "An addon for Garry's Mod.",
+            "links": {
+                "steam": "<li><a class='project_link steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
+                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>"
+            }
+        },
+        "re4_ammo_packs": {
+            "id": "re4_ammo_packs",
+            "date": "January 23th, 2020",
+            "name": "RE4 Ammo Packs",
+            "desc": "RE4 ammo packs modelled into Garry's Mod.",
+            "links": {
+                "steam": "<li><a class='project_link steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
+                "source": "<li><a class='project_link' target='_blank' href='https://leeous.com/ftp/projects/re4-ammo-packs/resident_evil_4_ammo_packs.zip'>Download</a>"
+            }
+        }
+    }
+}
