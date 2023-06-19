@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
 app.use('/ftp', express.static('ftp'), serveIndex('ftp', {'icons': true}));
 
 // Serve public directory
-app.use(express.static('public'));
+app.use(express.static('docs'));
 
 // Basic routing  
 app.listen(port, () => {
