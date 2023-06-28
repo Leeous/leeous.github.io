@@ -12,6 +12,7 @@ let clickSafe = null;
 window.addEventListener('DOMContentLoaded', () => {
   const lastUpdated = document.getElementById('pageLastUpdated');
   let projects = new Object();
+
   // Last update to website
   fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits')
     .then(res => {
