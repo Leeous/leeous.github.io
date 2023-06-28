@@ -1,5 +1,4 @@
-'use strict';
-export function fadeOut(elToHide, callback, transitionTime) {
+var fadeOut = function fadeOut(elToHide, callback, transitionTime) {
   if (!elToHide instanceof HTMLObjectElement) {
     console.error(elToHide + " is not a valid HTML object.")
     return;
@@ -28,7 +27,7 @@ export function fadeOut(elToHide, callback, transitionTime) {
  * 
  * 
  */
-export function fadeIn(elToShow, callback, transitionTime) {
+var fadeIn = function fadeIn(elToShow, callback, transitionTime) {
   if (!elToShow instanceof HTMLObjectElement) {
     console.log(elToShow instanceof HTMLObjectElement)
     console.error(elToHide + " is not a valid HTML object.")
@@ -52,3 +51,5 @@ export function fadeIn(elToShow, callback, transitionTime) {
     });
   }, transitionTime);
 }
+
+export { fadeIn, fadeOut }

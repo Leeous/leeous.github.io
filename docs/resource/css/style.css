@@ -318,6 +318,11 @@ body {
 /* #  Footer  # */
 /* ############ */
 
+#pageLastUpdated {
+    color: gray;
+    font-style: italic;
+}
+
 /* ################### */
 /* #  Media Queries  # */
 /* ################### */

@@ -1,5 +1,5 @@
 // Imports
-import { fadeIn, fadeOut } from './Util.js';
+import { fadeIn, fadeOut } from "./Util.js";
 
 
 // Static variables
@@ -10,6 +10,48 @@ let clickSafe = null;
 
 // DOM content loaded
 window.addEventListener('DOMContentLoaded', () => {
+  const lastUpdated = document.getElementById('pageLastUpdated');
+  let projects = new Object();
+  // Last update to website
+  fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits')
+    .then(res => {
+      if (!res.ok) {
+        throw new Error();
+      } else {
+        console.log('data recieved');
+        return res.json();
+      }
+    }).then(data => {
+      lastUpdated.innerText = `page last updated ${moment(data[0]['commit']['author']['date']).startOf('day').fromNow()}`; 
+    })
+    .catch( error => {
+      console.log(error);
+    });
+
+  // Fetch repo API data
+  fetch('https://api.github.com/users/Leeous')
+  //Convert the response to a JSON object
+    .then(response => response.json()) 
+    .then( data => document.body.append())
+		.catch( error => {
+      if (!response.ok) {
+        console.error('Something went wrong!\n' + error);
+      } else {
+        console.log("Retrived repo API data!")
+      }
+    });
+
+  // Projects request
+  fetch('resource/js/data.json')
+    .then((resp) => resp.json())
+    .then(function (projectData) {
+      populateProjects(projectData.addons);
+      populateProjects(projectData.projects);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   // Navagation bar
   const navElements = document.querySelectorAll('.nav_link');
   if (!window.location.hash || !safeHashArray.includes(window.location.hash)) {
@@ -40,16 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Projects request
-  fetch('resource/js/data.json')
-    .then((resp) => resp.json())
-    .then(function (projectData) {
-      populateProjects(projectData.addons);
-      populateProjects(projectData.projects);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+
   // Add event listener for link click
   document.querySelectorAll('.open_project').forEach((e) => { e.addEventListener('click', () => { window.open(e.dataset.link) })});
 });
