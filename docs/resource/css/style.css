@@ -17,10 +17,16 @@
     --fifth-color: #989798;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background: rgb(27, 27, 27);
     color: white;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ############## */
@@ -75,18 +81,19 @@ body {
 /* ########## */
 
 /* Page margin */
-#index_main, #index_footer {
-    margin: 10% 5%;
+#index_main {
+    margin: 3em 1em;
+}
+
+#index_footer {
+    flex-shrink: 0;
 }
 
 /* Main container */
 #index_main {
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-}
-
-#index_main aside {
-    margin-right: 5%
 }
 
 /* Pages */
@@ -114,16 +121,16 @@ body {
 }
 
 #about p {
-    margin: 5% 10%; 
+    margin: 3% 10%; 
     text-indent: 20px;
     text-align: left;
 }
 
 #pfp {
-    width: 80%;
+    width: 70%;
     border: solid 2px white;
     border-radius: 50%;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .buy_me_a_coffee {
@@ -154,10 +161,6 @@ body {
 #about nav li.double_button {
     grid-column-start: 1;
     grid-column-end: 3;
-}
-
-#about nav ul li:nth-child(4) a:nth-child(4) {
-    color: red;
 }
 
 #about nav ul li.social_button a {
@@ -204,9 +207,8 @@ body {
     background: #4078c0;
 }
 
-#about nav ul li.social_button a.twitter span {
-    background: #1da1f2;
-
+#about nav ul li.social_button a.threads span {
+    background: #101010;
 }
 
 #about nav ul li.social_button a.email span {
@@ -250,6 +252,7 @@ body {
 .project_links {
     list-style: none;
     display: flex;
+    text-transform: uppercase;
     justify-content: space-evenly;
 }
 
@@ -264,6 +267,10 @@ body {
     text-align: center;
     background-color: white;
     color: black;
+}
+
+.download {
+
 }
 
 .github {
@@ -318,6 +325,11 @@ body {
 /* #  Footer  # */
 /* ############ */
 
+#index_footer {
+    padding: 3em 0;
+    text-align: center;
+}
+
 #pageLastUpdated {
     color: gray;
     font-style: italic;
@@ -335,8 +347,14 @@ body {
         margin-bottom: .3em;
     }
 
-    #index_main, #index_footer {
-        margin: 2% 30%;
+    #index_main {
+        margin: 2% 25%
+    }
+    
+    #index_footer {
+        margin: 2% 5%;
+        padding: 3em 0;
+        text-align: left;
     }
 
     .page_title {
@@ -370,8 +388,13 @@ body {
         margin-bottom: .3em;
     }
 
-    #index_main, #index_footer {
+    #index_main {
         margin: 2% 40%;
+    }
+    
+    #index_footer {
+        margin: 0 10%;
+        padding: 2em 0;
     }
 
     .page_title {
