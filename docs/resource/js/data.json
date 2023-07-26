@@ -17,6 +17,15 @@
             "links": {
                 "github": "<li><a class='project_link github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>"
             }
+        },
+        "one_shot": {
+            "id": "one_shot",
+            "date": "June 29th, 2023",
+            "name": "One Shot",
+            "desc": "A \"one in the chamber\" style gamemode for <a href='https://sbox.facepunch.com/news' target='_blank'>S&Box</a>.",
+            "links": {
+                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/one_shot'>Github</a>"
+            }
         }
     },
     "addons": {
@@ -46,7 +55,8 @@
             "desc": "RE4 ammo packs modelled into Garry's Mod.",
             "links": {
                 "steam": "<li><a class='project_link steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
-                "source": "<li><a class='project_link' target='_blank' href='https://leeous.com/ftp/projects/re4-ammo-packs/resident_evil_4_ammo_packs.zip'>Download</a>"
+                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
+                "source": "<li><a class='project_link' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
             }
         }
     }
