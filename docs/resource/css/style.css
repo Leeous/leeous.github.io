@@ -355,7 +355,7 @@ body {
     }
 
     #index_main {
-        margin: 2% 40%;
+        margin: 2% 30%;
     }
     
     #index_footer {
@@ -375,7 +375,49 @@ body {
     }
     
     #about #pfp {
-        width: 75%; 
+        width: 65%; 
+        border: solid 2px white;
+        border-radius: 50%;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    #about #bio {
+        font-size: 1.2em;
+    }
+}
+
+/* 4K/TV */
+@media screen and (min-width: 2000px) {
+    #index_header .title {
+        font-size: 3em;
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: .3em;
+    }
+
+    #index_main {
+        margin: 2% 38%;
+    }
+    
+    #index_footer {
+        margin: 0 10%;
+        padding: 2em 0;
+    }
+
+    .page_title {
+        font-size: 3em;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    
+    .page_subtitle {
+        margin-top: 5px;
+        font-weight: 300;
+    }
+    
+    #about #pfp {
+        width: 60%; 
         border: solid 2px white;
         border-radius: 50%;
         margin-top: 25px;
