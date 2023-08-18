@@ -39,6 +39,7 @@ body {
     text-align: center;
     margin-top: 1em;
     margin-bottom: .3em;
+    user-select: none;
 }
 
 #index_header .title a {
@@ -284,6 +285,47 @@ body {
 }
 
 /* Blog */
+
+#blog {
+
+}
+
+#blog article {
+    /* margin-left: 10%;
+    margin-right: 10%; */
+}
+
+#blog article .title {
+    font-size: 1.5em;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#blog article .date {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1em;
+    font-weight: 200;
+}
+
+#blog article p {
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 1.5em;
+    letter-spacing: .05em;
+}
+
+#blog .post .img_section {
+    display: flex;
+    
+}
+
+#blog .post .img_section img {
+    width: 50%;
+    margin: 1em .4em;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 /* Maybe in the future */
 
