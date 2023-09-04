@@ -23,7 +23,7 @@ html, body {
 
 body {
     background: rgb(27, 27, 27);
-    color: white;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@ body {
 
 #index_header .title a {
     text-decoration: none;
-    color: white;
+    color: #fff;
 }
 
 /* Navagation - Menu */
@@ -61,20 +61,20 @@ body {
     padding: 4px 10px;
     font-size: 1.3em;
     text-decoration: none;
-    border-bottom: solid 0px white;
+    border-bottom: solid 0px #fff;
     transition: ease-in-out .2s all;
 }
 
 #index_header .nav .menu .nav_item .nav_link:hover {
-    color: white;
-    border-bottom: solid 3px white;
+    color: #fff;
+    border-bottom: solid 3px #fff;
 
 }
 
 /* Navagation - Active link highlight */
 #index_header .nav .menu .nav_item .active_page {
-    color: white;
-    border-bottom: solid 1.5px white;
+    color: #fff;
+    border-bottom: solid 1.5px #fff;
 }
 
 /* ########## */
@@ -133,7 +133,7 @@ body {
 
 #pfp {
     width: 70%;
-    border: solid 2px white;
+    border: solid 2px #fff;
     border-radius: 50%;
     margin-top: 15px;
 }
@@ -188,7 +188,7 @@ body {
     padding: 10px 5px;
     font-size: 1.25rem;
     background: var(--secondary-color);
-    color: white;
+    color: #fff;
     transform: translateY(-6px);
     will-change: transform;
     transition: transform .1s ease;
@@ -228,7 +228,7 @@ body {
 
 .project {
     margin: 10px 0;
-    border: solid 1px white;
+    border: solid 1px #fff;
 }
 
 .project_title {
@@ -270,7 +270,7 @@ body {
     padding: 7.5px;
     text-decoration: none;
     text-align: center;
-    background-color: white;
+    background-color: #fff;
     color: black;
 }
 
@@ -280,11 +280,11 @@ body {
 
 .github {
     background-color: #4078c0;
-    color: white;
+    color: #fff;
 }
 
 .steam {
-    color: white;
+    color: #fff;
     background-color: var(--secondary-color);
 }
 
@@ -344,7 +344,7 @@ body {
 }
 
 #blog .post .slideshow .slideshow_controls .thumbnail {
-    filter: grayscale();
+    filter: grayscale(.5);
     cursor: pointer;
     transition: all ease .2s;
     border: solid 1px rgb(27, 27, 27);
@@ -354,13 +354,13 @@ body {
 
 #blog .post .slideshow .slideshow_controls .thumbnail:hover {
     filter: none;
-    border: solid 1px white;
+    border: solid 1px #fff;
 }
 
 #blog .post .slideshow .slideshow_controls .thumbnail.active_thumbnail {
     filter: none;
     cursor: default;
-    border: solid 1px white;
+    border: solid 1px #fff;
 }
 
 /* Maybe in the future */
@@ -413,7 +413,7 @@ body {
     
     #about #pfp {
         width: 75%; 
-        border: solid 2px white;
+        border: solid 2px #fff;
         border-radius: 50%;
         margin-top: 25px;
     }
@@ -453,7 +453,7 @@ body {
     
     #about #pfp {
         width: 65%; 
-        border: solid 2px white;
+        border: solid 2px #fff;
         border-radius: 50%;
         margin-top: 25px;
         margin-bottom: 10px;
@@ -495,7 +495,7 @@ body {
     
     #about #pfp {
         width: 60%; 
-        border: solid 2px white;
+        border: solid 2px #fff;
         border-radius: 50%;
         margin-top: 25px;
         margin-bottom: 10px;
