@@ -1,3 +1,4 @@
+export {fadeIn, fadeOut}
 var fadeOut = function fadeOut(elToHide, callback, transitionTime) {
   if (!elToHide instanceof HTMLObjectElement) {
     console.error(elToHide + " is not a valid HTML object.")
@@ -22,9 +23,10 @@ var fadeOut = function fadeOut(elToHide, callback, transitionTime) {
 }
 
 /**
- *  Fade out DOM element
- *  @param {}
- * 
+ *  Fade in DOM element
+ *  @param {string} elToShow - element to show
+ *  @param {Number} transitionTime - fade duration in ms
+ *  @param {Function} callback - function to call after transition is finished
  * 
  */
 var fadeIn = function fadeIn(elToShow, callback, transitionTime) {
@@ -51,5 +53,3 @@ var fadeIn = function fadeIn(elToShow, callback, transitionTime) {
     });
   }, transitionTime);
 }
-
-export { fadeIn, fadeOut }

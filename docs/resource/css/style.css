@@ -61,7 +61,7 @@ body {
     padding: 4px 10px;
     font-size: 1.3em;
     text-decoration: none;
-    border-bottom: solid 0 black;
+    border-bottom: solid 0px white;
     transition: ease-in-out .2s all;
 }
 
@@ -117,6 +117,8 @@ body {
     font-weight: 300;
 }
 
+/* About */
+
 #about {
     text-align: center;
 }
@@ -125,6 +127,7 @@ body {
     margin: 3% 10%; 
     text-indent: 20px;
     text-align: left;
+    font-size: 1.1em;
 }
 
 #pfp {
@@ -297,34 +300,66 @@ body {
 
 #blog article .title {
     font-size: 1.5em;
-    margin-left: 10%;
-    margin-right: 10%;
+    text-align: center;
+    margin-bottom: .5em;
 }
 
 #blog article .date {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 1em;
+    text-align: center;    
+    margin-bottom: 1.2em;
     font-weight: 200;
 }
 
 #blog article p {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     line-height: 1.5em;
     letter-spacing: .05em;
 }
 
-#blog .post .img_section {
+#blog .post .slideshow {
     display: flex;
-    
+    flex-direction: column;
+    margin: 1.0em 0;
 }
 
-#blog .post .img_section img {
-    width: 50%;
-    margin: 1em .4em;
-    border-radius: 5px;
+#blog .post .slideshow .slide {
+    display: none;
+}
+
+#blog .post .slideshow .active_slide {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border-radius: 10px;
+}
+
+#blog .post .slideshow .slideshow_controls {
+    display: flex;
+    justify-content: center;
+    
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+#blog .post .slideshow .slideshow_controls .thumbnail {
+    filter: grayscale();
     cursor: pointer;
+    transition: all ease .2s;
+    border: solid 1px rgb(27, 27, 27);
+    margin: 1em .5em 0 .5em;
+    width: 6em;
+}
+
+#blog .post .slideshow .slideshow_controls .thumbnail:hover {
+    filter: none;
+    border: solid 1px white;
+}
+
+#blog .post .slideshow .slideshow_controls .thumbnail.active_thumbnail {
+    filter: none;
+    cursor: default;
+    border: solid 1px white;
 }
 
 /* Maybe in the future */
@@ -340,7 +375,6 @@ body {
 
 #pageLastUpdated {
     color: gray;
-    font-style: italic;
 }
 
 /* ################### */
@@ -467,6 +501,6 @@ body {
     }
 
     #about #bio {
-        font-size: 1.2em;
+        font-size: 2em;
     }
 }

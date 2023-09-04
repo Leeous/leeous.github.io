@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
         return res.json();
       }
     }).then(data => {
-      lastUpdated.innerText = `page last updated ${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}`; 
+      lastUpdated.innerHTML = `page last updated <i>${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</i>`; 
     }).catch( error => {
       console.log(error);
     });
@@ -67,6 +67,39 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active_page');
   }
 
+  // Slideshow logic
+  const slideshows = document.querySelectorAll('.slideshow');
+  slideshows.forEach((slideshow) => {
+    let slideshow_controls = slideshow.querySelector(".slideshow_controls");
+    let slideshow_display = slideshow.querySelector(".slideshow_display");
+    // console.log(slideshow_controls, slideshow_display);
+    for (let i = 0; i < slideshow_controls.children.length; i++)
+    {
+      let control = slideshow_controls.children[i];
+      control.dataset.order = i;
+      control.addEventListener("click", (e) => {
+        if (control.classList.contains("active_thumbnail")) { return; }
+        let order = control.dataset.order;
+        let new_slide = control.parentElement.parentElement.querySelector(`img[data-order="${order}"]`);
+        let active_thumbnail = control.parentElement.querySelector(".active_thumbnail");
+        let active_slide = control.parentElement.parentElement.querySelector(".active_slide");
+        // Remove active classes
+        active_thumbnail.classList.remove("active_thumbnail");
+        active_slide.classList.remove("active_slide");
+        // Add classes to new slide
+        control.classList.add("active_thumbnail");
+        new_slide.classList.add("active_slide");
+        // console.log(slideshow_display.children[control.dataset.order].classList.add("active_slide"));
+      });
+    }
+
+    for (let i = 0; i < slideshow_display.children.length; i++)
+    {
+      let display = slideshow_display.children[i];
+      display.dataset.order = i;
+    }
+  });
+
   // Handles class switching for the navagation bar
   navElements.forEach((key) => {
     key.addEventListener('click', () => {
@@ -93,5 +126,6 @@ window.addEventListener('DOMContentLoaded', () => {
     fadeIn(window.location.hash, null, 10); // Fade in initnal page - unless there's an anchor tag
     document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active_page');
   }
+
 
 });
