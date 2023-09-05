@@ -132,7 +132,7 @@ body {
 }
 
 #pfp {
-    width: 70%;
+    width: 50%;
     border: solid 2px #fff;
     border-radius: 50%;
     margin-top: 15px;
@@ -378,6 +378,23 @@ body {
     color: gray;
 }
 
+#pageLastUpdated a {
+    color: grey;
+    text-decoration: dotted;
+    text-decoration-line: underline;
+    font-style: italic;
+}
+
+#pageLastUpdated a:visited {
+    color: grey;
+    text-decoration: dotted;
+    text-decoration-line: underline;
+}
+
+#pageLastUpdated a:hover {
+    text-decoration: underline;
+}
+
 #pageLastUpdated .update_desc {
     text-transform: lowercase;
     font-size: .8em;
@@ -421,7 +438,7 @@ body {
     }
     
     #about #pfp {
-        width: 75%; 
+        width: 50%; 
         border: solid 2px #fff;
         border-radius: 50%;
         margin-top: 25px;

@@ -12,7 +12,7 @@ let clickSafe = null;
 window.addEventListener('DOMContentLoaded', () => {
   const lastUpdated = document.getElementById('pageLastUpdated');
   let projects = new Object();
-
+  // checkHash();
   // Display last update to website in footer
   fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits').then(res => {
       if (!res.ok) {
@@ -21,7 +21,10 @@ window.addEventListener('DOMContentLoaded', () => {
         return res.json();
       }
     }).then(data => {
-      lastUpdated.innerHTML = `page last updated <i>${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</i><br/><span class="update_desc">${data[0]['commit']['message']}</span></span>`; 
+      console.log(data);
+      lastUpdated.innerHTML = 
+        `page last updated <a href="${data[0]['html_url']}" target="_blank">${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</a><br/>
+        <span class="update_desc">${data[0]['commit']['message']}</span></span>`; 
     }).catch( error => {
       console.log(error);
     });
@@ -116,15 +119,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Add event listener for link click
   document.querySelectorAll('.open_project').forEach((e) => { e.addEventListener('click', () => { window.open(e.dataset.link) })});
-  
-  // Checks to see if hash tag is valid
-  if (!window.location.hash || !safeHashArray.includes(window.location.hash)) {
-    fadeIn('#about', null, 10); // Fade in initnal page - unless there's an anchor tag
-    document.querySelector('[data-fadein="#about"').classList.add('active_page');
-  } else {
-    fadeIn(window.location.hash, null, 10); // Fade in initnal page - unless there's an anchor tag
-    document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active_page');
-  }
-
-
 });
