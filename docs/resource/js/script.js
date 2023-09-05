@@ -18,11 +18,10 @@ window.addEventListener('DOMContentLoaded', () => {
       if (!res.ok) {
         throw new Error();
       } else {
-        console.log('data recieved');
         return res.json();
       }
     }).then(data => {
-      lastUpdated.innerHTML = `page last updated <i>${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</i>`; 
+      lastUpdated.innerHTML = `page last updated <i>${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</i><br/><span class="update_desc">${data[0]['commit']['message']}</span></span>`; 
     }).catch( error => {
       console.log(error);
     });

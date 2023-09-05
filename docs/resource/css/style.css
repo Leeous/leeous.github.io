@@ -378,6 +378,15 @@ body {
     color: gray;
 }
 
+#pageLastUpdated .update_desc {
+    text-transform: lowercase;
+    font-size: .8em;
+}
+/* ########### */
+/* #  Other  # */
+/* ########### */
+
+
 /* ################### */
 /* #  Media Queries  # */
 /* ################### */
