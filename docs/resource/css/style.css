@@ -131,6 +131,28 @@ body {
     letter-spacing: .4px;
 }
 
+#skills {
+
+}
+
+#skills header h2 {
+    border-radius: 12px;
+    padding: 10px 15px;
+}
+
+#skills header {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    cursor: pointer;
+    transform: translateY(-6px);
+    background-color: var(--secondary-color);
+}
+
+#skills .skill_list {
+    display: none;
+}
+
 #pfp {
     width: 50%;
     border: solid 2px #fff;
@@ -372,10 +394,12 @@ body {
 #index_footer {
     padding: 3em 0;
     text-align: center;
+    cursor: default;
 }
 
 #pageLastUpdated {
     color: gray;
+    cursor: default;
 }
 
 #pageLastUpdated a {
