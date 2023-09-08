@@ -34,7 +34,7 @@ body {
 /* ############## */
 
 /* "Leeous" */
-#index_header .title {
+#index-header .title {
     font-size: 3em;
     text-align: center;
     margin-top: 1em;
@@ -42,20 +42,20 @@ body {
     user-select: none;
 }
 
-#index_header .title a {
+#index-header .title a {
     text-decoration: none;
     color: #fff;
 }
 
 /* Navagation - Menu */
-#index_header .nav .menu {
+#index-header .nav .menu {
     display: flex;
     justify-content: center;
     list-style: none;
 }
 
 /* Navagation - Link */
-#index_header .nav .menu .nav_item .nav_link {
+#index-header .nav .menu .nav-item .nav-link {
     color: grey;
     margin: 5px;
     padding: 4px 10px;
@@ -65,14 +65,14 @@ body {
     transition: ease-in-out .2s all;
 }
 
-#index_header .nav .menu .nav_item .nav_link:hover {
+#index-header .nav .menu .nav-item .nav-link:hover {
     color: #fff;
     border-bottom: solid 3px #fff;
 
 }
 
 /* Navagation - Active link highlight */
-#index_header .nav .menu .nav_item .active_page {
+#index-header .nav .menu .nav-item .active-page {
     color: #fff;
     border-bottom: solid 1.5px #fff;
 }
@@ -82,16 +82,16 @@ body {
 /* ########## */
 
 /* Page margin */
-#index_main {
+#index-main {
     margin: 3em 1em;
 }
 
-#index_footer {
+#index-footer {
     flex-shrink: 0;
 }
 
 /* Main container */
-#index_main {
+#index-main {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
@@ -107,12 +107,12 @@ body {
     /* box-shadow: var(--secondary-color) -4px 4px 0 4px; */
 }
 
-.page_title {
+.page-title {
     font-size: 3em;
     margin-bottom: 0;
 }
 
-.page_subtitle {
+.page-subtitle {
     margin-top: 5px;
     font-weight: 300;
 }
@@ -132,25 +132,35 @@ body {
 }
 
 #skills {
-
+    padding: 10px;
 }
 
-#skills header h2 {
-    border-radius: 12px;
-    padding: 10px 15px;
-}
-
-#skills header {
-    display: flex;
+#skills .skill-label {
+    margin: .5em;
+    text-align: left;
     justify-content: space-between;
     border-radius: 12px;
-    cursor: pointer;
     transform: translateY(-6px);
-    background-color: var(--secondary-color);
 }
 
-#skills .skill_list {
-    display: none;
+#skills .skill-label summary {
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: var(--secondary-color);
+
+}
+
+.skill-list {
+    margin: 5px;
+}
+
+.skill-list li {
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+    background-color: black;
+    border-radius: 10px;
 }
 
 #pfp {
@@ -185,12 +195,12 @@ body {
     margin: .5em;
 }
 
-#about nav li.double_button {
+#about nav li.double-button {
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
-#about nav ul li.social_button a {
+#about nav ul li.social-button a {
     display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -204,7 +214,7 @@ body {
     text-decoration: none;
 }
 
-#about nav ul li.social_button a span {
+#about nav ul li.social-button a span {
     display: block;
     border-radius: 12px;
     padding: 10px 5px;
@@ -216,29 +226,29 @@ body {
     transition: transform .1s ease;
 }
 
-#about nav ul li.social_button a:hover span {
+#about nav ul li.social-button a:hover span {
     transform: translateY(-8px);
 }
 
-#about nav ul li.social_button a:active span {
+#about nav ul li.social-button a:active span {
     transform: translateY(-2px);
 }
 
-#about nav ul li.social_button a.steam span {
+#about nav ul li.social-button a.steam span {
     background: #2e3746;
 }
-#about nav ul li.social_button a.discord span {
+#about nav ul li.social-button a.discord span {
     background: #5865f2;
 }
-#about nav ul li.social_button a.github span {
+#about nav ul li.social-button a.github span {
     background: #4078c0;
 }
 
-#about nav ul li.social_button a.threads span {
+#about nav ul li.social-button a.threads span {
     background: #101010;
 }
 
-#about nav ul li.social_button a.email span {
+#about nav ul li.social-button a.email span {
     background: var(--secondary-color);
 }
 
@@ -350,14 +360,14 @@ body {
     display: none;
 }
 
-#blog .post .slideshow .active_slide {
+#blog .post .slideshow .active-slide {
     display: block;
     width: 100%;
     margin: 0;
     border-radius: 10px;
 }
 
-#blog .post .slideshow .slideshow_controls {
+#blog .post .slideshow .slideshow-controls {
     display: flex;
     justify-content: center;
     
@@ -365,7 +375,7 @@ body {
     -webkit-transform: translate3d(0, 0, 0);
 }
 
-#blog .post .slideshow .slideshow_controls .thumbnail {
+#blog .post .slideshow .slideshow-controls .thumbnail {
     filter: grayscale(.5);
     cursor: pointer;
     transition: all ease .2s;
@@ -374,12 +384,12 @@ body {
     width: 6em;
 }
 
-#blog .post .slideshow .slideshow_controls .thumbnail:hover {
+#blog .post .slideshow .slideshow-controls .thumbnail:hover {
     filter: none;
     border: solid 1px #fff;
 }
 
-#blog .post .slideshow .slideshow_controls .thumbnail.active_thumbnail {
+#blog .post .slideshow .slideshow-controls .thumbnail.active_thumbnail {
     filter: none;
     cursor: default;
     border: solid 1px #fff;
@@ -391,7 +401,7 @@ body {
 /* #  Footer  # */
 /* ############ */
 
-#index_footer {
+#index-footer {
     padding: 3em 0;
     text-align: center;
     cursor: default;
@@ -419,7 +429,7 @@ body {
     text-decoration: underline;
 }
 
-#pageLastUpdated .update_desc {
+#pageLastUpdated .update-desc {
     text-transform: lowercase;
     font-size: .8em;
 }
@@ -460,30 +470,30 @@ body {
 /* ################### */
 
 @media screen and (min-width: 900px) {
-    #index_header .title {
+    #index-header .title {
         font-size: 3em;
         text-align: center;
         margin-top: 1em;
         margin-bottom: .3em;
     }
 
-    #index_main {
+    #index-main {
         margin: 2% 25%
     }
     
-    #index_footer {
+    #index-footer {
         margin: 2% 5%;
         padding: 3em 0;
         text-align: left;
     }
 
-    .page_title {
+    .page-title {
         font-size: 3em;
         margin-bottom: 0;
         margin-top: 0;
     }
     
-    .page_subtitle {
+    .page-subtitle {
         margin-top: 5px;
         font-weight: 300;
     }
@@ -501,29 +511,29 @@ body {
 }
 
 @media screen and (min-width: 1500px) {
-    #index_header .title {
+    #index-header .title {
         font-size: 3em;
         text-align: center;
         margin-top: 1em;
         margin-bottom: .3em;
     }
 
-    #index_main {
+    #index-main {
         margin: 2% 30%;
     }
     
-    #index_footer {
+    #index-footer {
         margin: 0 10%;
         padding: 2em 0;
     }
 
-    .page_title {
+    .page-title {
         font-size: 3em;
         margin-bottom: 0;
         margin-top: 0;
     }
     
-    .page_subtitle {
+    .page-subtitle {
         margin-top: 5px;
         font-weight: 300;
     }
@@ -543,29 +553,29 @@ body {
 
 /* 4K/TV */
 @media screen and (min-width: 2000px) {
-    #index_header .title {
+    #index-header .title {
         font-size: 3em;
         text-align: center;
         margin-top: 1em;
         margin-bottom: .3em;
     }
 
-    #index_main {
+    #index-main {
         margin: 2% 38%;
     }
     
-    #index_footer {
+    #index-footer {
         margin: 0 10%;
         padding: 2em 0;
     }
 
-    .page_title {
+    .page-title {
         font-size: 3em;
         margin-bottom: 0;
         margin-top: 0;
     }
     
-    .page_subtitle {
+    .page-subtitle {
         margin-top: 5px;
         font-weight: 300;
     }

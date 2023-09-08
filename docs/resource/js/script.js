@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
       console.log(data);
       lastUpdated.innerHTML = 
         `page last updated <a href="${data[0]['html_url']}" target="_blank">${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</a><br/>
-        <span class="update_desc">${data[0]['commit']['message']}</span></span>`; 
+        <span class="update-desc">${data[0]['commit']['message']}</span></span>`; 
     }).catch( error => {
       console.log(error);
     });
@@ -54,27 +54,40 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}</div>
         </div>
       `;
-      document.querySelector('#index_main #projects').insertAdjacentHTML('afterbegin', projectTemplate);
+      document.querySelector('#index-main #projects').insertAdjacentHTML('afterbegin', projectTemplate);
       // TODO: Add detailed animation to display projects details
     });
   }
 
   // Navagation bar
-  const navElements = document.querySelectorAll('.nav_link');
+  const navElements = document.querySelectorAll('.nav-link');
   if (!window.location.hash || !safeHashArray.includes(window.location.hash)) {
     fadeIn('#about', null, 10); // Fade in initnal page - unless there's an anchor tag
-    document.querySelector('[data-fadein="#about"').classList.add('active_page');
+    document.querySelector('[data-fadein="#about"').classList.add('active-page');
   } else {
     fadeIn(window.location.hash, null, 10); // Fade in initnal page - unless there's an anchor tag
-    document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active_page');
+    document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active-page');
   }
+
+  // Skill lists
+  // let skill_lists = document.querySelectorAll('.skill-label h2');
+  // skill_lists.forEach((list) => {
+  //   console.log(list, skill_lists);
+  //   list.addEventListener('click', (e) => {
+  //     var content = list.nextElementSibling;
+  //     if (content.style.maxHeight) {
+  //       content.style.maxHeight = null;
+  //     } else {
+  //       content.style.maxHeight = content.scrollHeight + "px";
+  //     }
+  //   });
+  // })
 
   // Slideshow logic
   const slideshows = document.querySelectorAll('.slideshow');
   slideshows.forEach((slideshow) => {
-    let slideshow_controls = slideshow.querySelector(".slideshow_controls");
-    let slideshow_display = slideshow.querySelector(".slideshow_display");
-    // console.log(slideshow_controls, slideshow_display);
+    let slideshow_controls = slideshow.querySelector(".slideshow-controls");
+    let slideshow_display = slideshow.querySelector(".slideshow-display");
     for (let i = 0; i < slideshow_controls.children.length; i++)
     {
       let control = slideshow_controls.children[i];
@@ -84,14 +97,14 @@ window.addEventListener('DOMContentLoaded', () => {
         let order = control.dataset.order;
         let new_slide = control.parentElement.parentElement.querySelector(`img[data-order="${order}"]`);
         let active_thumbnail = control.parentElement.querySelector(".active_thumbnail");
-        let active_slide = control.parentElement.parentElement.querySelector(".active_slide");
+        let active_slide = control.parentElement.parentElement.querySelector(".active-slide");
         // Remove active classes
         active_thumbnail.classList.remove("active_thumbnail");
-        active_slide.classList.remove("active_slide");
+        active_slide.classList.remove("active-slide");
         // Add classes to new slide
         control.classList.add("active_thumbnail");
-        new_slide.classList.add("active_slide");
-        // console.log(slideshow_display.children[control.dataset.order].classList.add("active_slide"));
+        new_slide.classList.add("active-slide");
+        // console.log(slideshow_display.children[control.dataset.order].classList.add("active-slide"));
       });
     }
 
@@ -106,14 +119,14 @@ window.addEventListener('DOMContentLoaded', () => {
   navElements.forEach((key) => {
     key.addEventListener('click', () => {
       clickSafe = false;
-      if (key.classList.contains('active_page') || clickSafe) { return; }
-      fadeOut(document.querySelector('.active_page').dataset.fadein, () => {
+      if (key.classList.contains('active-page') || clickSafe) { return; }
+      fadeOut(document.querySelector('.active-page').dataset.fadein, () => {
         fadeIn(key.dataset.fadein, () => {
           clickSafe = true;
         });
       });
-      document.querySelector('.active_page').classList.remove('active_page');
-      key.classList.add('active_page');
+      document.querySelector('.active-page').classList.remove('active-page');
+      key.classList.add('active-page');
     });
   });
 

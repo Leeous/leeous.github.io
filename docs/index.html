@@ -13,32 +13,32 @@
 		<link rel="stylesheet" href="resource/css/style.css">
 </head>
 <body>
-  	<header id="index_header">
+  	<header id="index-header">
 		<!-- Logo -->
 		<h1 class="title">Leeous</h1>
 		<!-- Menu -->
         <nav class="nav">
             <ul class="menu">
-                <li class="nav_item"><a data-fadein="#about" class="nav_link" href="#about">ABOUT</a></li>
-                <li class="nav_item"><a data-fadein="#projects" class="nav_link" href="#projects">PROJECTS</a></li>
-                <li class="nav_item"><a data-fadein="#blog" class="nav_link" href="#blog">BLOG</a></li>
+                <li class="nav-item"><a data-fadein="#about" class="nav-link" href="#about">ABOUT</a></li>
+                <li class="nav-item"><a data-fadein="#projects" class="nav-link" href="#projects">PROJECTS</a></li>
+                <li class="nav-item"><a data-fadein="#blog" class="nav-link" href="#blog">BLOG</a></li>
             </ul>
         </nav>
   	</header>
-  	<main id="index_main">
+  	<main id="index-main">
 		<div id="about" class="page">
-			<h1 class="page_title">Cody Fields</h1>
-			<h3 class="page_subtitle">North Carolina, USA</h3>
+			<h1 class="page-title">Cody Fields</h1>
+			<h3 class="page-subtitle">North Carolina, USA</h3>
 			<img id="pfp" src="resource/imgs/profile_real.jpg"/>
 			<nav>
 				<ul>
-					<li class="social_button double_button"><a href="https://www.buymeacoffee.com/Leeous" target="_blank"><span>Buy me a coffee &#9749;</span></a></li>
-					<li class="social_button"><a href="https://steamcommunity.com/id/Leeous/" target="_blank" class="steam"><span>Steam</span></a></li>
-					<li class="social_button"><a href="https://discord.com/users/159764909159219201" target="_blank" class="discord"><span>Discord</span></a></li>
-					<li class="social_button"><a href="https://github.com/Leeous" target="_blank" class="github"><span>GitHub</span></a></li>
-					<li class="social_button"><a href="https://www.threads.net/@leeous" target="_blank" class="threads"><span>Threads</span></a></li>
-					<li class="social_button double_button"><a href="mailto:contact@leeous.com" target="_blank" class="email"><span>Email</span></a></li>
-					<li class="social_button double_button"><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target="_blank" class="pgpkey"><span>PGP Key</span></a></li>
+					<li class="social-button double-button"><a href="https://www.buymeacoffee.com/Leeous" target="_blank"><span>Buy me a coffee &#9749;</span></a></li>
+					<li class="social-button"><a href="https://steamcommunity.com/id/Leeous/" target="_blank" class="steam"><span>Steam</span></a></li>
+					<li class="social-button"><a href="https://discord.com/users/159764909159219201" target="_blank" class="discord"><span>Discord</span></a></li>
+					<li class="social-button"><a href="https://github.com/Leeous" target="_blank" class="github"><span>GitHub</span></a></li>
+					<li class="social-button"><a href="https://www.threads.net/@leeous" target="_blank" class="threads"><span>Threads</span></a></li>
+					<li class="social-button double-button"><a href="mailto:contact@leeous.com" target="_blank" class="email"><span>Email</span></a></li>
+					<li class="social-button double-button"><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target="_blank" class="pgpkey"><span>PGP Key</span></a></li>
 				</ul>
 			</nav>
 			<div id="bio">
@@ -48,16 +48,11 @@
 					Email is the best way to reach me since I'm not on social media too often. Right now, I'm on the hunt for an entry-level IT job and hoping to build a long-term career in the field.
 				</p>
 			</div>
-			<!-- <div id="skills">
+			<div id="skills">
 				<h1>Skills</h1>
-				<div>
-					<header>
-						<h2>
-							<span class="expand_list">Gaming</span>
-						</h2>
-						<h2>&#8595;</h2>
-					</header>
-					<ul class="skill_list">
+				<details class="skill-label">
+					<summary>Gaming</summary>
+					<ul class="skill-list">
 						<li>Source Engine</li>
 						<li>Server Management/Hosting</li>
 						<li>User Management</li>
@@ -65,36 +60,39 @@
 						<li>Mod Development (Lua, C#)</li>
 						<li>Forum Moderation/Hosting</li>
 					</ul>
-				</div>
-				<h2><span>&#8595; IT &#8595;</span></h2>
-				<ul class="skill_list">
-					<li>General Documentation</li>
-					<li>Full-stack Web development</li>
-					<li>Blender</li>
-					<li>Ubuntu Server</li>
-					<li>HPE server managment</li>
-					<li>Windows</li>
-					<li>SecOps awareness</li>
-					<li>PC building/repair</li>
-					<li>Mobile device repair</li>
-					<li>Team Management</li>
-					<li>UX optimization</li>
-					<li>Photoshop/Gimp</li>
-					<li></li>
-				</ul>
-				<h2><span>Other</span></h2>
-				<ul class="skill_list">
-					<li>Cash/check management</li>
-					<li>Bank deposits</li>
-					<li>Photo lab</li>
-					<li>Stocking Logistics</li>
-					<li>CCTV operation</li>
-					<li>Insurance Agent</li>
-					<li>Product Advertisement</li>
-					<li>Customer Relations</li>
-					<li>Fraud Prevention</li>
-				</ul>
-			</div> -->
+				</details>
+				<details class="skill-label">
+					<summary>IT</summary>
+					<ul class="skill-list">
+						<li>General Documentation</li>
+						<li>Full-stack Web development</li>
+						<li>Blender</li>
+						<li>Ubuntu Server</li>
+						<li>HPE server managment</li>
+						<li>Windows</li>
+						<li>SecOps awareness</li>
+						<li>PC building/repair</li>
+						<li>Mobile device repair</li>
+						<li>UX optimization</li>
+						<li>Photoshop/Gimp</li>
+					</ul>
+				</details>
+				<details class="skill-label">
+					<summary>Other</summary>
+					<ul class="skill-list">
+						<li>Cash/check management</li>
+						<li>Team Management</li>
+						<li>Bank deposits</li>
+						<li>Photo lab</li>
+						<li>Stocking Logistics</li>
+						<li>CCTV operation</li>
+						<li>Insurance Agent</li>
+						<li>Product Advertisement</li>
+						<li>Customer Relations</li>
+						<li>Fraud Prevention</li>
+					</ul>
+				</details>
+			</div>
 		</div>
 		<div id="projects" class="page">
 			<!-- JS will place our projects -->
@@ -112,12 +110,12 @@
 					what people will create. I have no doubt that S&Box can easily hit the top 10 if they play their cards right. Developers are already showing off their talent even while the API
 					is changing almost daily. I'm excited for the future. :)
 				</p>
-				<section class="img_section slideshow">
-					<div class="slideshow_display">
-						<img class="slide active_slide" src="resource/imgs/blog/post1/render2.png" alt="">
+				<section class="img-section slideshow">
+					<div class="slideshow-display">
+						<img class="slide active-slide" src="resource/imgs/blog/post1/render2.png" alt="">
 						<img class="slide" src="resource/imgs/blog/post1/render1.png" alt="">
 					</div>
-					<div class="slideshow_controls">
+					<div class="slideshow-controls">
 						<img class="thumbnail active_thumbnail" src="resource/imgs/blog/post1/render2.png" alt="">
 						<img class="thumbnail" src="resource/imgs/blog/post1/render1.png" alt="">
 					</div>
@@ -126,7 +124,7 @@
 			</article>
 		</div>
 	</main>
-  	<footer id="index_footer">
+  	<footer id="index-footer">
 		<p><span id="poweredBy">Powered by coffee <span class="coffee">☕</span></span></p>
 		<p id="pageLastUpdated"></p>
   	</footer>
