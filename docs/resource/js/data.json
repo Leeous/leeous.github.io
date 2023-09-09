@@ -6,7 +6,7 @@
             "name": "Garry's Mod Addon Tool",
             "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
             "links": {
-                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"
+                "github": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"
             }
         },
         "joystick_mouse_control": {
@@ -15,7 +15,7 @@
             "name": "Joystick Mouse Control",
             "desc": "A lightweight Electron app that lets you control your cusor with gamepads.",
             "links": {
-                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>"
+                "github": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>"
             }
         },
         "one_shot": {
@@ -24,7 +24,7 @@
             "name": "One Shot",
             "desc": "A \"one in the chamber\" style gamemode for <a href='https://sbox.facepunch.com/news' target='_blank'>S&Box</a>.",
             "links": {
-                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/one_shot'>Github</a>"
+                "github": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/Leeous/one_shot'>Github</a>"
             }
         }
     },
@@ -35,7 +35,7 @@
             "name": "Mine Thrower",
             "desc": "Mine thrower inside Garry's Mod!",
             "links": {
-                "github": "<li><a class='project_link github' target='_blank' href=https://github.com/Leeous/medic-kiosk'>Github</a>"
+                "github": "<li class='github project-background'><a class='project_link github' target='_blank' href=https://github.com/Leeous/medic-kiosk'>Github</a>"
             }
         },
         "medic_kiosk": {
@@ -44,8 +44,8 @@
             "name": "Medic Kiosk",
             "desc": "An addon for Garry's Mod.",
             "links": {
-                "steam": "<li><a class='project_link steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
-                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>"
+                "steam": "<li class='steam project-background'><a class='project_link steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
+                "github": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>"
             }
         },
         "re4_ammo_packs": {
@@ -54,9 +54,9 @@
             "name": "RE4 Ammo Packs",
             "desc": "RE4 ammo packs modelled into Garry's Mod.",
             "links": {
-                "steam": "<li><a class='project_link steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
-                "github": "<li><a class='project_link github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
-                "source": "<li><a class='project_link' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
+                "steam": "<li class='steam project-background'><a class='project_link steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
+                "github": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
+                "source": "<li  class='download project-background'><a class='project_link' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
             }
         }
     }
