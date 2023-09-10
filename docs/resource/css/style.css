@@ -212,10 +212,11 @@ a:not(.project_link):hover {
 }
 
 #pfp {
-    width: 50%;
+    width: 75%;
     border: solid 2px #fff;
     border-radius: 50%;
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .buy_me_a_coffee {
@@ -544,6 +545,13 @@ details[open] summary ~ * {
 /* ################### */
 /* #  Media Queries  # */
 /* ################### */
+
+@media screen and (min-width: 500px) {
+    #about #pfp {
+        width: 50%;
+    }
+}
+
 
 @media screen and (min-width: 900px) {
     #index-header .title {
