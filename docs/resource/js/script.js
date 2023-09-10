@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }).then(data => {
       lastUpdated.innerHTML = 
-        `page last updated <a href="${data[0]['html_url']}" target="_blank">${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</a><br/>
+        `page last updated <a href="${data[0]['html_url']}" target="_blank">${moment(data[0]['commit']['author']['date']).startOf('second').fromNow()}</a><br/>
         <span class="update-desc">${data[0]['commit']['message']}</span></span>`; 
     }).catch( error => {
       console.log(error);
@@ -55,12 +55,14 @@ window.addEventListener('DOMContentLoaded', () => {
   // Parses the JSON file with project data
   function populateProjects(projectData) {
     Object.keys(projectData).forEach(function (key) {
+      console.log
       // ${projectData[key].source ? `<button class='padding-small source open_project' data-link='${projectData[key].source}'>Source</button>` : ""}
       // ${projectData[key].github ? `<button class='padding-small github open_project' data-link='${projectData[key].github}'>GitHub</button>` : ""}
       // ${projectData[key].steam ? `<button class='padding-small steam open_project' data-link='${projectData[key].steam}'>Steam</button>` : ""}
       const projectTemplate = `
         <div class="project" projectData-id="${projectData[key].id}">
         <h3 class="project_title">${projectData[key].name}</h3>
+        ${projectData[key].icon ? projectData[key].icon : ''}
         <!--<p class="project_last_update">updated <i>102 days ago</i></p>-->
         <p class="project_desc">${projectData[key].desc}</p>
         <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}</div>
