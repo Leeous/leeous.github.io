@@ -24,23 +24,69 @@ body {
     flex-direction: column;
 }
 
+a:not(.project_link) {
+    color: white;
+    text-decoration: dotted;
+    text-decoration-line: underline;
+}
+
+a:not(.project_link):hover {
+    color: white;
+    text-decoration: underline;
+}
+
 /* ############## */
 /* #   Header   # */
 /* ############## */
 
 /* "Leeous" */
-#index-header .title {
-    font-size: 3em;
+#index-header {
     text-align: center;
+}
+
+#index-header .title {
+    display: inline-block;
+    font-size: 3em;
+    justify-content: center;
     margin-top: 1em;
     margin-bottom: .3em;
     user-select: none;
+    transition: all 1s animation;
 }
 
-#index-header .title a {
+/* #index-header .title a {
     text-decoration: none;
     color: #fff;
 }
+
+#index-header .title:hover {
+    animation: infinite 2s pride;
+}
+
+@keyframes pride {
+    0% {
+        color: 2px #ff0000;
+    }
+    16% {
+        color: 1px #ff9800;
+    }
+    33% {
+        color: 2px #ffff00;
+
+    }
+    50% {
+        color: 1px #009800;
+
+    }
+    66% {
+        color: 2px #0000ff;
+        
+    }
+    81% {
+        color: 1px #980098;
+
+    }
+} */
 
 /* Navagation - Menu */
 #index-header .nav .menu {
@@ -298,6 +344,7 @@ body {
 }
 
 .project_link {
+    font-weight: bold;
     display: block;
     padding: 7.5px;
     text-decoration: none;
@@ -307,12 +354,12 @@ body {
     transition: ease-in-out .1s transform;
 }
 
-.project_link:hover {
+.project_link:hover, .project_link:active {
     transform: translateY(-5px);
 }
 
 .project-background {
-    background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+    background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
 }
 
 .download {
@@ -355,14 +402,11 @@ body {
 #blog article p {
     margin-left: 5%;
     margin-right: 5%;
-    line-height: 1.5em;
-    letter-spacing: .03em;
+    letter-spacing: .02em;
 }
 
 #blog article p a {
     color: white;
-    text-decoration: dotted;
-    text-decoration-line: underline;
 }
 
 #blog article p a:hover {
@@ -464,6 +508,19 @@ body {
 
 #poweredBy:hover span.coffee {
     animation: .2s shake infinite;
+}
+
+details[open] summary ~ * {
+    animation: sweep .4s ease-in-out;
+}
+
+details[open] summary ~ * {
+    animation: sweep .4s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0; transform: rotateX(30deg);}
+    100%  {opacity: 1;  transform: rotateX(0deg);}
 }
 
 /* ################ */

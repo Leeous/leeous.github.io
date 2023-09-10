@@ -12,7 +12,20 @@ let clickSafe = null;
 window.addEventListener('DOMContentLoaded', () => {
   const lastUpdated = document.getElementById('pageLastUpdated');
   let projects = new Object();
-  // checkHash();
+  // Check if on-site archor tag 
+  window.addEventListener('hashchange', (hash) => {
+    let oldHash = hash.oldURL.substring(hash.oldURL.indexOf('#'));
+    let newHash = hash.newURL.substring(hash.newURL.indexOf('#'));
+    // Fade out old hash, fade in new
+    fadeOut(oldHash, () => {
+      fadeIn(newHash);
+    });
+    // Change highlighted nav element if hash is a on-site anchor
+    if (safeHashArray.includes(newHash)) {
+      document.querySelector(".active-page").classList.remove("active-page");
+      document.querySelector(`.nav-link[href="${newHash}"]`).classList.add("active-page");
+    }
+  });
   // Display last update to website in footer
   fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits').then(res => {
       if (!res.ok) {
@@ -21,7 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
         return res.json();
       }
     }).then(data => {
-      console.log(data);
       lastUpdated.innerHTML = 
         `page last updated <a href="${data[0]['html_url']}" target="_blank">${moment(data[0]['commit']['author']['date']).startOf('hour').fromNow()}</a><br/>
         <span class="update-desc">${data[0]['commit']['message']}</span></span>`; 

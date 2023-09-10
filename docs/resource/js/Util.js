@@ -1,5 +1,6 @@
 export {fadeIn, fadeOut}
 var fadeOut = function fadeOut(elToHide, callback, transitionTime) {
+  if (elToHide == "" || elToHide == null) { return console.error("No selector for fade out")}
   if (!elToHide instanceof HTMLObjectElement) {
     console.error(elToHide + " is not a valid HTML object.")
     return;
@@ -30,6 +31,7 @@ var fadeOut = function fadeOut(elToHide, callback, transitionTime) {
  * 
  */
 var fadeIn = function fadeIn(elToShow, callback, transitionTime) {
+  if (elToShow == "" || elToShow == null) { return console.error("No selector for fade in")}
   if (!elToShow instanceof HTMLObjectElement) {
     console.log(elToShow instanceof HTMLObjectElement)
     console.error(elToHide + " is not a valid HTML object.")
