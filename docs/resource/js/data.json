@@ -4,7 +4,7 @@
             "id": "garrys_mod_addon_tool",
             "date": "December 9th, 2020",
             "name": "Garry's Mod Addon Tool",
-            "icon": "<img class='project_img' src='https://github.com/Leeous/gmod-addon-tool/blob/master/src/img/icon.png?raw=true'>",
+            "icon": "<img class='project_img' src='https://github.com/Leeous/gmod-addon-tool/blob/master/src/img/icon.png?raw=true' alt='GMAT Icon'>",
             "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
             "links": {
                 "github": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"

@@ -26,6 +26,16 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector(".active-page").classList.remove("active-page");
     document.querySelector(`.nav-link[href="${newHash}"]`).classList.add("active-page");
   });
+  // Make only one skill section open at a time
+  let skill_labels = document.querySelectorAll('.skill-label');
+  skill_labels.forEach((label) => {
+    label.addEventListener('click', (e) => {
+      if (document.querySelector('details[open=""]')) {
+        document.querySelector('details[open=""]').removeAttribute('open');
+      }
+    });
+  });
+
   // Display last update to website in footer
   fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits').then(res => {
       if (!res.ok) {
@@ -77,6 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const navElements = document.querySelectorAll('.nav-link');
   if (!window.location.hash || !safeHashArray.includes(window.location.hash)) {
     fadeIn('#about', null, 10); // Fade in initnal page - unless there's an anchor tag
+    window.location.hash = "about";
     document.querySelector('[data-fadein="#about"').classList.add('active-page');
   } else {
     fadeIn(window.location.hash, null, 10); // Fade in initnal page - unless there's an anchor tag
