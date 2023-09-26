@@ -1,31 +1,69 @@
 // Imports
 import { fadeIn, fadeOut } from "./Util.js";
 
-
 // Static variables
 const safeHashArray = ['#about', '#projects', '#blog'];
 
 // Variables
+let pfpClicks = 0;
 let clickSafe = null;
 
 // DOM content loaded
 window.addEventListener('DOMContentLoaded', () => {
   const lastUpdated = document.getElementById('pageLastUpdated');
-  let projects = new Object();
-  // Check if on-site archor tag 
-  window.addEventListener('hashchange', (hash) => {
-    let oldHash = hash.oldURL.substring(hash.oldURL.indexOf('#'));
-    let newHash = hash.newURL.substring(hash.newURL.indexOf('#'));
-    // Validate new hash
-    if (!safeHashArray.includes(newHash)) { return; }
-    // Fade out old hash, fade in new
-    fadeOut(oldHash, () => {
-      fadeIn(newHash);
-    });
-    // Change highlighted nav element if hash is a on-site anchor
-    document.querySelector(".active-page").classList.remove("active-page");
-    document.querySelector(`.nav-link[href="${newHash}"]`).classList.add("active-page");
-  });
+  // let projects = new Object();
+  // Check if hash changes, update active page
+  // TODO: FIX LATER
+  // window.addEventListener('hashchange', (hash) => {
+  //   let oldHash = hash.oldURL.substring(hash.oldURL.indexOf('#'));
+  //   let newHash = hash.newURL.substring(hash.newURL.indexOf('#'));
+  //   // Validate new hash
+  //   if (!safeHashArray.includes(newHash)) { return; }
+  //   // Check if old hash exists, if not, fade out active page
+  //   if (hash.oldURL.indexOf('#') == -1) {
+  //     fadeOut(document.querySelector('.active-page'));
+  //     fadeIn(newHash);
+  //   } else {
+  //     // Fade out old hash, fade in new
+  //     fadeOut(oldHash, () => {
+  //       fadeIn(newHash);
+  //     });
+  //   }
+  //   // Change highlighted nav element if hash is a on-site anchor
+  //   document.querySelector(".active-page").classList.remove("active-page");
+  //   document.querySelector(`.nav-link[href="${newHash}"]`).classList.add("active-page");
+  // });
+
+  // PFP easter egg logic
+  document.querySelector('#pfp').addEventListener('click', (e) => {
+    const vineBoom = new Audio('resource/audio/vine-boom.mp3');
+    if (pfpClicks != 25) {
+      pfpClicks++;
+
+      console.info(`${pfpClicks}/25 clicks!`);
+    } else {
+      // Start easter egg
+      document.querySelector(`body`).insertAdjacentHTML('beforebegin', 
+        `
+          <div class="easter-egg">
+
+            <img src="resource/imgs/profile_easter.jpg" alt="A drawing of me in the Family Guy art style.">
+          </div>
+        `
+      );
+      var animation = document.querySelector('.easter-egg img').animate([{ opacity: "0" }],
+      {
+        fill: "forwards",
+        duration: 1250
+      });
+      animation.play();
+      vineBoom.play();
+      animation.onfinish = () => {
+        document.querySelector('.easter-egg').remove();
+      };
+    }
+  })
+
   // Make only one skill section open at a time
   let skill_labels = document.querySelectorAll('.skill-label');
   skill_labels.forEach((label) => {
@@ -55,20 +93,16 @@ window.addEventListener('DOMContentLoaded', () => {
   fetch('resource/js/data.json')
     .then((resp) => resp.json())
     .then(function (projectData) {
-      populateProjects(projectData.addons);
-      populateProjects(projectData.projects);
+      populateProjects(projectData.mods, "mods");
+      populateProjects(projectData.projects, "projects");
     })
     .catch(function (error) {
       console.log(error);
     });
 
   // Parses the JSON file with project data
-  function populateProjects(projectData) {
+  function populateProjects(projectData, type) {
     Object.keys(projectData).forEach(function (key) {
-      console.log
-      // ${projectData[key].source ? `<button class='padding-small source open_project' data-link='${projectData[key].source}'>Source</button>` : ""}
-      // ${projectData[key].github ? `<button class='padding-small github open_project' data-link='${projectData[key].github}'>GitHub</button>` : ""}
-      // ${projectData[key].steam ? `<button class='padding-small steam open_project' data-link='${projectData[key].steam}'>Steam</button>` : ""}
       const projectTemplate = `
         <div class="project" projectData-id="${projectData[key].id}">
         <h3 class="project_title">${projectData[key].name}</h3>
@@ -78,35 +112,14 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}</div>
         </div>
       `;
-      document.querySelector('#index-main #projects').insertAdjacentHTML('afterbegin', projectTemplate);
+      if (type == "mods") {
+        document.querySelector('#index-main #projects .mods').insertAdjacentHTML('beforeend', projectTemplate);
+      } else {
+        document.querySelector('#index-main #projects .projects').insertAdjacentHTML('beforeend', projectTemplate);
+      }
       // TODO: Add detailed animation to display projects details
     });
   }
-
-  // Navagation bar
-  const navElements = document.querySelectorAll('.nav-link');
-  if (!window.location.hash || !safeHashArray.includes(window.location.hash)) {
-    fadeIn('#about', null, 10); // Fade in initnal page - unless there's an anchor tag
-    window.location.hash = "about";
-    document.querySelector('[data-fadein="#about"').classList.add('active-page');
-  } else {
-    fadeIn(window.location.hash, null, 10); // Fade in initnal page - unless there's an anchor tag
-    document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active-page');
-  }
-
-  // Skill lists
-  // let skill_lists = document.querySelectorAll('.skill-label h2');
-  // skill_lists.forEach((list) => {
-  //   console.log(list, skill_lists);
-  //   list.addEventListener('click', (e) => {
-  //     var content = list.nextElementSibling;
-  //     if (content.style.maxHeight) {
-  //       content.style.maxHeight = null;
-  //     } else {
-  //       content.style.maxHeight = content.scrollHeight + "px";
-  //     }
-  //   });
-  // })
 
   // Slideshow logic
   const slideshows = document.querySelectorAll('.slideshow');
@@ -139,6 +152,16 @@ window.addEventListener('DOMContentLoaded', () => {
       display.dataset.order = i;
     }
   });
+
+  // Navagation bar
+  const navElements = document.querySelectorAll('.nav-link');
+  if (!window.location.hash || !safeHashArray.includes(window.location.hash)) {
+    fadeIn('#about', null, 10); // Fade in initnal page - unless there's an anchor tag
+    document.querySelector('[data-fadein="#about"').classList.add('active-page');
+  } else {
+    fadeIn(window.location.hash, null, 10); // Fade in initnal page - unless there's an anchor tag
+    document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active-page');
+  }
 
   // Handles class switching for the navagation bar
   navElements.forEach((key) => {

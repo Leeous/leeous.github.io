@@ -29,7 +29,17 @@
             }
         }
     },
-    "addons": {
+    "mods": {
+        "death_grips_flannel": {
+            "id": "death_grips_flannel",
+            "date": "September 14th, 2023",
+            "name": "Death Grips Flannel",
+            "desc": "Changes the Starfield flannel into the design for the DG 2023 tour jacket.",
+            "links": {
+                "nexus": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
+                "source": "<li  class='download project-background'><a class='project_link' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
+            }
+        },
         "mine_thrower": {
             "id": "mine_thrower",
             "date": "March 30th, 2020",
