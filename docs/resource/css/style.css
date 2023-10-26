@@ -422,9 +422,8 @@ a:not(.project_link):hover {
 
 }
 
-#blog article {
-    /* margin-left: 10%;
-    margin-right: 10%; */
+#blog article:not(:first-child) {
+    margin-top: 2.5em;
 }
 
 #blog article .title {
@@ -435,6 +434,7 @@ a:not(.project_link):hover {
 
 #blog article .date {
     text-align: center;    
+    margin-top: .5em;
     margin-bottom: 1em;
     font-weight: 200;
 }
