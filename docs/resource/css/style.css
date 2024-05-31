@@ -10,6 +10,21 @@
     --third-color: #595959;
     --fourth-color: #777677;
     --fifth-color: #989798;
+    --x: -8px;
+    --y: -8px;
+    --red: #e60000;
+    --orange: #ff8e00;
+    --yellow: #ffef00;
+    --green: #00821b;
+    --blue: #004bff;
+    --purple: #780089;
+    --clear: rgba(0, 0, 0, 0);
+    --firstStep: 1.5px;
+    --secondStep: 3px;
+    --thirdStep: 4.5px;
+    --forthStep: 6px;
+    --fifthStep: 7.5px;
+    --sixthStep: 9px;
 }
 
 html, body {
@@ -46,12 +61,100 @@ a:not(.project_link):hover {
 
 #index-header .title {
     display: inline-block;
-    font-size: 3em;
+    font-size: 5em;
     justify-content: center;
     margin-top: 1em;
     margin-bottom: .3em;
     user-select: none;
-    transition: all 1s animation;
+    color: #fff;
+    font-family: 'Glory', sans-serif;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-shadow: 
+    2px 2px var(--clear),
+    4px 4px var(--clear), 
+    6px 6px var(--clear),
+    8px 8px var(--clear),
+    10px 10px var(--clear),
+    12px 12px var(--clear);
+    animation: 1s linear 0s infinite normal running rainbow-title;
+}
+
+#index-header .title:hover {
+}
+
+@keyframes rainbow-title {
+    0% {
+        text-shadow: 
+        var(--firstStep) var(--firstStep) var(--red),
+        var(--secondStep) var(--secondStep) var(--orange), 
+        var(--thirdStep) var(--thirdStep) var(--yellow),
+        var(--forthStep) var(--forthStep) var(--green),
+        var(--fifthStep) var(--fifthStep) var(--blue),
+        var(--sixthStep) var(--sixthStep) var(--purple);
+    }
+
+    16.6% {
+        text-shadow: 
+        var(--firstStep) var(--firstStep) var(--purple),
+        var(--secondStep) var(--secondStep) var(--red),
+        var(--thirdStep) var(--thirdStep) var(--orange), 
+        var(--forthStep) var(--forthStep) var(--yellow),
+        var(--fifthStep) var(--fifthStep) var(--green),
+        var(--sixthStep) var(--sixthStep) var(--blue);
+    }
+
+    33.2% {
+        text-shadow: 
+            var(--firstStep) var(--firstStep) var(--blue),
+            var(--secondStep) var(--secondStep) var(--purple),
+            var(--thirdStep) var(--thirdStep) var(--red), 
+            var(--forthStep) var(--forthStep) var(--orange), 
+            var(--fifthStep) var(--fifthStep) var(--yellow),
+            var(--sixthStep) var(--sixthStep) var(--green);
+    }
+
+    50% {
+        text-shadow: 
+        var(--firstStep) var(--firstStep) var(--green),
+        var(--secondStep) var(--secondStep) var(--blue),
+        var(--thirdStep) var(--thirdStep) var(--purple),
+        var(--forthStep) var(--forthStep) var(--red), 
+            var(--fifthStep) var(--fifthStep) var(--orange), 
+            var(--sixthStep) var(--sixthStep) var(--yellow);
+    }
+
+    66.4% {
+        text-shadow: 
+        var(--firstStep) var(--firstStep) var(--yellow),
+        var(--secondStep) var(--secondStep) var(--green),
+        var(--thirdStep) var(--thirdStep) var(--blue),
+        var(--forthStep) var(--forthStep) var(--purple),
+            var(--fifthStep) var(--fifthStep) var(--red), 
+            var(--sixthStep) var(--sixthStep) var(--orange);
+    }
+
+    83% {
+        text-shadow: 
+        var(--firstStep) var(--firstStep) var(--orange), 
+        var(--secondStep) var(--secondStep) var(--yellow),
+        var(--thirdStep) var(--thirdStep) var(--green),
+        var(--forthStep) var(--forthStep) var(--blue),
+        var(--fifthStep) var(--fifthStep) var(--purple),
+        var(--sixthStep) var(--sixthStep) var(--red);
+
+    }
+    100% {
+        text-shadow: 
+            var(--firstStep) var(--firstStep) var(--red), 
+            var(--secondStep) var(--secondStep) var(--orange), 
+            var(--thirdStep) var(--thirdStep) var(--yellow),
+            var(--forthStep) var(--forthStep) var(--green),
+            var(--fifthStep) var(--fifthStep) var(--blue),
+            var(--sixthStep) var(--sixthStep) var(--purple);
+    }
+
+
 }
 
 /* #index-header .title a {
@@ -706,7 +809,7 @@ details[open] summary ~ * {
 /* 4K/TV */
 @media screen and (min-width: 2000px) {
     #index-header .title {
-        font-size: 3em;
+        font-size: 5em;
         text-align: center;
         margin-top: 1em;
         margin-bottom: .3em;
