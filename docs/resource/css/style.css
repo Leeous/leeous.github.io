@@ -25,9 +25,6 @@
     --forthStep: 5px;
     --fifthStep: 6px;
     --sixthStep: 7px;
-
-    /* Brand Color */
-    --thread: 
 }
 
 html, body {
@@ -80,7 +77,6 @@ a:not(.project_link):hover {
     color: #fff;
     font-weight: 800;
     letter-spacing: 4px;
-    animation: 1s ease-in-out  infinite running normal rainbow-title;
     -webkit-text-stroke: #0A0A0B 1.5px;
 
 }
@@ -191,26 +187,24 @@ a:not(.project_link):hover {
 }
 
 #skills .skill-label summary {
-    border-radius: 12px;
     cursor: pointer;
     padding: 10px 15px;
-    background-color: var(--secondary-color);
-
+    margin: .6em;
+    border: solid 1px white;
 }
 
 .skill-list {
     display: flex;
     flex-wrap: wrap;
+    margin: .6em;
     justify-content: center;
-    margin: 5px;
 }
 
 .skill-list li {
     margin: 5px;
     padding: 10px;
     display: inline-block;
-    background-color: black;
-    border-radius: 10px;
+    border: solid 1px white;
 }
 
 #pfp {
@@ -658,10 +652,11 @@ details[open] summary ~ * {
 
 @media screen and (min-width: 900px) {
     #index-header .title {
-        font-size: 3em;
+        font-size: 5em;
         text-align: center;
         margin-top: 1em;
         margin-bottom: .3em;
+        animation: 1s ease-in-out  infinite running normal rainbow-title;
     }
 
     #index-main {
@@ -724,7 +719,7 @@ details[open] summary ~ * {
 
 @media screen and (min-width: 1500px) {
     #index-header .title {
-        font-size: 3em;
+        font-size: 6em;
         text-align: center;
         margin-top: 1em;
         margin-bottom: .3em;
@@ -766,7 +761,7 @@ details[open] summary ~ * {
 /* 4K/TV */
 @media screen and (min-width: 2000px) {
     #index-header .title {
-        font-size: 5em;
+        font-size: 6em;
         text-align: center;
         margin-top: 1em;
         margin-bottom: .3em;

@@ -12,14 +12,28 @@ let clickSafe = null;
 let range = 5;
 
 // Pride Title
-document.body.addEventListener('mousemove', (event) => {
-  const x = Math.round(event.pageX * range / window.innerWidth) - range / 2;
-  const y = Math.round(event.pageY * range / window.innerHeight) - range / 2;
-  gsap.to(titleElement, {
-    '--x': x,
-    '--y': y,
+if (!is_touch_enabled()) {
+  document.body.addEventListener('mousemove', (event) => {
+    const x = Math.round(event.pageX * range / window.innerWidth) - range / 2;
+    const y = Math.round(event.pageY * range / window.innerHeight) - range / 2;
+    gsap.to(titleElement, {
+      '--x': x,
+      '--y': y,
+    });
   });
-});
+} else {
+  gsap.to(titleElement, {
+    '--x': -1,
+    '--y': -1
+  })
+}
+
+// Check if touch device
+function is_touch_enabled() {
+	return ( 'ontouchstart' in window ) || 
+		( navigator.maxTouchPoints > 0 ) || 
+		( navigator.msMaxTouchPoints > 0 );
+}
 
 // DOM content loaded
 window.addEventListener('DOMContentLoaded', () => {
@@ -109,15 +123,15 @@ window.addEventListener('DOMContentLoaded', () => {
   fetch('resource/js/data.json')
     .then((resp) => resp.json())
     .then(function (projectData) {
-      populateProjects(projectData.mods, "mods");
-      populateProjects(projectData.projects, "projects");
+      populateProjects(projectData);
     })
     .catch(function (error) {
       console.log(error);
     });
 
   // Parses the JSON file with project data
-  function populateProjects(projectData, type) {
+  function populateProjects(projectData) {
+    console.log(projectData)
     Object.keys(projectData).forEach(function (key) {
       const projectTemplate = `
         <div class="project" projectData-id="${projectData[key].id}">
@@ -128,11 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}</div>
         </div>
       `;
-      if (type == "mods") {
-        document.querySelector('#index-main #projects .mods').insertAdjacentHTML('beforeend', projectTemplate);
-      } else {
-        document.querySelector('#index-main #projects .projects').insertAdjacentHTML('beforeend', projectTemplate);
-      }
+      document.querySelector('#index-main #projects .projects').insertAdjacentHTML('beforeend', projectTemplate);
       // TODO: Add detailed animation to display projects details
     });
   }
