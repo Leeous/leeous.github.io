@@ -19,12 +19,15 @@
     --blue: #004bff;
     --purple: #780089;
     --clear: rgba(0, 0, 0, 0);
-    --firstStep: 1.5px;
+    --firstStep: 2px;
     --secondStep: 3px;
-    --thirdStep: 4.5px;
-    --forthStep: 6px;
-    --fifthStep: 7.5px;
-    --sixthStep: 9px;
+    --thirdStep: 4px;
+    --forthStep: 5px;
+    --fifthStep: 6px;
+    --sixthStep: 7px;
+
+    /* Brand Color */
+    --thread: 
 }
 
 html, body {
@@ -54,6 +57,14 @@ a:not(.project_link):hover {
 /* #   Header   # */
 /* ############## */
 
+/* WIP banner */
+#wip-banner {
+    background-color: rgb(90, 131, 206);
+    text-align: center;
+    padding: 1em;
+    display: none;
+}
+
 /* "Leeous" */
 #index-header {
     text-align: center;
@@ -63,133 +74,20 @@ a:not(.project_link):hover {
     display: inline-block;
     font-size: 5em;
     justify-content: center;
-    margin-top: 1em;
+    margin-top: .5em;
     margin-bottom: .3em;
     user-select: none;
     color: #fff;
-    font-family: 'Glory', sans-serif;
     font-weight: 800;
     letter-spacing: 4px;
-    text-shadow: 
-    2px 2px var(--clear),
-    4px 4px var(--clear), 
-    6px 6px var(--clear),
-    8px 8px var(--clear),
-    10px 10px var(--clear),
-    12px 12px var(--clear);
-    animation: 1s linear 0s infinite normal running rainbow-title;
+    animation: 1s ease-in-out  infinite running normal rainbow-title;
+    -webkit-text-stroke: #0A0A0B 1.5px;
+
 }
 
 #index-header .title:hover {
+    animation-play-state: running;
 }
-
-@keyframes rainbow-title {
-    0% {
-        text-shadow: 
-        var(--firstStep) var(--firstStep) var(--red),
-        var(--secondStep) var(--secondStep) var(--orange), 
-        var(--thirdStep) var(--thirdStep) var(--yellow),
-        var(--forthStep) var(--forthStep) var(--green),
-        var(--fifthStep) var(--fifthStep) var(--blue),
-        var(--sixthStep) var(--sixthStep) var(--purple);
-    }
-
-    16.6% {
-        text-shadow: 
-        var(--firstStep) var(--firstStep) var(--purple),
-        var(--secondStep) var(--secondStep) var(--red),
-        var(--thirdStep) var(--thirdStep) var(--orange), 
-        var(--forthStep) var(--forthStep) var(--yellow),
-        var(--fifthStep) var(--fifthStep) var(--green),
-        var(--sixthStep) var(--sixthStep) var(--blue);
-    }
-
-    33.2% {
-        text-shadow: 
-            var(--firstStep) var(--firstStep) var(--blue),
-            var(--secondStep) var(--secondStep) var(--purple),
-            var(--thirdStep) var(--thirdStep) var(--red), 
-            var(--forthStep) var(--forthStep) var(--orange), 
-            var(--fifthStep) var(--fifthStep) var(--yellow),
-            var(--sixthStep) var(--sixthStep) var(--green);
-    }
-
-    50% {
-        text-shadow: 
-        var(--firstStep) var(--firstStep) var(--green),
-        var(--secondStep) var(--secondStep) var(--blue),
-        var(--thirdStep) var(--thirdStep) var(--purple),
-        var(--forthStep) var(--forthStep) var(--red), 
-            var(--fifthStep) var(--fifthStep) var(--orange), 
-            var(--sixthStep) var(--sixthStep) var(--yellow);
-    }
-
-    66.4% {
-        text-shadow: 
-        var(--firstStep) var(--firstStep) var(--yellow),
-        var(--secondStep) var(--secondStep) var(--green),
-        var(--thirdStep) var(--thirdStep) var(--blue),
-        var(--forthStep) var(--forthStep) var(--purple),
-            var(--fifthStep) var(--fifthStep) var(--red), 
-            var(--sixthStep) var(--sixthStep) var(--orange);
-    }
-
-    83% {
-        text-shadow: 
-        var(--firstStep) var(--firstStep) var(--orange), 
-        var(--secondStep) var(--secondStep) var(--yellow),
-        var(--thirdStep) var(--thirdStep) var(--green),
-        var(--forthStep) var(--forthStep) var(--blue),
-        var(--fifthStep) var(--fifthStep) var(--purple),
-        var(--sixthStep) var(--sixthStep) var(--red);
-
-    }
-    100% {
-        text-shadow: 
-            var(--firstStep) var(--firstStep) var(--red), 
-            var(--secondStep) var(--secondStep) var(--orange), 
-            var(--thirdStep) var(--thirdStep) var(--yellow),
-            var(--forthStep) var(--forthStep) var(--green),
-            var(--fifthStep) var(--fifthStep) var(--blue),
-            var(--sixthStep) var(--sixthStep) var(--purple);
-    }
-
-
-}
-
-/* #index-header .title a {
-    text-decoration: none;
-    color: #fff;
-}
-
-#index-header .title:hover {
-    animation: infinite 2s pride;
-}
-
-@keyframes pride {
-    0% {
-        color: 2px #ff0000;
-    }
-    16% {
-        color: 1px #ff9800;
-    }
-    33% {
-        color: 2px #ffff00;
-
-    }
-    50% {
-        color: 1px #009800;
-
-    }
-    66% {
-        color: 2px #0000ff;
-        
-    }
-    81% {
-        color: 1px #980098;
-
-    }
-} */
 
 /* Navagation - Menu */
 #index-header .nav .menu {
@@ -207,6 +105,7 @@ a:not(.project_link):hover {
     text-decoration: none;
     border-bottom: solid 0px #fff;
     transition: ease-in-out .2s all;
+    user-select: none;
 }
 
 #index-header .nav .menu .nav-item .nav-link:hover {
@@ -316,8 +215,7 @@ a:not(.project_link):hover {
 
 #pfp {
     width: 75%;
-    border: solid 2px #fff;
-    border-radius: 50%;
+    border: solid 1px #fff;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -369,10 +267,9 @@ a:not(.project_link):hover {
     display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    border-radius: 12px;
-    border: none;
+    border-radius: 0px;
+    border: 1px solid white;
     user-select: none;
-    background: var(--main-color);
     padding: 0;
     cursor: pointer;
     outline-offset: 4px;
@@ -381,10 +278,9 @@ a:not(.project_link):hover {
 
 #about nav ul li.social-button a span {
     display: block;
-    border-radius: 12px;
+    border-radius: 0px;
     padding: 10px 5px;
     font-size: 1.25rem;
-    background: var(--secondary-color);
     color: #fff;
     transform: translateY(-6px);
     will-change: transform;
@@ -400,21 +296,20 @@ a:not(.project_link):hover {
 }
 
 #about nav ul li.social-button a.steam span {
-    background: #2e3746;
 }
 #about nav ul li.social-button a.discord span {
-    background: #5865f2;
 }
 #about nav ul li.social-button a.github span {
-    background: #4078c0;
 }
 
 #about nav ul li.social-button a.threads span {
-    background: #101010;
+    display: flex;
+    justify-content: center;
+    /* background: linear-gradient(90deg, rgba(79,1,221,1) 0%, rgba(195,1,253,1) 25%, rgba(240,0,146,1) 50%, rgba(253,0,40,1) 75%, rgba(241,146,0,1) 100%); */
 }
 
+
 #about nav ul li.social-button a.email span {
-    background: var(--secondary-color);
 }
 
 /* Projects */
@@ -507,16 +402,6 @@ a:not(.project_link):hover {
 
 .download {
 
-}
-
-.github {
-    background-color: #4078c0;
-    color: #fff;
-}
-
-.steam {
-    color: #fff;
-    background-color: var(--secondary-color);
 }
 
 /* Blog */
@@ -684,11 +569,83 @@ details[open] summary ~ * {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+@keyframes rainbow-title {
+    
+    0% {
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--red),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--orange),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--yellow),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--green),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--blue),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--purple);
+    }
+
+    16.6% {
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--purple),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--red),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--orange),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--yellow),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--green),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--blue);
+    }
+
+    33.2% {
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--blue),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--purple),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--red),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--orange),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--yellow),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--green);
+    }
+
+    50% {
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--green),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--blue),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--purple),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--red),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--orange),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--yellow);
+    }
+
+    66.4% {
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--yellow),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--green),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--blue),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--purple),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--red),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--orange);
+    }
+
+    83% {
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--orange),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--yellow),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--green),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--blue),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--purple),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--red);
+    }
+    100% {
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--red),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--orange),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--yellow),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--green),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--blue),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--purple);
+    }
+}
+
 /* ################### */
 /* #  Media Queries  # */
 /* ################### */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 900px)  {
     #about #pfp {
         width: 50%;
     }

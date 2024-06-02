@@ -3,13 +3,29 @@ import { fadeIn, fadeOut } from "./Util.js";
 
 // Static variables
 const safeHashArray = ['#about', '#projects', '#blog'];
+const titleElement = document.querySelector("#index-header .title");
+const wipBannerEnabled = true;
 
 // Variables
 let pfpClicks = 0;
 let clickSafe = null;
+let range = 5;
+
+// Pride Title
+document.body.addEventListener('mousemove', (event) => {
+  const x = Math.round(event.pageX * range / window.innerWidth) - range / 2;
+  const y = Math.round(event.pageY * range / window.innerHeight) - range / 2;
+  gsap.to(titleElement, {
+    '--x': x,
+    '--y': y,
+  });
+});
 
 // DOM content loaded
 window.addEventListener('DOMContentLoaded', () => {
+  // Check if WIP banner is enabled
+  if (wipBannerEnabled) { document.querySelector("#wip-banner").style.display = "block"}
+
   const lastUpdated = document.getElementById('pageLastUpdated');
   // let projects = new Object();
   // Check if hash changes, update active page
