@@ -1,0 +1,515 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+:root
+    --main-color: #0A0A0B
+    --secondary-color: #383838
+    --third-color: #595959
+    --fourth-color: #777677
+    --fifth-color: #989798
+    --x: 0px
+    --y: 0px
+    --red: #e60000
+    --orange: #ff8e00
+    --yellow: #ffef00
+    --green: #00821b
+    --blue: #004bff
+    --purple: #780089
+    --clear: rgba(0, 0, 0, 0)
+    --firstStep: 2px
+    --secondStep: 3px
+    --thirdStep: 4px
+    --forthStep: 5px
+    --fifthStep: 6px
+    --sixthStep: 7px
+    --paddding-xsmall: .5rem
+    --paddding-small: 1rem
+    --padding-med: 2rem
+    --padding-large: 3rem
+    --padding-xlarge: 5rem
+    --margin-xsmall: .5rem
+    --margin-small: 1rem
+    --margin-med: 2rem
+    --margin-large: 3rem
+    --margin-xlarge: 5rem
+
+html, body
+    height: 100%
+body
+    background: rgb(27, 27, 27)
+    color: #fff
+    font-family: 'Roboto', sans-serif
+    display: flex
+    flex-direction: column
+a
+    &:not(.project_link)
+        color: white
+        text-decoration: dotted
+        text-decoration-line: underline
+    &:not(.project_link):hover
+        color: white
+        text-decoration: underline
+#wip-banner
+    background-color: rgb(90, 131, 206)
+    text-align: center
+    padding: 1em
+    display: none
+#index-header
+    text-align: center
+    .title
+        display: inline-block
+        font-size: 4em
+        justify-content: center
+        margin-top: .5em
+        margin-bottom: .3em
+        user-select: none
+        color: #fff
+        font-weight: 800
+        letter-spacing: 4px
+        -webkit-text-stroke: #0A0A0B 1.5px
+        animation: 1s ease-in-out infinite running normal rainbow-title
+    .nav
+        .menu
+            display: flex
+            justify-content: center
+            list-style: none
+            .nav-item
+                .nav-link
+                    color: grey
+                    margin: 5px
+                    padding: 4px 10px
+                    font-size: 1.3em
+                    text-decoration: none
+                    border-bottom: solid 0 #fff
+                    transition: ease-in-out .2s all
+                    user-select: none
+                    &:hover
+                        color: #fff
+                        border-bottom: solid 3px #fff
+                .active-page
+                    color: #fff
+                    border-bottom: solid 1.5px #fff
+#index-main
+    margin: 3em 1em
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+#index-footer
+    flex-shrink: 0
+    padding: 3em 0
+    text-align: center
+    cursor: default
+    text-align: left
+    margin: 10vw
+#about, #projects, #blog
+    display: none
+.page
+    border-radius: 0
+.page-title
+    font-size: 2.5em
+    margin-bottom: 0
+.page-subtitle
+    margin-top: 5px
+    font-weight: 300
+#about
+    text-align: center
+    grid-template-columns: auto auto
+    p
+        margin: 0 var(--margin-xsmall)
+        text-indent: 20px
+        text-align: left
+        font-size: 1.1em
+        letter-spacing: .4px
+    nav
+        ul
+            display: grid
+            grid-template-columns: 50% 50%
+            justify-content: center
+            flex-wrap: wrap
+            list-style: none
+            li
+                margin: .6em
+                &:first-child
+                    // TODO: FIX
+                &.social-button
+                    margin: var(--margin-xsmall) 0
+                &:nt30
+					h-child(-n 
+                    & + 2)
+                        margin: 0 0 var(--margin-xsmall) 0
+        li
+            &.double-button
+                grid-column-start: 1
+                grid-column-end: 3
+.section-title
+    margin: var(--margin-med) 0 var(--margin-xsmall) 0
+#skills
+    .skill-label
+        user-select: none
+        text-align: left
+        justify-content: space-between
+        margin: var(--margin-small) 0
+        border-radius: 12px
+        transform: translateY(-6px)
+        summary
+            cursor: pointer
+            padding: 10px 15px
+            margin: 0
+            border: solid 1px white
+            transition: ease-in-out .2s all
+            &:hover
+                border: solid 1px white
+                background-color: white
+                color: black
+.skill-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    li
+        margin: 5px
+        padding: 10px
+        display: inline-block
+        border: solid 1px white
+        &:first-child
+            margin-top: var(--margin-small)
+#pfp
+    width: 75vw
+    border: solid 1px #fff
+    margin-top: 15px
+    width: 20vw
+.easter-egg
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+    z-index: 1
+    img
+        width: 100%
+        height: 100%
+.buy_me_a_coffee
+    grid-column-start: 1
+    grid-column-end: 3
+    img
+        border-radius: 12px
+        border-bottom: 5px var(--main-color) solid
+        width: 100%
+.social-button
+    a
+        display: block
+        font-family: 'Roboto', sans-serif
+        border-radius: 0px
+        border: 1px solid white
+        user-select: none
+        padding: .6em
+        cursor: pointer
+        text-decoration: none
+        &:hover
+            text-decoration: none
+        &.steam
+            border: 1px solid #00adee
+            color: #00adee
+        &.discord
+            border: 1px solid #5865f2
+            color: #5865f2
+        &.github
+            border: 1px solid #4078c0
+            color: #4078c0
+        &.threads
+            border-image: solid 1px linear-gradient(90deg, rgba(79,1,221,1) 0%, rgba(195,1,253,1) 25%, rgba(240,0,146,1) 50%, rgba(253,0,40,1) 75%, rgba(241,146,0,1) 100%)
+        &.email
+            span
+        &.coffee
+            border: solid 1px #ffdd00
+            color: #ffdd00
+.social-button a.steam, #about nav ul li.social-button a.github
+    margin-right: 10px
+.social-button a.threads, #about nav ul li.social-button a.discord
+    margin-left: 10px
+#projects
+    & > div
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        justify-items: space-around
+    div
+        section
+            display: flex
+            flex-direction: column
+            width: 100%
+    .mods
+    .projects
+.project
+    margin: 10px 0
+    border: solid 1px #fff
+.project_title
+    margin: .5em 0 1px 0
+    text-transform: uppercase
+    text-align: center
+    font-size: 1.3em
+.project_last_update
+    color: grey
+    font-size: .8em
+    text-align: center
+.project_img
+    width: 25%
+    display: block
+    margin: 5px auto 5px auto
+.project_desc
+    margin: 8px 13px 15px 14px
+    text-align: center
+    word-spacing: 1px
+    a
+        &:visited
+            color: grey
+.project_links
+    list-style: none
+    display: flex
+    text-transform: uppercase
+    justify-content: space-evenly
+    li
+        width: 100%
+.project_link
+    font-weight: bold
+    letter-spacing: .1em
+    display: block
+    padding: 7.5px
+    text-decoration: none
+    text-align: center
+    background-color: #fff
+    color: black
+    transition: cubic-bezier(0.79, 0.33, 0.19, 0.91) .1s transform
+.project_link:hover, .project_link:active, .project_link:focus
+    transform: translateY(-5px)
+.project-background
+    background-image: linear-gradient(rgb(0 0 0/50%) 0 0)
+.download
+#blog
+    article
+        &:not(:first-child)
+            margin-top: 2.5em
+        .title
+            font-size: 2em
+            text-align: center
+            margin-bottom: .1em
+        .date
+            text-align: center
+            margin-top: .5em
+            margin-bottom: 1em
+            font-weight: 200
+        p
+            margin-left: 5%
+            margin-right: 5%
+            letter-spacing: .02em
+            a
+                color: white
+                &:hover
+                    text-decoration: underline
+    .post
+        .slideshow
+            display: flex
+            flex-direction: column
+            margin: 1.0em 0
+            .slide
+                display: none
+            .active-slide
+                display: block
+                width: 100%
+                margin: 0
+                border-radius: 10px
+            .slideshow-controls
+                display: flex
+                justify-content: center
+                transform: translate3d(0, 0, 0)
+                -webkit-transform: translate3d(0, 0, 0)
+                .thumbnail
+                    filter: grayscale(.5)
+                    cursor: pointer
+                    transition: all ease .2s
+                    border: solid 1px rgb(27, 27, 27)
+                    margin: 1em .5em 0 .5em
+                    width: 6em
+                    &:hover
+                        filter: none
+                        border: solid 1px #fff
+                    &.active_thumbnail
+                        filter: none
+                        cursor: default
+                        border: solid 1px #fff
+#pageLastUpdated
+    color: gray
+    cursor: default
+    a
+        color: grey
+        text-decoration: dotted
+        text-decoration-line: underline
+        font-style: italic
+        &:visited
+            color: grey
+            text-decoration: dotted
+            text-decoration-line: underline
+        &:hover
+            text-decoration: underline
+    .update-desc
+        text-transform: lowercase
+        font-size: .8em
+#poweredBy
+    span
+        &.coffee
+            display: inline-block
+            transform: rotate(0), translateX(0), translateY(0)
+    &:hover
+        span
+            &.coffee
+                animation: .2s shake infinite
+details[open]
+    summary
+        background-color: white
+        color: black
+        & ~ *
+            animation: sweep .4s ease-in-out
+            animation: sweep .4s ease-in-out
+            animation: sweep .4s ease-in-out
+@keyframes
+	sweep 
+    0%    {opacity: 0
+        transform: rotateX(30deg)
+    100%
+    	opacity: 1
+    	transform: rotateX(0deg)
+    	transform: translate(1px, -2px) rotate(-1deg)
+    	text-shadow: calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--red),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--orange),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--yellow),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--green),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--blue),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--purple) 
+
+    @keyframes
+		shake 
+        0% { transform: translate(1px, 1px) rotate(0deg)
+        rainbow-title
+			0% {
+            text-shadow: calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--red),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--orange),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--yellow),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--green),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--blue),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--purple) 
+    @media
+		screen 
+			and 
+				(min-width 
+        &:
+						700px) 
+// 10% 
+// 	transform: translate(-1px, -2px) rotate(-1deg) 
+// 20% 
+// 	transform: translate(-3px, 0px) rotate(1deg) 
+// 30% 
+// 	transform: translate(3px, 2px) rotate(0deg) 
+// 40% 
+// 	transform: translate(1px, -1px) rotate(1deg) 
+// 50% 
+// 	transform: translate(-1px, 2px) rotate(-1deg) 
+// 	text-shadow: calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--green),
+//             calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--blue),
+//             calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--purple),
+//             calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--red),
+//             calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--orange),
+//             calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--yellow) 
+// 60% 
+// 	transform: translate(-3px, 1px) rotate(0deg) 
+// 70% 
+// 	transform: translate(3px, 1px) rotate(-1deg) 
+// 80% 
+// 	transform: translate(-1px, -1px) rotate(1deg) 
+// 90% 
+// 	transform: translate(1px, 2px) rotate(0deg) 
+// 83% 
+// 	text-shadow: calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--orange),
+//             calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--yellow),
+//             calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--green),
+//             calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--blue),
+//             calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--purple),
+//             calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--red) 
+
+// @media 
+// 	screen 
+// 		and 
+// 			(min-width 
+// 				&: 
+// 					1000px) 
+// .column-wrapper 
+// 	display: grid 
+// 	grid-template-columns: 75% 50% 
+// 	gap: 3rem 
+// 	justify-content: center 
+// #socials 
+// 	& > h1 
+// 		&.section-title 
+// 			margin-top: 0 
+
+@keyframes rainbow-title
+
+    0%
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--red),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--orange),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--yellow),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--green),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--blue),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--purple)
+    16.6% 
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--purple),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--red),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--orange),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--yellow),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--green),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--blue);
+    33.2%
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--blue),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--purple),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--red),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--orange),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--yellow),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--green)
+
+    50%
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--green),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--blue),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--purple),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--red),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--orange),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--yellow)
+
+    66.4%
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--yellow),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--green),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--blue),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--purple),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--red),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--orange)
+
+    83%
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--orange),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--yellow),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--green),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--blue),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--purple),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--red)
+    100%
+        text-shadow: 
+            calc(var(--x) * -1) calc(var(--y) * -1) 0px var(--red),
+            calc(var(--x) * -2) calc(var(--y) * -2) 0px var(--orange),
+            calc(var(--x) * -3) calc(var(--y) * -3) 0px var(--yellow),
+            calc(var(--x) * -4) calc(var(--y) * -4) 0px var(--green),
+            calc(var(--x) * -5) calc(var(--y) * -5) 0px var(--blue),
+            calc(var(--x) * -6) calc(var(--y) * -6) 0px var(--purple)

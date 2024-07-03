@@ -10,8 +10,8 @@
     --third-color: #595959;
     --fourth-color: #777677;
     --fifth-color: #989798;
-    --x: -8px;
-    --y: -8px;
+    --x: 0px;
+    --y: 0px;
     --red: #e60000;
     --orange: #ff8e00;
     --yellow: #ffef00;
@@ -39,13 +39,13 @@ body {
     flex-direction: column;
 }
 
-a:not(.project_link) {
+a:not(.project_link, .social-button a) {
     color: white;
     text-decoration: dotted;
     text-decoration-line: underline;
 }
 
-a:not(.project_link):hover {
+a:not(.project_link, .social-button a):hover {
     color: white;
     text-decoration: underline;
 }
@@ -242,7 +242,7 @@ a:not(.project_link):hover {
 
 #about nav ul {
     display: grid;
-    grid-template-columns: 46% 46%;
+    grid-template-columns: 50% 50%;
     justify-content: center;
     flex-wrap: wrap;
     list-style: none;
@@ -252,22 +252,23 @@ a:not(.project_link):hover {
     margin: .6em;
 }
 
-#about nav li.double-button {
+li.double-button {
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
-#about nav ul li.social-button a {
+.social-button a {
     display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     border-radius: 0px;
     border: 1px solid white;
     user-select: none;
-    padding: 0;
+    padding: 10px;
     cursor: pointer;
     outline-offset: 4px;
     text-decoration: none;
+    color: white;
 }
 
 #about nav ul li.social-button a span {
