@@ -3,7 +3,6 @@
         "id": "garrys_mod_addon_tool",
         "date": "December 9th, 2020",
         "name": "Garry's Mod Addon Tool",
-        "icon": "<img class='project_img' src='https://github.com/Leeous/gmod-addon-tool/blob/master/src/img/icon.png?raw=true' alt='GMAT Icon'>",
         "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
         "links": {
             "github": "<li class='github project-background'><a class='project_link github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"
@@ -41,7 +40,7 @@
         "id": "mine_thrower",
         "date": "March 30th, 2020",
         "name": "Mine Thrower",
-        "desc": "Mine thrower inside Garry's Mod!",
+        "desc": "Mine thrower from Resident Evil 4 inside Garry's Mod!",
         "links": {
             "github": "<li class='github project-background'><a class='project_link github' target='_blank' href=https://github.com/Leeous/medic-kiosk'>Github</a>"
         }

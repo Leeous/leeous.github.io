@@ -4,7 +4,7 @@ import { fadeIn, fadeOut } from "./Util.js";
 // Static variables
 const safeHashArray = ['#about', '#projects', '#blog'];
 const titleElement = document.querySelector("#index-header .title");
-const wipBannerEnabled = true;
+const wipBannerEnabled = false;
 
 // Variables
 let pfpClicks = 0;
@@ -94,16 +94,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // Make only one skill section open at a time
-  let skill_labels = document.querySelectorAll('.skill-label');
-  skill_labels.forEach((label) => {
-    label.addEventListener('click', (e) => {
-      if (document.querySelector('details[open=""]')) {
-        document.querySelector('details[open=""]').removeAttribute('open');
-      }
-    });
-  });
-
   // Display last update to website in footer
   fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits').then(res => {
       if (!res.ok) {
@@ -131,7 +121,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Parses the JSON file with project data
   function populateProjects(projectData) {
-    console.log(projectData)
     Object.keys(projectData).forEach(function (key) {
       const projectTemplate = `
         <div class="project" projectData-id="${projectData[key].id}">
@@ -142,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}</div>
         </div>
       `;
-      document.querySelector('#index-main #projects .projects').insertAdjacentHTML('beforeend', projectTemplate);
+      document.querySelector('#index-main #projects .projects_container').insertAdjacentHTML('beforeend', projectTemplate);
       // TODO: Add detailed animation to display projects details
     });
   }

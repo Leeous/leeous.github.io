@@ -35,8 +35,6 @@ body {
     background: rgb(27, 27, 27);
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 a:not(.project_link, .social-button a) {
@@ -120,20 +118,18 @@ a:not(.project_link, .social-button a):hover {
 /* #  Main  # */
 /* ########## */
 
-/* Page margin */
+
+/* Main container */
 #index-main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 3em 1em;
+    transition: ease-in-out .2s all;
 }
 
 #index-footer {
     flex-shrink: 0;
-}
-
-/* Main container */
-#index-main {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Pages */
@@ -141,10 +137,6 @@ a:not(.project_link, .social-button a):hover {
     display: none;
 }
 
-.page {
-    border-radius: 0;
-    /* box-shadow: var(--secondary-color) -4px 4px 0 4px; */
-}
 
 .page-title {
     font-size: 3em;
@@ -179,7 +171,6 @@ a:not(.project_link, .social-button a):hover {
 
 #skills .skill-label {
     user-select: none;
-    margin: .5em;
     text-align: left;
     justify-content: space-between;
     border-radius: 12px;
@@ -212,6 +203,7 @@ a:not(.project_link, .social-button a):hover {
     border: solid 1px #fff;
     margin-top: 15px;
     margin-bottom: 15px;
+    transition: ease-in-out .2s width;
 }
 
 .easter-egg {
@@ -309,37 +301,37 @@ li.double-button {
 
 /* Projects */
 
-#projects > div {
+/* .projects_container {
+    display: grid;
+    column-gap: 3em;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+} */
+
+.project {
+    border: solid 1px white;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    justify-items: space-around;
+    margin: 2em 0;
 }
 
-#projects div section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#projects .mods {
-
-}
-
-#projects .projects {
-
-}
-
-.project {
-    margin: 10px 0;
-    border: solid 1px #fff;
+.project:first-child {
+    margin-top: 0;
 }
 
 .project_title {
-    margin: .5em 0 1px 0;
+    margin: 1em 0em;
     text-transform: uppercase;
     text-align: center;
     font-size: 1.3em;
+}
+
+.project_desc {
+    margin: 0em 1em 1em 1em; 
+    text-align: center;
+    word-spacing: 1px;
 }
 
 .project_last_update {
@@ -354,12 +346,6 @@ li.double-button {
     margin: 5px auto 5px auto;
 }
 
-.project_desc {
-    margin: 8px 13px 15px 14px; 
-    text-align: center;
-    word-spacing: 1px;
-}
-
 .project_desc a:visited {
     color: grey;
 }
@@ -368,7 +354,7 @@ li.double-button {
     list-style: none;
     display: flex;
     text-transform: uppercase;
-    justify-content: space-evenly;
+    align-items: flex-end;
 }
 
 .project_links li {
@@ -385,10 +371,6 @@ li.double-button {
     background-color: #fff;
     color: black;
     transition: cubic-bezier(0.79, 0.33, 0.19, 0.91) .1s transform;
-}
-
-.project_link:hover, .project_link:active, .project_link:focus {
-    transform: translateY(-5px);            
 }
 
 .project-background {
@@ -639,19 +621,19 @@ details[open] summary ~ * {
 /* ################### */
 /* #  Media Queries  # */
 /* ################### */
-
-@media screen and (min-width: 500px) and (max-width: 900px)  {
+@media screen and (min-width: 600px) {
     #about #pfp {
-        width: 50%;
-    }
-
-    .project_img {
-        width: 15%;
+        width: 40%; 
+        border: solid 2px #fff;
+        margin-top: 25px;
+        margin-bottom: 10px;
     }
 }
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
+
+
     #index-header .title {
         font-size: 5em;
         text-align: center;
@@ -661,11 +643,11 @@ details[open] summary ~ * {
     }
 
     #index-main {
-        margin: 2% 25%
+        margin: 2% 15%
     }
     
     #index-footer {
-        margin: 2% 5%;
+        margin: 0 5%;
         padding: 3em 0;
         text-align: left;
     }
@@ -682,9 +664,8 @@ details[open] summary ~ * {
     }
     
     #about #pfp {
-        width: 50%; 
+        width: 40%; 
         border: solid 2px #fff;
-        border-radius: 50%;
         margin-top: 25px;
         margin-bottom: 10px;
     }
@@ -713,12 +694,27 @@ details[open] summary ~ * {
         font-size: 1.1em;
     }
 
-    #projects {
-        flex-direction: row;
-    }
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1000px) {
+
+    .projects_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2em 2em;
+        grid-auto-flow: row;
+        column-gap: 3em;
+        row-gap: 2em;
+        align-items: flex-start;
+        justify-content: center;
+    } 
+
+    /* Remove padding for list view */
+    .project {
+        margin: 0;
+    }
+
     #index-header .title {
         font-size: 6em;
         text-align: center;
@@ -727,7 +723,7 @@ details[open] summary ~ * {
     }
 
     #index-main {
-        margin: 2% 30%;
+        margin: 2% 25w%;
     }
     
     #index-footer {
@@ -747,15 +743,13 @@ details[open] summary ~ * {
     }
     
     #about #pfp {
-        width: 65%; 
-        border: solid 2px #fff;
-        border-radius: 50%;
+        width: 40%; 
         margin-top: 25px;
         margin-bottom: 25px;
     }
 
     #about #bio {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 }
 
@@ -769,7 +763,6 @@ details[open] summary ~ * {
     }
 
     #index-main {
-        margin: 2% 38%;
     }
     
     #index-footer {
@@ -791,7 +784,6 @@ details[open] summary ~ * {
     #about #pfp {
         width: 60%; 
         border: solid 2px #fff;
-        border-radius: 50%;
         margin-top: 25px;
         margin-bottom: 25px;
     }
