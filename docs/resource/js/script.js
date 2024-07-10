@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
         ${projectData[key].icon ? projectData[key].icon : ''}
         <!--<p class="project_last_update">updated <i>102 days ago</i></p>-->
         <p class="project_desc">${projectData[key].desc}</p>
-        <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}</div>
+        <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}${projectData[key].links.nexus ? projectData[key].links.nexus : ''}</div>
         </div>
       `;
       document.querySelector('#index-main #projects .projects_container').insertAdjacentHTML('beforeend', projectTemplate);
