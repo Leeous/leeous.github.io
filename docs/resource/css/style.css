@@ -265,38 +265,61 @@ li.double-button {
 
 #about nav ul li.social-button a span {
     display: block;
-    border-radius: 0px;
     padding: 10px 5px;
     font-size: 1.25rem;
     color: #fff;
-    transform: translateY(-6px);
     will-change: transform;
     transition: transform .1s ease;
 }
 
-#about nav ul li.social-button a:hover span {
-    transform: translateY(-8px);
+#about nav ul li.social-button a.steam {
+    border-color: #00adee;
+    color: #00adee;
+    transition: .2s background-color ease-in-out;
 }
 
-#about nav ul li.social-button a:active span {
-    transform: translateY(-2px);
+#about nav ul li.social-button a.discord {
+    border-color: #5e5fe8;
+    color: #5e5fe8;
+    transition: .2s background-color ease-in-out;
 }
 
-#about nav ul li.social-button a.steam span {
-}
-#about nav ul li.social-button a.discord span {
-}
-#about nav ul li.social-button a.github span {
-}
-
-#about nav ul li.social-button a.threads span {
-    display: flex;
-    justify-content: center;
-    /* background: linear-gradient(90deg, rgba(79,1,221,1) 0%, rgba(195,1,253,1) 25%, rgba(240,0,146,1) 50%, rgba(253,0,40,1) 75%, rgba(241,146,0,1) 100%); */
+#about nav ul li.social-button a.github {
+    border-color: #4078c0;
+    color: #4078c0;
+    transition: .2s background-color ease-in-out;
 }
 
+#about nav ul li.social-button a.threads {
+    border-color: #f80059;
+    color: #f80059;
+    transition: .2s background-color ease-in-out;
+}
 
-#about nav ul li.social-button a.email span {
+#about nav ul li.social-button a.coffee {
+    border-color: #ffdd00;
+    color: #ffdd00;
+    transition: .2s background-color ease-in-out;
+}
+
+#about nav ul li.social-button a.steam:hover {
+    background-color: #014b66;
+}
+
+#about nav ul li.social-button a.discord:hover {
+    background-color: #2c2c6d;
+}
+
+#about nav ul li.social-button a.github:hover {
+    background-color: #162a43;
+}
+
+#about nav ul li.social-button a.threads:hover {
+    background-color: #660024;
+}
+
+#about nav ul li.social-button a.coffee:hover {
+    background-color: #594d00;
 }
 
 /* Projects */
@@ -377,9 +400,23 @@ li.double-button {
     background-image: linear-gradient(rgb(0 0 0/50%) 0 0);
 }
 
-.download {
-
+.project_github {
+    background-color: #4078c0;
+    color: white;
 }
+.project_download {
+    background-color: black;
+    color: white;
+}
+.project_nexus {
+    background-color: #d98f40;
+    color: white;
+}
+.project_steam {
+    background-color:  #171a21;
+    color: white;
+}
+
 
 /* Blog */
 
