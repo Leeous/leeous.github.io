@@ -122,18 +122,41 @@ window.addEventListener('DOMContentLoaded', () => {
   // Parses the JSON file with project data
   function populateProjects(projectData) {
     Object.keys(projectData).forEach(function (key) {
+      // Get Github data if project has a link for it
+      if (projectData[key].links.github_api) {
+        populateGData(projectData[key].links.github_api, projectData[key].id);
+      }
+
       const projectTemplate = `
         <div class="project" projectData-id="${projectData[key].id}">
         <h3 class="project_title">${projectData[key].name}</h3>
         ${projectData[key].icon ? projectData[key].icon : ''}
         <!--<p class="project_last_update">updated <i>102 days ago</i></p>-->
         <p class="project_desc">${projectData[key].desc}</p>
-        <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''}${projectData[key].links.nexus ? projectData[key].links.nexus : ''}</div>
+        <div class="project_tags">${projectData[key].tags.archived ? projectData[key].tags.archived : ''}${projectData[key].tags.abandoned ? projectData[key].tags.abandoned : ''}${projectData[key].tags.finished ? projectData[key].tags.finished : ''}
+        <div class="project_gdata"></div>
+        <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''} ${projectData[key].links.nexus ? projectData[key].links.nexus : ''}</div>
         </div>
       `;
       document.querySelector('#index-main #projects .projects_container').insertAdjacentHTML('beforeend', projectTemplate);
       // TODO: Add detailed animation to display projects details
     });
+  }
+
+  function populateGData(url, id) {
+    fetch(url).then(res => {
+      if (!res.ok) {
+        throw new Error();
+      } else {
+        return res.json();
+      }
+    }).then(data => {
+      console.log(data, id);
+      let gStars = data.stargazers_count;
+      document.querySelector(`[projectData-id="${id}"] .project_gdata`).insertAdjacentHTML('beforeend', `
+        <p class="stars">⭐ ${gStars}</p>
+        `);
+    })
   }
 
   // Slideshow logic

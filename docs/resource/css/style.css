@@ -338,6 +338,7 @@ li.double-button {
     flex-direction: column;
     justify-content: space-between;
     margin: 2em 0;
+    text-align: center;
 }
 
 .project:first-child {
@@ -352,7 +353,7 @@ li.double-button {
 }
 
 .project_desc {
-    margin: 0em 1em 1em 1em; 
+    margin: 0em 1em .5em 1em; 
     text-align: center;
     word-spacing: 1px;
 }
@@ -415,6 +416,26 @@ li.double-button {
 .project_steam {
     background-color:  #171a21;
     color: white;
+}
+
+.abandoned, .finished {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+.abandoned {
+    background-color: rgb(44, 44, 44);
+}
+
+.finished {
+    background-color: rgb(0, 94, 0);
+}
+
+.stars {
+    margin-bottom: 1em;
 }
 
 

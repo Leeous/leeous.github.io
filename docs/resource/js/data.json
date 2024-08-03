@@ -5,16 +5,24 @@
         "name": "Garry's Mod Addon Tool",
         "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
         "links": {
-            "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"
+            "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>",
+            "github_api": "https://api.github.com/repos/leeous/gmod-addon-tool"
+        },
+        "tags": {
+            "finished": "<div class='project-label finished'>Finished ✅</div>"
         }
     },
     "joystick_mouse_control": {
         "id": "joystick_mouse_control",
         "date": "August 12th, 2020",
         "name": "Joystick Mouse Control",
-        "desc": "A lightweight Electron app that lets you control your cusor with gamepads.",
+        "desc": "An Electron app that lets you control your cusor with gamepads.",
         "links": {
-            "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>"
+            "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>",
+            "github_api": "https://api.github.com/repos/git-git-git-got-got-got/joystick-mouse-control"
+        },
+        "tags": {
+            "abandoned": "<div class='project-label abandoned'>Abandoned ☠️</div>"
         }
     },
     "one_shot": {
@@ -24,6 +32,9 @@
         "desc": "A \"one in the chamber\" style gamemode for <a href='https://sbox.facepunch.com/news' target='_blank'>S&Box</a>.",
         "links": {
             "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/one_shot'>Github</a>"
+        },
+        "tags": {
+            "abandoned": "<div class='project-label abandoned'>Abandoned ☠️</div>"
         }
     },
     "death_grips_flannel": {
@@ -33,8 +44,11 @@
         "desc": "Changes the Starfield flannel into the design for the DG 2023 tour jacket.",
         "links": {
             "nexus": "<li class='nexus project-background'><a class='project_link project_nexus' target='_blank' href='https://www.nexusmods.com/starfield/mods/2523?tab=description'>NEXUS</a>"
+        },
+        "tags": {
+            "finished": "<div class='project-label finished'>Finished ✅</div>"
         }
-    },
+    },  
     "medic_kiosk": {
         "id": "medic_kiosk",
         "date": "June 12th, 2017",
@@ -42,7 +56,11 @@
         "desc": "An addon for Garry's Mod.",
         "links": {
             "steam": "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
-            "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>"
+            "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>",
+            "github_api": "https://api.github.com/repos/Leeous/medic-kiosk"
+        },
+        "tags": {
+            "finished": "<div class='project-label finished'>Finished ✅</div>"
         }
     },
     "re4_ammo_packs": {
@@ -54,6 +72,9 @@
             "steam": "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
             "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
             "source": "<li  class='download project-background'><a class='project_link project_download' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
+        },
+        "tags": {
+            "finished": "<div class='project-label finished'>Finished ✅</div>"
         }
     }
 }
