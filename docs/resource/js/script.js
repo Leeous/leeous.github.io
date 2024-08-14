@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded', () => {
         ${projectData[key].icon ? projectData[key].icon : ''}
         <!--<p class="project_last_update">updated <i>102 days ago</i></p>-->
         <p class="project_desc">${projectData[key].desc}</p>
-        <div class="project_tags">${projectData[key].tags.archived ? projectData[key].tags.archived : ''}${projectData[key].tags.abandoned ? projectData[key].tags.abandoned : ''}${projectData[key].tags.finished ? projectData[key].tags.finished : ''}
+        <div class="project_tags">${projectData[key].tags.archived ? projectData[key].tags.archived : ''}${projectData[key].tags.abandoned ? projectData[key].tags.abandoned : ''}${projectData[key].tags.finished ? projectData[key].tags.finished : ''}${projectData[key].tags.WIP ? projectData[key].tags.WIP : ''}
         <div class="project_gdata"></div>
         <div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''} ${projectData[key].links.nexus ? projectData[key].links.nexus : ''}</div>
         </div>

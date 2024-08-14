@@ -1,4 +1,17 @@
 {
+    "bcbs_prefix_explorer": {
+        "id": "bcbs_prefix_explorer",
+        "date": "August 11th, 2024",
+        "name": "BCBS Prefix Explorer",
+        "desc": "A Chrome (and future Firefox) extension that assists Healthcare providers with BCBS carriers. ",
+        "links": {
+            "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/bcbs-prefix-explorer'>Github</a>",
+            "github_api": "https://api.github.com/repos/leeous/bcbs-prefix-explorer"
+        },
+        "tags": {
+            "WIP": "<div class='project-label WIP'>WIP 🔨</div>"
+        }
+    },
     "garrys_mod_addon_tool": {
         "id": "garrys_mod_addon_tool",
         "date": "December 9th, 2020",

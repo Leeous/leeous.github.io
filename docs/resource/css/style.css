@@ -418,12 +418,16 @@ li.double-button {
     color: white;
 }
 
-.abandoned, .finished {
+.abandoned, .finished, .WIP {
     display: inline-block;
     text-align: center;
-    padding: 5px;
+    padding: 8px;
     margin-bottom: 1em;
     text-transform: uppercase;
+}
+
+.WIP {
+    background-color: rgb(6, 104, 150);
 }
 
 .abandoned {
