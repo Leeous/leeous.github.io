@@ -290,9 +290,9 @@ li.double-button {
     transition: .2s background-color ease-in-out;
 }
 
-#about nav ul li.social-button a.threads {
-    border-color: #f80059;
-    color: #f80059;
+#about nav ul li.social-button a.bluesky {
+    border-color: #1083fe;
+    color: #1083fe;
     transition: .2s background-color ease-in-out;
 }
 
@@ -314,8 +314,9 @@ li.double-button {
     background-color: #162a43;
 }
 
-#about nav ul li.social-button a.threads:hover {
-    background-color: #660024;
+#about nav ul li.social-button a.bluesky:hover {
+    background-color: rgba(16, 131, 254, .2)
+
 }
 
 #about nav ul li.social-button a.coffee:hover {
