@@ -302,12 +302,16 @@ li.double-button {
     transition: .2s background-color ease-in-out;
 }
 
+#about nav ul li.social-button a.pgpkey, #about nav ul li.social-button a.email {
+    transition: .2s background-color ease-in-out;
+}
+
 #about nav ul li.social-button a.steam:hover {
-    background-color: #014b66;
+    background-color: #014b6652;
 }
 
 #about nav ul li.social-button a.discord:hover {
-    background-color: #2c2c6d;
+    background-color: #2c2c6d9a;
 }
 
 #about nav ul li.social-button a.github:hover {
@@ -315,12 +319,15 @@ li.double-button {
 }
 
 #about nav ul li.social-button a.bluesky:hover {
-    background-color: rgba(16, 131, 254, .2)
-
+    background-color: rgba(16, 131, 254, .2);
 }
 
 #about nav ul li.social-button a.coffee:hover {
-    background-color: #594d00;
+    background-color: #594d0088;
+}
+
+#about nav ul li.social-button a.email:hover, #about nav ul li.social-button a.pgpkey:hover {
+    background-color: #ffffff11;
 }
 
 /* Projects */
