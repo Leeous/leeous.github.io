@@ -109,15 +109,71 @@ window.addEventListener('DOMContentLoaded', () => {
       console.log(error);
     });
 
-  // Projects request
-  fetch('resource/js/data.json')
+  // Project data request
+  fetch('resource/js/project_data.json')
     .then((resp) => resp.json())
-    .then(function (projectData) {
-      populateProjects(projectData);
-    })
+    .then(projectData => populateProjects(projectData))
+    .catch(error => console.log(error));
+
+  // Project data request
+  fetch('resource/js/blog_data.json')
+    .then((resp) => resp.json())
+    .then(blogData => { populateBlog(blogData) })
     .catch(function (error) {
       console.log(error);
     });
+
+  // Parses the JSON file with blog data
+  function populateBlog(blogData) {
+    Object.keys(blogData["posts"]).forEach(function (key) {
+      let post = blogData["posts"][key];
+      console.log(post["title"]);
+
+      // TODO: add ability to have slideshows in between content of post - not hard to do, just not not needed atm
+      document.querySelector('#blog').insertAdjacentHTML('afterbegin', 
+        `
+        <article class="post">
+				<h1 class="title">${post.title}</h1>
+				<h5 class="date">${post.published_date}</h5>
+          <p>${post.content}</p>
+          ${post.images ? post.images : ""}
+			  </article>
+        `
+      );
+    });
+
+    // Slideshow logic - do this after blog data is fully loaded
+    const slideshows = document.querySelectorAll('.slideshow');
+    slideshows.forEach((slideshow) => {
+      let slideshow_controls = slideshow.querySelector(".slideshow-controls");
+      let slideshow_display = slideshow.querySelector(".slideshow-display");
+      for (let i = 0; i < slideshow_controls.children.length; i++)
+      {
+        let control = slideshow_controls.children[i];
+        control.dataset.order = i;
+        control.addEventListener("click", (e) => {
+          if (control.classList.contains("active_thumbnail")) { return; }
+          let order = control.dataset.order;
+          let new_slide = control.parentElement.parentElement.querySelector(`img[data-order="${order}"]`);
+          let active_thumbnail = control.parentElement.querySelector(".active_thumbnail");
+          let active_slide = control.parentElement.parentElement.querySelector(".active-slide");
+          // Remove active classes
+          active_thumbnail.classList.remove("active_thumbnail");
+          active_slide.classList.remove("active-slide");
+          // Add classes to new slide
+          control.classList.add("active_thumbnail");
+          new_slide.classList.add("active-slide");
+          // console.log(slideshow_display.children[control.dataset.order].classList.add("active-slide"));
+        });
+      }
+
+      for (let i = 0; i < slideshow_display.children.length; i++)
+      {
+        let display = slideshow_display.children[i];
+        display.dataset.order = i;
+      }
+    });
+  }
 
   // Parses the JSON file with project data
   function populateProjects(projectData) {
@@ -151,7 +207,6 @@ window.addEventListener('DOMContentLoaded', () => {
         return res.json();
       }
     }).then(data => {
-      console.log(data, id);
       let gStars = data.stargazers_count;
       document.querySelector(`[projectData-id="${id}"] .project_gdata`).insertAdjacentHTML('beforeend', `
         <p class="stars">⭐ ${gStars}</p>
@@ -159,39 +214,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // Slideshow logic
-  const slideshows = document.querySelectorAll('.slideshow');
-  slideshows.forEach((slideshow) => {
-    let slideshow_controls = slideshow.querySelector(".slideshow-controls");
-    let slideshow_display = slideshow.querySelector(".slideshow-display");
-    for (let i = 0; i < slideshow_controls.children.length; i++)
-    {
-      let control = slideshow_controls.children[i];
-      control.dataset.order = i;
-      control.addEventListener("click", (e) => {
-        if (control.classList.contains("active_thumbnail")) { return; }
-        let order = control.dataset.order;
-        let new_slide = control.parentElement.parentElement.querySelector(`img[data-order="${order}"]`);
-        let active_thumbnail = control.parentElement.querySelector(".active_thumbnail");
-        let active_slide = control.parentElement.parentElement.querySelector(".active-slide");
-        // Remove active classes
-        active_thumbnail.classList.remove("active_thumbnail");
-        active_slide.classList.remove("active-slide");
-        // Add classes to new slide
-        control.classList.add("active_thumbnail");
-        new_slide.classList.add("active-slide");
-        // console.log(slideshow_display.children[control.dataset.order].classList.add("active-slide"));
-      });
-    }
-
-    for (let i = 0; i < slideshow_display.children.length; i++)
-    {
-      let display = slideshow_display.children[i];
-      display.dataset.order = i;
-    }
-  });
-
-  // Navagation bar
+  // Navigation bar
   const navElements = document.querySelectorAll('.nav-link');
   if (!window.location.hash || !safeHashArray.includes(window.location.hash)) {
     fadeIn('#about', null, 10); // Fade in initnal page - unless there's an anchor tag
@@ -201,7 +224,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector(`[data-fadein="${window.location.hash}"`).classList.add('active-page');
   }
 
-  // Handles class switching for the navagation bar
+  // Handles class switching for the navigation bar
   navElements.forEach((key) => {
     key.addEventListener('click', () => {
       clickSafe = false;
