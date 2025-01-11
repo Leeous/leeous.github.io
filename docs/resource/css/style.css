@@ -75,8 +75,6 @@ a:not(.project_link, .social-button a):hover {
     color: #fff;
     font-weight: 800;
     letter-spacing: 4px;
-    -webkit-text-stroke: #0A0A0B 1.5px;
-
 }
 
 #index-header .title:hover {
@@ -454,7 +452,7 @@ li.double-button {
 /* Blog */
 
 #blog {
-
+    
 }
 
 #blog article:not(:first-child) {
@@ -486,6 +484,14 @@ li.double-button {
 
 #blog article p a:hover {
     text-decoration: underline;
+}
+
+#blog div.active-blog-page {
+    /* display: block; */
+}
+
+[class^="page-"] {
+    display: none;
 }
 
 #blog .post .slideshow {
@@ -531,6 +537,44 @@ li.double-button {
     filter: none;
     cursor: default;
     border: solid 1px #fff;
+}
+
+.page-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-controls p {
+    margin: 0 0rem 0 .5rem;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.page-controls p.page-click {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.page-controls p.active-blog-page-indicator {
+    text-decoration: none;
+    cursor: default;
+}
+
+.page-controls p:last-child {
+    margin: 0 .5rem 0 .5rem;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.page-controls button {
+    font-size: 1rem;
+    font-weight: bolder;
+    border: solid white 1px;
+    background-color: rgb(27, 27, 27);
+    color: white;
+    cursor: pointer;
+    padding: .1rem 1rem;
 }
 
 /* Maybe in the future */
