@@ -7,7 +7,7 @@ export { fadeIn, fadeOut, paginate }
  *  @param {Array} array - array to paginate
  *  @param {Number} itemLimit - number of elements per page
  *  @param {Boolean} reverse - Reverse array data?
- *  @param {String} pageContainer - Reverse array data?
+ *  @param {String} pageContainer - Selector where data will be placed
  *  @param {String} pageTagName - string that we'll use to navigate pages
  *  @returns {Array} items chunked based on itemLimit
  */
@@ -97,7 +97,6 @@ var paginate = function paginate(array, itemLimit, reverse, pageContainer, pageT
   });
 
   return itemsPaginated;
-
 }
 
 /**

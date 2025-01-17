@@ -41,8 +41,7 @@ function activateSlideshow() {
 	slideshows.forEach((slideshow) => {
 		let slideshow_controls = slideshow.querySelector(".slideshow-controls");
 		let slideshow_display = slideshow.querySelector(".slideshow-display");
-		for (let i = 0; i < slideshow_controls.children.length; i++)
-		{
+		for (let i = 0; i < slideshow_controls.children.length; i++) {
 			let control = slideshow_controls.children[i];
 			control.dataset.order = i;
 			control.addEventListener("click", (e) => {
@@ -61,8 +60,7 @@ function activateSlideshow() {
 			});
 		}
 
-		for (let i = 0; i < slideshow_display.children.length; i++)
-		{
+		for (let i = 0; i < slideshow_display.children.length; i++) {
 			let display = slideshow_display.children[i];
 			display.dataset.order = i;
 		}
@@ -170,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (posts.length > 4) {
 			let postsPaginated = paginate(posts, 4, false, "#blog", "blog");
 			let currentPage = 1;
-	
+
 			postsPaginated.forEach((array) => {
 				for (let i = 0; i < array.length; i++) {
 					let element = array[i];
@@ -189,7 +187,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		} else {
 			posts.reverse();
 			posts.forEach((array) => {
-					document.querySelector(`#blog`).insertAdjacentHTML('beforeend', `
+				document.querySelector(`#blog`).insertAdjacentHTML('beforeend', `
 						<article class="post">
 						<h1 class="title">${array["title"]}</h1>
 						<h5 class="date">${array.published_date}</h5>
@@ -203,28 +201,56 @@ window.addEventListener('DOMContentLoaded', () => {
 		activateSlideshow();
 	}
 
+	let projects = [];
 	// Parses the JSON file with project data
 	function populateProjects(projectData) {
+
 		Object.keys(projectData).forEach(function (key) {
 			// Get Github data if project has a link for it
 			if (projectData[key].links.github_api) {
-				populateGData(projectData[key].links.github_api, projectData[key].id);
+				// populateGData(projectData[key].links.github_api, projectData[key].id); TEMP
 			}
-
-			const projectTemplate = `
-				<div class="project" projectData-id="${projectData[key].id}">
-				<h3 class="project_title">${projectData[key].name}</h3>
-				${projectData[key].icon ? projectData[key].icon : ''}
-				<!--<p class="project_last_update">updated <i>102 days ago</i></p>-->
-				<p class="project_desc">${projectData[key].desc}</p>
-				<div class="project_tags">${projectData[key].tags.archived ? projectData[key].tags.archived : ''}${projectData[key].tags.abandoned ? projectData[key].tags.abandoned : ''}${projectData[key].tags.finished ? projectData[key].tags.finished : ''}${projectData[key].tags.WIP ? projectData[key].tags.WIP : ''}
-				<div class="project_gdata"></div>
-				<div class="project_links">${projectData[key].links.source ? projectData[key].links.source : ''}${projectData[key].links.github ? projectData[key].links.github : ''}${projectData[key].links.steam ? projectData[key].links.steam : ''} ${projectData[key].links.nexus ? projectData[key].links.nexus : ''}</div>
-				</div>
-			`;
-			document.querySelector('#index-main #projects .projects_container').insertAdjacentHTML('beforeend', projectTemplate);
-			// TODO: Add detailed animation to display projects details
+			projects.push(projectData[key])
 		});
+
+		console.log(projects)
+
+		if (projects.length > 4) {
+			
+			let projectsPaginated = paginate(projects, 4, false, ".projects_container", "projects");
+			let currentPage = 1;
+
+			projectsPaginated.forEach((array) => {
+				for (let i = 0; i < array.length; i++) {
+					let element = array[i];
+					console.log(element)
+					document.querySelector(`.page-projects-${currentPage}`).insertAdjacentHTML('beforeend', `
+							<div class="project" projectData-id="${projectData.id}">
+								<h3 class="project_title">${element.name}</h3>
+								${element.icon ? element.icon : ''}
+								<!--<p class="project_last_update">updated <i>102 days ago</i></p>-->
+								<p class="project_desc">${element.desc}</p>
+								<div class="project_tags">${element.tags.archived ? element.tags.archived : ''}${element.tags.abandoned ? element.tags.abandoned : ''}${element.tags.finished ? element.tags.finished : ''}${element.tags.WIP ? element.tags.WIP : ''}
+								<div class="project_gdata"></div>
+								<div class="project_links">${element.links.source ? element.links.source : ''}${element.links.github ? element.links.github : ''}${element.links.steam ? element.links.steam : ''} ${element.links.nexus ? element.links.nexus : ''}</div>
+							</div>
+						`);
+				}
+				// Advance current page once for loop completes
+				currentPage++;
+			});
+		} else {
+			projects.forEach((array) => {
+				document.querySelector(`#blog`).insertAdjacentHTML('beforeend', `
+						<article class="post">
+						<h1 class="title">${array["title"]}</h1>
+						<h5 class="date">${array.published_date}</h5>
+							<p>${array.content}</p>
+							${array.images ? array.images : ""}
+						</article>
+					`);
+			});
+		}
 	}
 
 	function populateGData(url, id) {

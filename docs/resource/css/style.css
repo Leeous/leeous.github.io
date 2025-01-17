@@ -486,7 +486,7 @@ li.double-button {
     text-decoration: underline;
 }
 
-#blog div.active-blog-page {
+#blog div.active-blog-page, #projects .projects_container .active-projects-page {
     display: block;
 }
 
@@ -503,12 +503,12 @@ li.double-button {
     display: inline-block;
 }
 
-.page-controls p.page-blog-click:not(.active-blog-page-indicator) {
+.page-controls p.page-blog-click:not(.active-blog-page-indicator), .page-controls p.page-projects-click:not(.active-projects-page-indicator) {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.page-controls p[class="active-blog-page-indicator"] {
+.page-controls p[class="active-blog-page-indicator"], .page-controls p[class="active-projects-page-indicator"] {
     text-decoration: none;
     cursor: default;
 }
@@ -810,18 +810,18 @@ details[open] summary ~ * {
 @media screen and (min-width: 1000px) {
 
     .projects_container {
-        display: grid;
+        /* display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 1fr 1fr;
         gap: 2em 2em;
         grid-auto-flow: row;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: center; */
     } 
 
     /* Remove padding for list view */
     .project {
-        margin: 0;
+        margin: 1.5rem 0;
     }
 
     #index-header .title {
