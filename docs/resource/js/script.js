@@ -1,5 +1,5 @@
 // Imports
-import { fadeIn, fadeOut } from "./Util.js";
+import { fadeIn, fadeOut, paginate } from "./Util.js";
 
 // Static variables
 const safeHashArray = ['#about', '#projects', '#blog'];
@@ -30,15 +30,50 @@ if (!is_touch_enabled()) {
 
 // Check if touch device
 function is_touch_enabled() {
-	return ( 'ontouchstart' in window ) || 
-		( navigator.maxTouchPoints > 0 ) || 
-		( navigator.msMaxTouchPoints > 0 );
+	return ('ontouchstart' in window) ||
+		(navigator.maxTouchPoints > 0) ||
+		(navigator.msMaxTouchPoints > 0);
 }
+
+// Attach slideshow logic
+function activateSlideshow() {
+	const slideshows = document.querySelectorAll('.slideshow');
+	slideshows.forEach((slideshow) => {
+		let slideshow_controls = slideshow.querySelector(".slideshow-controls");
+		let slideshow_display = slideshow.querySelector(".slideshow-display");
+		for (let i = 0; i < slideshow_controls.children.length; i++)
+		{
+			let control = slideshow_controls.children[i];
+			control.dataset.order = i;
+			control.addEventListener("click", (e) => {
+				if (control.classList.contains("active_thumbnail")) { return; }
+				let order = control.dataset.order;
+				let new_slide = control.parentElement.parentElement.querySelector(`img[data-order="${order}"]`);
+				let active_thumbnail = control.parentElement.querySelector(".active_thumbnail");
+				let active_slide = control.parentElement.parentElement.querySelector(".active-slide");
+				// Remove active classes
+				active_thumbnail.classList.remove("active_thumbnail");
+				active_slide.classList.remove("active-slide");
+				// Add classes to new slide
+				control.classList.add("active_thumbnail");
+				new_slide.classList.add("active-slide");
+				// console.log(slideshow_display.children[control.dataset.order].classList.add("active-slide"));
+			});
+		}
+
+		for (let i = 0; i < slideshow_display.children.length; i++)
+		{
+			let display = slideshow_display.children[i];
+			display.dataset.order = i;
+		}
+	});
+}
+
 
 // DOM content loaded
 window.addEventListener('DOMContentLoaded', () => {
 	// Check if WIP banner is enabled
-	if (wipBannerEnabled) { document.querySelector("#wip-banner").style.display = "block"}
+	if (wipBannerEnabled) { document.querySelector("#wip-banner").style.display = "block" }
 
 	const lastUpdated = document.getElementById('pageLastUpdated');
 	// let projects = new Object();
@@ -73,7 +108,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			console.info(`${pfpClicks}/25 clicks!`);
 		} else {
 			// Start easter egg
-			document.querySelector(`body`).insertAdjacentHTML('beforebegin', 
+			document.querySelector(`body`).insertAdjacentHTML('beforebegin',
 				`
 					<div class="easter-egg">
 
@@ -82,10 +117,10 @@ window.addEventListener('DOMContentLoaded', () => {
 				`
 			);
 			var animation = document.querySelector('.easter-egg img').animate([{ opacity: "0" }],
-			{
-				fill: "forwards",
-				duration: 1250
-			});
+				{
+					fill: "forwards",
+					duration: 1250
+				});
 			animation.play();
 			vineBoom.play();
 			animation.onfinish = () => {
@@ -96,18 +131,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// Display last update to website in footer
 	fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits').then(res => {
-			if (!res.ok) {
-				throw new Error();
-			} else {
-				return res.json();
-			}
-		}).then(data => {
-			lastUpdated.innerHTML = 
-				`page last updated <a href="${data[0]['html_url']}" target="_blank">${moment(data[0]['commit']['author']['date']).startOf('second').fromNow()}</a><br/>
-				<span class="update-desc">${data[0]['commit']['message']}</span></span>`; 
-		}).catch( error => {
-			console.log(error);
-		});
+		if (!res.ok) {
+			throw new Error();
+		} else {
+			return res.json();
+		}
+	}).then(data => {
+		lastUpdated.innerHTML =
+			`page last updated <a href="${data[0]['html_url']}" target="_blank">${moment(data[0]['commit']['author']['date']).startOf('second').fromNow()}</a><br/>
+				<span class="update-desc">${data[0]['commit']['message']}</span></span>`;
+	}).catch(error => {
+		console.log(error);
+	});
 
 	// Project data request
 	fetch('resource/js/project_data.json')
@@ -121,7 +156,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		.then(blogData => { populateBlog(blogData) })
 		.catch(function (error) {
 			console.log(error);
-	});
+		});
 
 
 	let posts = [];
@@ -132,156 +167,40 @@ window.addEventListener('DOMContentLoaded', () => {
 			posts.push(blogData["posts"][key]);
 		});
 
-		// Reverse array TODO: sort array by [date]
-		posts.reverse();
-
-		// Limit of posts per page
-		const POST_LIMIT = 4;
-		// Number of pages generated based on posts.length
-		let pagesGenerated = 0;
-		// Chucks array based on POST_LIMIT
-		let currentPostCount = 0;
-		// Ticks up to posts.length
-		let overallPostCount = 0;
-
-		// If posts exceeds POST_LIMIT, begin pagination logic
-		if (posts.length > POST_LIMIT) {
-			for (let i = 0; i < posts.length; i++) {
-				currentPostCount++;
-				overallPostCount++;
-				// If we hit PAGE_LIMIT, start generating pages, or if first POST_LIMIT set (otherwise it will be omitted)
-				if (currentPostCount == POST_LIMIT || overallPostCount == 1) {
-					// Tick page gen
-					pagesGenerated++;
-					
-					// Reset counter
-					currentPostCount = 0;
-					
-					// Create page
-					let page = document.createElement("div");
-					page.setAttribute("class", `page-${pagesGenerated == 1 ? pagesGenerated + " active-blog-page" : pagesGenerated}`);
-
-					// Append page
-					document.getElementById("blog").appendChild(page);
-
-					// Insert current posts into page
-					let page_posts = posts.slice(i, i + POST_LIMIT);
-					// Place posts in current page
-					page_posts.forEach((post) => { 
-						document.querySelector(`#blog .page-${pagesGenerated}`).insertAdjacentHTML("beforeend", 
-							`
-							<article class="post">
-							<h1 class="title">${post.title}</h1>
-							<h5 class="date">${post.published_date}</h5>
-								<p>${post.content}</p>
-								${post.images ? post.images : ""}
-							</article>
-							`
-						);
-					});
+		if (posts.length > 4) {
+			let postsPaginated = paginate(posts, 4, false, "#blog", "blog");
+			let currentPage = 1;
+	
+			postsPaginated.forEach((array) => {
+				for (let i = 0; i < array.length; i++) {
+					let element = array[i];
+					document.querySelector(`.page-blog-${currentPage}`).insertAdjacentHTML('beforeend', `
+						<article class="post">
+						<h1 class="title">${element["title"]}</h1>
+						<h5 class="date">${element.published_date}</h5>
+							<p>${element.content}</p>
+							${element.images ? element.images : ""}
+						</article>
+					`);
 				}
-			}
-
-			// Insert pagination control elements
-			document.querySelector("#blog").insertAdjacentHTML("beforeend", `
-				<div class="page-controls">
-					<button class="button-normal blog-previous-page">&lt;</button>
-					<div class="pages"></div>
-					<button class="button-normal blog-next-page">&gt;</button>
-			 	</div>
-			`);
-
-			// Insert page numbers based on pagesGenerated
-			for (let i = 1; i < pagesGenerated + 1; i++) {
-				document.querySelector(".pages").insertAdjacentHTML("beforeend", `<p class="${i == 1 ? "active-blog-page-indicator" : ""} page-click" data-page="${i}">${i}</p>`)
-			}
-
-			// Add click handling
-			document.querySelectorAll(".page-click").forEach(element => {
-				element.addEventListener("click", (event) => {
-					// If page == active, return
-					if (event.target.classList.contains("active-blog-page-indicator")) { return; }
-					// Get page number from data atturbite 
-					let pageRequested = Number(event.target.dataset.page);
-					console.log(pageRequested)
-					// Remove active tags from page and page indicator
-					document.querySelector(".active-blog-page-indicator").classList.remove("active-blog-page-indicator");
-					document.querySelector(`.page-${pageRequested}`).classList.remove("active-blog-page");
-					// Fade out current active page
-					fadeOut(".active-blog-page", () => {
-						// Add active tags and fade in requested page
-						document.querySelector(`.page-${pageRequested}`).classList.add("active-blog-page");
-						document.querySelector(`.page-click[data-page="${pageRequested}"]`).classList.add("active-blog-page-indicator");
-						fadeIn(`.page-${pageRequested}`, null, 3);
-					}, 3);
-				});
+				// Advance current page once for loop completes
+				currentPage++;
 			});
-
-			// Previous page
-			document.querySelector(".blog-previous-page").addEventListener("click", (event) => {
-				let currentPage = document.querySelector(".active-blog-page-indicator");
-				if (currentPage.previousElementSibling == null) { return; }
-				currentPage.previousElementSibling.click();
-			});
-
-			// Next page
-			document.querySelector(".blog-next-page").addEventListener("click", (event) => {
-				let currentPage = document.querySelector(".active-blog-page-indicator");
-				if (currentPage.nextElementSibling == null) { return; }
-				currentPage.nextElementSibling.click();
-			});
-
-
-			// Fade in first page
-			fadeIn(".page-1");
 		} else {
-			posts.forEach((post) => { 
-				document.querySelector(`#blog`).insertAdjacentHTML("beforeend", 
-					`
-					<article class="post">
-					<h1 class="title">${post.title}</h1>
-					<h5 class="date">${post.published_date}</h5>
-						<p>${post.content}</p>
-						${post.images ? post.images : ""}
-					</article>
-					`
-				);
+			posts.reverse();
+			posts.forEach((array) => {
+					document.querySelector(`#blog`).insertAdjacentHTML('beforeend', `
+						<article class="post">
+						<h1 class="title">${array["title"]}</h1>
+						<h5 class="date">${array.published_date}</h5>
+							<p>${array.content}</p>
+							${array.images ? array.images : ""}
+						</article>
+					`);
 			});
 		}
 
-
-
-		// Attach slideshow logic
-		const slideshows = document.querySelectorAll('.slideshow');
-		slideshows.forEach((slideshow) => {
-			let slideshow_controls = slideshow.querySelector(".slideshow-controls");
-			let slideshow_display = slideshow.querySelector(".slideshow-display");
-			for (let i = 0; i < slideshow_controls.children.length; i++)
-			{
-				let control = slideshow_controls.children[i];
-				control.dataset.order = i;
-				control.addEventListener("click", (e) => {
-					if (control.classList.contains("active_thumbnail")) { return; }
-					let order = control.dataset.order;
-					let new_slide = control.parentElement.parentElement.querySelector(`img[data-order="${order}"]`);
-					let active_thumbnail = control.parentElement.querySelector(".active_thumbnail");
-					let active_slide = control.parentElement.parentElement.querySelector(".active-slide");
-					// Remove active classes
-					active_thumbnail.classList.remove("active_thumbnail");
-					active_slide.classList.remove("active-slide");
-					// Add classes to new slide
-					control.classList.add("active_thumbnail");
-					new_slide.classList.add("active-slide");
-					// console.log(slideshow_display.children[control.dataset.order].classList.add("active-slide"));
-				});
-			}
-
-			for (let i = 0; i < slideshow_display.children.length; i++)
-			{
-				let display = slideshow_display.children[i];
-				display.dataset.order = i;
-			}
-		});
+		activateSlideshow();
 	}
 
 	// Parses the JSON file with project data
@@ -349,5 +268,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Add event listener for link click
-	document.querySelectorAll('.open_project').forEach((e) => { e.addEventListener('click', () => { window.open(e.dataset.link) })});
+	document.querySelectorAll('.open_project').forEach((e) => { e.addEventListener('click', () => { window.open(e.dataset.link) }) });
 });

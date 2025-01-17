@@ -81,14 +81,14 @@ a:not(.project_link, .social-button a):hover {
     animation-play-state: running;
 }
 
-/* Navagation - Menu */
+/* Navigation - Menu */
 #index-header .nav .menu {
     display: flex;
     justify-content: center;
     list-style: none;
 }
 
-/* Navagation - Link */
+/* Navigation - Link */
 #index-header .nav .menu .nav-item .nav-link {
     color: grey;
     margin: 5px;
@@ -106,7 +106,7 @@ a:not(.project_link, .social-button a):hover {
 
 }
 
-/* Navagation - Active link highlight */
+/* Navigation - Active link highlight */
 #index-header .nav .menu .nav-item .active-page {
     color: #fff;
     border-bottom: solid 1.5px #fff;
@@ -487,10 +487,53 @@ li.double-button {
 }
 
 #blog div.active-blog-page {
-    /* display: block; */
+    display: block;
 }
 
-[class^="page-"] {
+.page-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.page-controls p {
+    margin: 0 0rem 0 .5rem;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.page-controls p.page-blog-click:not(.active-blog-page-indicator) {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.page-controls p[class="active-blog-page-indicator"] {
+    text-decoration: none;
+    cursor: default;
+}
+
+#blog [class^="active-"] {
+    display: block;
+}
+
+.page-controls p:last-child {
+    margin: 0 .5rem 0 .5rem;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.page-controls button {
+    font-size: 1rem;
+    font-weight: bolder;
+    border: solid white 1px;
+    background-color: rgb(27, 27, 27);
+    color: white;
+    cursor: pointer;
+    padding: .1rem 1rem;
+}
+
+div[class^="page-"]:not(.page-controls) {
     display: none;
 }
 
@@ -538,46 +581,6 @@ li.double-button {
     cursor: default;
     border: solid 1px #fff;
 }
-
-.page-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-controls p {
-    margin: 0 0rem 0 .5rem;
-    font-size: 1.3rem;
-    display: inline-block;
-}
-
-.page-controls p.page-click {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.page-controls p.active-blog-page-indicator {
-    text-decoration: none;
-    cursor: default;
-}
-
-.page-controls p:last-child {
-    margin: 0 .5rem 0 .5rem;
-    font-size: 1.3rem;
-    display: inline-block;
-}
-
-.page-controls button {
-    font-size: 1rem;
-    font-weight: bolder;
-    border: solid white 1px;
-    background-color: rgb(27, 27, 27);
-    color: white;
-    cursor: pointer;
-    padding: .1rem 1rem;
-}
-
-/* Maybe in the future */
 
 /* ############ */
 /* #  Footer  # */
