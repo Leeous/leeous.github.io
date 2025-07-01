@@ -1,6 +1,6 @@
 body {
   background-color: #000000;
-  color: #fff;
+  color: #ffffff;
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -54,7 +54,7 @@ body {
   width: 50%;
   margin: auto;
   border-radius: 50%;
-  border: solid 0.2rem white;
+  border: solid 0.1rem white;
 }
 .about .name {
   margin: 0;
@@ -66,17 +66,20 @@ body {
 
 .about-socials ul {
   display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 0.2rem;
+  width: 100%;
+  grid-template-columns: 45% 45%;
+  gap: 0.5rem;
   list-style: none;
   padding-left: 0;
+  margin: 1rem;
 }
 .about-socials ul li a {
-  display: block;
   text-decoration: none;
-  padding: 0.5rem;
-  background-color: white;
-  color: black;
+  padding: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 0.1rem white;
 }
 .about-socials ul li.span-two {
   grid-column: 1/-1;
@@ -101,7 +104,7 @@ body {
   cursor: pointer;
   padding: 10px 15px;
   margin: 0.6em;
-  border: solid 1px white;
+  border: solid 0.1rem white;
 }
 
 .skill-list {
