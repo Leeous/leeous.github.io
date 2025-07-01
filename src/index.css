@@ -2,6 +2,7 @@
   --font-size-base: 16px;
   --color-primary: #ffffff;
   --color-bg: #000000;
+  --thin-border: solid 1px white;
 }
 
 *, *::before, *::after {
@@ -11,7 +12,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: "Open Sans", sans-serif;
   background-color: #fff;
   color: #111;
