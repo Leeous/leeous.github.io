@@ -118,3 +118,36 @@ body {
     margin: 1rem;
   }
 }
+
+
+// Skills \\
+
+.skills .skill-label {
+    user-select: none;
+    text-align: left;
+    justify-content: space-between;
+    border-radius: 12px;
+    transform: translateY(-6px);
+}
+
+.skills .skill-label summary {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: .6em;
+    border: solid 1px white;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .6em;
+    padding-left: 0;
+    justify-content: center;
+}
+
+.skill-list li {
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+    border: solid 1px white;
+}

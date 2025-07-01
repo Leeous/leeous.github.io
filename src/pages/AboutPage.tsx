@@ -25,50 +25,50 @@ export default function Home() {
           Email is the best way to reach me since I'm not on social media too often.<br /><br /> Right now, I'm on the hunt for an entry-level IT job and hoping to build a long-term career in the field.
         </p>
       </section>
-      <section>
+      <section className='skills'>
         <h2>Skills</h2>
-<details className="skill-label">
-					<summary>Modding & Game Tools</summary>
-					<ul className='skill-list'>
-						<li>Source Engine</li>
-						<li>Server Management/Hosting</li>
-						<li>User Management</li>
-						<li>Hammer Editor (Source 1/2)</li>
-						<li>Mod Development (Lua, C#)</li>
-						<li>Forum Moderation/Hosting</li>
-					</ul>
-				</details>
-				<details className='skill-label'>
-					<summary>IT</summary>
-					<ul className='skill-list'>
-						<li>General Documentation</li>
-						<li>Full-stack Web development</li>
-						<li>Blender</li>
-						<li>Ubuntu Server</li>
-						<li>HPE server management</li>
-						<li>Windows</li>
-						<li>SecOps awareness</li>
-						<li>PC building/repair</li>
-						<li>Mobile device repair</li>
-						<li>UX optimization</li>
-						<li>Photoshop/Gimp</li>
-					</ul>
-				</details>
-				<details className='skill-label'>
-					<summary>Other</summary>
-					<ul className='skill-list'>
-						<li>Cash/check management</li>
-						<li>Team Management</li>
-						<li>Bank deposits</li>
-						<li>Photo lab</li>
-						<li>Stocking Logistics</li>
-						<li>CCTV operation</li>
-						<li>Insurance Agent</li>
-						<li>Product Advertisement</li>
-						<li>Customer Relations</li>
-						<li>Fraud Prevention</li>
-					</ul>
-				</details>
+        <details className="skill-label">
+          <summary>Modding & Game Tools</summary>
+          <ul className='skill-list'>
+            <li>Server Management/Hosting</li>
+            <li>Source Engine</li>
+            <li>User Management</li>
+            <li>Hammer Editor</li>
+            <li>Mod Development (Lua, C#)</li>
+            <li>Forum Moderation/Hosting</li>
+          </ul>
+        </details>
+        <details className='skill-label'>
+          <summary>IT</summary>
+          <ul className='skill-list'>
+            <li>General Documentation</li>
+            <li>Full-stack Web development</li>
+            <li>Blender</li>
+            <li>Ubuntu Server</li>
+            <li>HPE server management</li>
+            <li>Windows</li>
+            <li>SecOps awareness</li>
+            <li>PC building/repair</li>
+            <li>Mobile device repair</li>
+            <li>UX optimization</li>
+            <li>Photoshop/Gimp</li>
+          </ul>
+        </details>
+        <details className='skill-label'>
+          <summary>Other</summary>
+          <ul className='skill-list'>
+            <li>Cash/check management</li>
+            <li>Team Management</li>
+            <li>Bank deposits</li>
+            <li>Photo lab</li>
+            <li>Stocking Logistics</li>
+            <li>CCTV operation</li>
+            <li>Insurance Agent</li>
+            <li>Product Advertisement</li>
+            <li>Customer Relations</li>
+            <li>Fraud Prevention</li>
+          </ul>
+        </details>
       </section>
       <figure><embed src='https://wakatime.com/share/@018cd227-4c79-474a-90a6-9837813301b4/bc8f0964-b605-4b10-95f6-7f8aa0c72d5a.svg' /></figure>
     </main>
