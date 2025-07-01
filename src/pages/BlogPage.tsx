@@ -1,5 +1,6 @@
 export default function Blog() {
   return(
-    <span>Blog</span>
+    <main className='blog-page page'>
+    </main>
   )
 }

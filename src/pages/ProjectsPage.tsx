@@ -1,5 +1,6 @@
 export default function Projects() {
   return(
-    <span>Projects</span>
+    <main className='projects-page page'>
+    </main>
   )
 }

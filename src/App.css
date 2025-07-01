@@ -2,7 +2,7 @@
   --font-size-base: 16px;
   --color-primary: #ffffff;
   --color-bg: #000000;
-  --thin-border: solid 1px white;
+  --thin-border: solid .2rem white;
 }
 
 body {
@@ -85,6 +85,7 @@ body {
 .about-socials ul {
   display: grid;
   grid-template-columns: 50% 50%;
+  gap: .2rem;
   list-style: none;
   padding-left: 0;
 }
@@ -93,9 +94,14 @@ body {
   display: block;
   text-decoration: none;
   padding: .5rem;
+  background-color: white;
+  color: black;
 }
 
 .about-socials ul li a:hover {
-  background-color: white;
-  color: black;
+}
+
+.about-bio p {
+  text-indent: 2rem;
+  margin: 1rem;
 }
