@@ -1,3 +1,10 @@
+:root {
+  --font-size-base: 16px;
+  --color-primary: #ffffff;
+  --color-bg: #000000;
+  --thin-border: solid 1px white;
+}
+
 body {
   background-color: var(--color-bg);
   color: #fff;
@@ -11,7 +18,6 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
   height: 100%;
   background-color: var(--color-bg);
@@ -19,11 +25,12 @@ body {
 
 .main-header {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .main-header h1 {
   font-size: 4rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0;
 }
 
 .main-navigation-bar ul {
@@ -31,11 +38,18 @@ body {
   display: flex;
   justify-content: center;
   padding-left: 0;
+  margin-top: 0;
 }
 
 .main-navigation-bar ul li a {
-  margin: 1rem;
-  padding: 0 5px;
+  padding: 0 1rem;
+  margin: .5rem;
+  text-decoration: none;
+  display: block;
+}
+
+.main-navigation-bar ul li .active {
+  font-weight: bold;
 }
 
 .main-footer {
@@ -49,12 +63,39 @@ body {
 /* About page */
 
 .about-page {
-
+  text-align: center;
 }
 
-.about-page .pfp {
+.about .pfp {
   width: 50%;
   margin: auto;
   border-radius: 50%;
   border: var(--thin-border);
+}
+
+.about .name {
+  margin: 0;
+}
+
+.about .location {
+  margin-top: 0;
+  font-weight: lighter;
+}
+
+.about-socials ul {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-socials ul li a {
+  display: block;
+  text-decoration: none;
+  padding: .5rem;
+}
+
+.about-socials ul li a:hover {
+  background-color: white;
+  color: black;
 }
