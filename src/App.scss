@@ -1,0 +1,120 @@
+// Variables
+$font-size-base: 16px;
+$color-primary: #ffffff;
+$color-bg: #000000;
+$thin-border: solid 0.2rem white;
+
+body {
+  background-color: $color-bg;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "width" 100;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  background-color: $color-bg;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+}
+
+.main-navigation-bar {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 0;
+
+    li {
+      a {
+        padding: 0 1rem;
+        margin: 0.5rem;
+        text-decoration: none;
+        display: block;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.main-footer {
+  // Add footer styles if needed
+}
+
+.page {
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+// About page
+.about-page {
+  text-align: center;
+}
+
+.about {
+  .pfp {
+    width: 50%;
+    margin: auto;
+    border-radius: 50%;
+    border: $thin-border;
+  }
+
+  .name {
+    margin: 0;
+  }
+
+  .location {
+    margin-top: 0;
+    font-weight: lighter;
+  }
+}
+
+.about-socials {
+  ul {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0.2rem;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 0.5rem;
+        background-color: white;
+        color: black;
+
+        &:hover {
+          // Optional hover styling
+        }
+      }
+    }
+  }
+}
+
+.about-bio {
+  p {
+    text-indent: 2rem;
+    margin: 1rem;
+  }
+}

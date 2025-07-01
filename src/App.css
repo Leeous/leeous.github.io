@@ -1,18 +1,10 @@
-:root {
-  --font-size-base: 16px;
-  --color-primary: #ffffff;
-  --color-bg: #000000;
-  --thin-border: solid .2rem white;
-}
-
 body {
-  background-color: var(--color-bg);
+  background-color: #000000;
   color: #fff;
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-variation-settings:
-    "width" 100;
+  font-variation-settings: "width" 100;
 }
 
 #root {
@@ -20,14 +12,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
   height: 100%;
-  background-color: var(--color-bg);
+  background-color: #000000;
 }
 
 .main-header {
   text-align: center;
   margin-bottom: 1rem;
 }
-
 .main-header h1 {
   font-size: 4rem;
   margin-bottom: 0;
@@ -40,27 +31,20 @@ body {
   padding-left: 0;
   margin-top: 0;
 }
-
 .main-navigation-bar ul li a {
   padding: 0 1rem;
-  margin: .5rem;
+  margin: 0.5rem;
   text-decoration: none;
   display: block;
 }
-
-.main-navigation-bar ul li .active {
+.main-navigation-bar ul li a.active {
   font-weight: bold;
-}
-
-.main-footer {
 }
 
 .page .title {
   font-size: 1.5rem;
   text-align: center;
 }
-
-/* About page */
 
 .about-page {
   text-align: center;
@@ -70,13 +54,11 @@ body {
   width: 50%;
   margin: auto;
   border-radius: 50%;
-  border: var(--thin-border);
+  border: solid 0.2rem white;
 }
-
 .about .name {
   margin: 0;
 }
-
 .about .location {
   margin-top: 0;
   font-weight: lighter;
@@ -85,23 +67,18 @@ body {
 .about-socials ul {
   display: grid;
   grid-template-columns: 50% 50%;
-  gap: .2rem;
+  gap: 0.2rem;
   list-style: none;
   padding-left: 0;
 }
-
 .about-socials ul li a {
   display: block;
   text-decoration: none;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: white;
   color: black;
 }
-
-.about-socials ul li a:hover {
-}
-
 .about-bio p {
   text-indent: 2rem;
   margin: 1rem;
-}
+}/*# sourceMappingURL=App.css.map */
