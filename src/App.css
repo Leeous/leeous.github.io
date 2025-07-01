@@ -14,6 +14,7 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   height: 100%;
+  background-color: var(--color-bg);
 }
 
 .main-header {
@@ -34,4 +35,26 @@ body {
 
 .main-navigation-bar ul li a {
   margin: 1rem;
+  padding: 0 5px;
+}
+
+.main-footer {
+}
+
+.page .title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* About page */
+
+.about-page {
+
+}
+
+.about-page .pfp {
+  width: 50%;
+  margin: auto;
+  border-radius: 50%;
+  border: var(--thin-border);
 }
