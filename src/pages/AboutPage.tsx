@@ -14,8 +14,8 @@ export default function Home() {
           <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin</a></li>
           <li><a href="https://github.com/Leeous" target='_blank'>Github</a></li>
           <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky</a></li>
-          <li><a href="mailto:contact@leeous.com" target='_blank'>Email</a></li>
-          <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key</a></li>
+          <li className='span-two'><a href="mailto:contact@leeous.com" target='_blank'>Email</a></li>
+          <li className='span-two'><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key</a></li>
         </ul>
       </section>
       <section className='about-bio'>

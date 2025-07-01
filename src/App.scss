@@ -108,6 +108,9 @@ body {
           // Optional hover styling
         }
       }
+      &.span-two {
+        grid-column: 1 / -1;
+      }
     }
   }
 }
