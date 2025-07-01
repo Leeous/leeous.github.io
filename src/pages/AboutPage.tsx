@@ -10,12 +10,12 @@ export default function Home() {
       </section>
       <section className='about-socials'>
         <ul>
-          <li><a href="#">Buy me a coffee</a></li>
-          <li><a href="#">Linkedin</a></li>
-          <li><a href="#">Github</a></li>
-          <li><a href="#">Steam</a></li>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">PGP Key</a></li>
+          <li><a href="https://www.buymeacoffee.com/Leeous" target='_blank'>Buy me a coffee</a></li>
+          <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin</a></li>
+          <li><a href="https://github.com/Leeous" target='_blank'>Github</a></li>
+          <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky</a></li>
+          <li><a href="mailto:contact@leeous.com" target='_blank'>Email</a></li>
+          <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key</a></li>
         </ul>
       </section>
       <section className='about-bio'>
