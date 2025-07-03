@@ -1,6 +1,5 @@
-import PFP from '../assets/pfp.jpg';
+import PFP from '../assets/images/pfp.jpg';
 import BlueskyIcon from '../components/icons/BlueskyIcon';
-import CoffeeIcon from '../components/icons/CoffeeIcon';
 import EmailIcon from '../components/icons/EmailIcon';
 import GitHubIcon from '../components/icons/GithubIcon';
 import KeyIcon from '../components/icons/KeyIcon';
