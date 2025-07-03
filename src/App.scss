@@ -41,7 +41,6 @@ body {
 
     li {
       a {
-        border-bottom: .1rem solid transparent;
         padding: 0 1rem;
         margin: 0.5rem;
         text-decoration: none;
@@ -49,18 +48,14 @@ body {
         transition: .2s ease-in-out all;
         &.active {
           font-weight: bold;
-          border-bottom: .1rem solid $color-primary;
+          box-shadow: 0 2px 0 0 $color-primary;
         }
         &:hover {
-          border-bottom: .2rem solid $color-primary;
+          box-shadow: 0 2px 0 0 $color-primary;
         }
       }
     }
   }
-}
-
-.main-footer {
-  // Add footer styles if needed
 }
 
 .page {
@@ -97,18 +92,18 @@ body {
   ul {
     display: grid;
     width: 100%;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
     gap: 0.5rem;
     list-style: none;
-    padding-left: 0;
-    margin: 1rem;
+    padding: 1rem;
     li {
       a {
         text-decoration: none;
         padding: 0.35rem;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
         border: $thin-border;
         &:hover {
           // Optional hover styling
@@ -127,7 +122,6 @@ body {
     margin: 1rem;
   }
 }
-
 
 // Skills \\
 
@@ -159,4 +153,9 @@ body {
     padding: 10px;
     display: inline-block;
     border: solid 1px white;
+}
+
+// Footer \\
+.main-footer {
+  margin: 1rem;
 }
