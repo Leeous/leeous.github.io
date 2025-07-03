@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "title": "First post",
+      "published_date": "April 27th, 2023",
+      "content": "The punisher, alongside <a href=\"https://github.com/Leeous/one_shot#\" target=\"_blank\">One Shot</a>, are my main projects as of right now. I've attempted FPS rigs before, but I'll be honest, I was never able to get down the various intricacies of creating viewmodels for Source 1. For this rig, I have a simpler gun, better tools, and way better hands to work with. This gun, if you're unfamiliar, is from Resident Evil 4 (2023). I plan on porting more guns/props from RE4, and making content for gamemode devs to use in their projects. As for my gamemode, One Shot, it is mostly a test project for me to try out the S&Box workflow. So far, S&Box has been really fun to work with. I can only imagine what people will create. I have no doubt that S&Box can easily hit the top 10 if they play their cards right. Developers are already showing off their talent even while the API is changing almost daily. I'm excited for the future. :) <br> <section class=\"img-section slideshow\"><div class=\"slideshow-display\"><img class=\"slide active-slide\" src=\"resource/imgs/blog/post1/render2.png\" alt=\"\"><img class=\"slide\" src=\"resource/imgs/blog/post1/render1.png\" alt=\"\"></div><div class=\"slideshow-controls\"><img class=\"thumbnail active_thumbnail\" src=\"resource/imgs/blog/post1/render2.png\" alt=\"\"><img class=\"thumbnail\" src=\"resource/imgs/blog/post1/render1.png\" alt=\"\"></div></section> <p>You can find all of my S&box uploads <a href=\"https://asset.party/leeous\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.</p>",
+      "images": ""
+    },
+    {
+      "title": "Reprioritization",
+      "published_date": "October 6th, 2023",
+      "content": "So I was planning to work on projects related to S&Box, however, I think I need to go back to basics and ensure I'm ready for the full release. I don't mind learning on the fly at all, in fact it's how I learn most things but I feel like it would be a big benefit to me understanding the language better. I consider myself a web developer over any other title that could apply to me but I'd like to expand that title. As of today, I'm going to be focusing on certifications and expanding my knowledge. I'll still be working on smaller projects so One Shot and the punisher are projects for later, when I have more focus, knowledge and time."
+    },
+    {
+      "title": "New Year",
+      "published_date": "December 25th, 2024",
+      "content": "2024 was an interesting and busy year in my personal life. Unfortunately, that means I've not been working on much of anything outside of my current job. Part of this was getting used to working from home, and learning the many workflows that come with my current role. Since I've mostly gotten used to my current work life balance, I should be able to prioritize working on more portifilo-type projects. After the new year, I'm hoping to have a couple of projects spun up, and to also complete the <a href=\"https://github.com/Leeous/bcbs-prefix-explorer\" target=\"_blank\">BCBS Prefix Explorer</a>. I seem to be the most motivated around the start of a new year, and hopefully can reflect that here."
+    }
+  ]
+}
