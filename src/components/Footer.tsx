@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import throbber from '../assets/throbber.svg';
 
 dayjs.extend(relativeTime);
 
 export default function Footer() {
   const [lastUpdate, setLastUpdate] = useState<string[]>([]);
   useEffect(() => {
-    // GET request using fetch inside useEffect React hook
+    // Fetch most recent commits, display time since last commit as well as commit message in <Footer>
     fetch('https://api.github.com/repos/Leeous/Leeous.github.io/commits')
       .then(response => response.json())
       .then(data => {
-        const timeSinceLastUpdate = dayjs(data[0]['commit']['author']['date']).startOf('second').fromNow();
-        const lastCommitMessage = data[0]['commit']['message'];
-        setLastUpdate([timeSinceLastUpdate, lastCommitMessage]);
-      });
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  }, [lastUpdate]);
+        const timeSinceLastUpdate = dayjs(data[0]['commit']['author']['date']).startOf('second').fromNow()
+        const lastCommitMessage = data[0]['commit']['message']
+        setLastUpdate([timeSinceLastUpdate, lastCommitMessage])
+      })
+  }, [])
   return (
     <footer className="main-footer">
       <p><span id="poweredBy">Powered by coffee <span className="coffee">&#9749;</span></span></p>
@@ -25,6 +25,9 @@ export default function Footer() {
           page last updated <a href="${data[0]['html_url']}" target="_blank">{lastUpdate[0]}</a><br />
           <span className="update-desc">{lastUpdate[1]}</span>
         </p>
+      }
+      {lastUpdate.length == 0 &&
+      <p>Loading...</p>
       }
     </footer>
   )
