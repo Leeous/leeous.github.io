@@ -17,13 +17,12 @@ export default function Home() {
       </section>
       <section className='about-socials'>
         <ul>
-          <li className='span-two'><a href="https://www.buymeacoffee.com/Leeous" target='_blank'>Buy me a coffee<CoffeeIcon /></a></li>
           <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin <LinkedInIcon /></a></li>
           <li><a href="https://github.com/Leeous" target='_blank'>Github <GitHubIcon /></a></li>
           <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky <BlueskyIcon /></a></li>
           <li><a href="https://steamcommunity.com/id/Leeous" target='_blank'>Steam <SteamIcon /></a></li>
-          <li className='span-two'><a href="mailto:contact@leeous.com" target='_blank'>Email <EmailIcon /></a></li>
-          <li className='span-two'><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <KeyIcon /></a></li>
+          <li><a href="mailto:contact@leeous.com" target='_blank'>Email <EmailIcon /></a></li>
+          <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <KeyIcon /></a></li>
         </ul>
       </section>
       <section className='about-bio'>
