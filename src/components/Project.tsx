@@ -1,3 +1,5 @@
+import React from "react";
+
 type ProjectProps = {
   id: string;
   name: string;
@@ -15,31 +17,29 @@ export default function Project({
   links,
   tags,
 }: ProjectProps) {
+  console.log(links)
   return (
     <div className="project" id={id}>
       <h1>{name}</h1>
       <h2>{date}</h2>
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
 
+      {tags?.length > 0 && (
+          tags.map((tag, id) => (
+              <span dangerouslySetInnerHTML={{ __html: tag }} />
+          ))
+      )}
+
       {links?.length > 0 && (
         <ul>
-          {links.map((link, idx) => (
-            <li key={idx}>
+          {links.map((link, id) => (
+            <li key={id}>
               <span dangerouslySetInnerHTML={{ __html: link }} />
             </li>
           ))}
         </ul>
       )}
 
-      {tags?.length > 0 && (
-        <ul>
-          {tags.map((tag, idx) => (
-            <li key={idx}>
-              <span dangerouslySetInnerHTML={{ __html: tag }} />
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 }
