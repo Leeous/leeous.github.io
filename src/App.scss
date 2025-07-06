@@ -31,6 +31,26 @@ body {
   }
 }
 
+.main-footer {
+  margin: 1rem;
+  color: grey;
+  #powered-by {
+    color: white
+  }
+  .last-commit {
+    a {
+      text-decoration: dotted;
+      text-decoration-line: underline;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .update-desc {
+      font-size: .9rem;
+    }
+  }
+}
+
 .main-navigation-bar {
   ul {
     list-style: none;

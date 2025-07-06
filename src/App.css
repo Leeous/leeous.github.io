@@ -24,6 +24,25 @@ body {
   margin-bottom: 0;
 }
 
+.main-footer {
+  margin: 1rem;
+  color: grey;
+}
+.main-footer #powered-by {
+  color: white;
+}
+.main-footer .last-commit a {
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+  text-decoration-line: underline;
+}
+.main-footer .last-commit a:hover {
+  text-decoration: underline;
+}
+.main-footer .last-commit .update-desc {
+  font-size: 0.9rem;
+}
+
 .main-navigation-bar ul {
   list-style: none;
   display: flex;
