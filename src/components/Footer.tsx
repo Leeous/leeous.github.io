@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-// import throbber from '../assets/throbber.svg';
 
 dayjs.extend(relativeTime);
 

@@ -3,11 +3,6 @@ import Project from "../components/Project";
 import projects from "../assets/data/project_data.json";
 
 export default function Projects() {
-  useEffect(() => {
-    projects.forEach((project) => {
-      console.log(project)
-    })
-  }, [])
   return(
     <main className='projects-page page'>
       {projects.map((project) => {
