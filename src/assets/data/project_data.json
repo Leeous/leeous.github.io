@@ -5,11 +5,9 @@
     "name": "BCBS Prefix Explorer",
     "desc": "A Chrome (and future Firefox) extension that assists Healthcare providers with BCBS carriers. ",
     "links": [
-      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/bcbs-prefix-explorer'>Github</a>"
+      { "label": "github", "url": "https://github.com/Leeous/bcbs-prefix-explorer" }
     ],
-    "tags": [
-      "<div class='project-label WIP'>WIP 🔨</div>"
-    ]
+    "tags": ["WIP 🔨"]
   },
   {
     "id": "garrys_mod_addon_tool",
@@ -17,11 +15,9 @@
     "name": "Garry's Mod Addon Tool",
     "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
     "links": [
-      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"
+      { "label": "github", "url": "https://github.com/Leeous/gmod-addon-tool" }
     ],
-    "tags": [
-      "<div class='project-label finished'>Finished ✅</div>"
-    ]
+    "tags": ["Finished ✅"]
   },
   {
     "id": "joystick_mouse_control",
@@ -29,23 +25,19 @@
     "name": "Joystick Mouse Control",
     "desc": "An Electron app that lets you control your cursor with gamepads.",
     "links": [
-      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>"
+      { "label": "github", "url": "https://github.com/git-git-git-got-got-got/joystick-mouse-control" }
     ],
-    "tags": [
-      "<div class='project-label abandoned'>Abandoned ☠️</div>"
-    ]
+    "tags": ["Abandoned ☠️"]
   },
   {
     "id": "one_shot",
     "date": "June 29th, 2023",
     "name": "One Shot",
-    "desc": "A \"one in the chamber\" style gamemode for <a href='https://sbox.facepunch.com/news' target='_blank'>S&Box</a>.",
+    "desc": "A \"one in the chamber\" style gamemode for S&Box.",
     "links": [
-      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/one_shot'>Github</a>"
+      { "label": "github", "url": "https://github.com/Leeous/one_shot" }
     ],
-    "tags": [
-      "<div class='project-label abandoned'>Abandoned ☠️</div>"
-    ]
+    "tags": ["Abandoned ☠️"]
   },
   {
     "id": "death_grips_flannel",
@@ -53,11 +45,9 @@
     "name": "Death Grips Flannel",
     "desc": "Changes the Starfield flannel into the design for the DG 2023 tour jacket.",
     "links": [
-      "<li class='nexus project-background'><a class='project_link project_nexus' target='_blank' href='https://www.nexusmods.com/starfield/mods/2523?tab=description'>NEXUS</a>"
+      { "label": "nexus", "url": "https://www.nexusmods.com/starfield/mods/2523?tab=description" }
     ],
-    "tags": [
-      "<div class='project-label finished'>Finished ✅</div>"
-    ]
+    "tags": ["Finished ✅"]
   },
   {
     "id": "medic_kiosk",
@@ -65,12 +55,10 @@
     "name": "Medic Kiosk",
     "desc": "An addon for Garry's Mod.",
     "links": [
-      "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
-      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>"
+      { "label": "steam", "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=771173724" },
+      { "label": "github", "url": "https://github.com/Leeous/medic-kiosk" }
     ],
-    "tags": [
-      "<div class='project-label finished'>Finished ✅</div>"
-    ]
+    "tags": ["Finished ✅"]
   },
   {
     "id": "re4_ammo_packs",
@@ -78,12 +66,10 @@
     "name": "RE4 Ammo Packs",
     "desc": "RE4 ammo packs modelled into Garry's Mod.",
     "links": [
-      "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
-      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
-      "<li  class='download project-background'><a class='project_link project_download' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
+      { "label": "steam", "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175" },
+      { "label": "github", "url": "https://github.com/Leeous/re4_ammo_packs" },
+      { "label": "download", "url": "https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip" }
     ],
-    "tags": [
-      "<div class='project-label finished'>Finished ✅</div>"
-    ]
+    "tags": ["Finished ✅"]
   }
 ]
