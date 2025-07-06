@@ -29,8 +29,16 @@ export default function Project({
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
 
       {tags?.length > 0 && (
-          tags.map((tag, id) => (
-              <span dangerouslySetInnerHTML={{ __html: tag }} />
+          tags.map((tag) => (
+              <span className={tag} id={tag}>{
+                tag === "finished" 
+                ? "Finished " + String.fromCodePoint(0x2705)
+                : tag === "wip"
+                ? "WIP " + String.fromCodePoint(0x1F528)
+                : tag ==="abandoned"
+                ? "Abandoned " + String.fromCodePoint(0x1F480) 
+                :""}
+                </span>
           ))
       )}
 

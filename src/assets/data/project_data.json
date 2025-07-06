@@ -7,7 +7,7 @@
     "links": [
       { "label": "github", "url": "https://github.com/Leeous/bcbs-prefix-explorer" }
     ],
-    "tags": ["WIP 🔨"]
+    "tags": ["wip"]
   },
   {
     "id": "garrys_mod_addon_tool",
@@ -17,7 +17,7 @@
     "links": [
       { "label": "github", "url": "https://github.com/Leeous/gmod-addon-tool" }
     ],
-    "tags": ["Finished ✅"]
+    "tags": ["finished"]
   },
   {
     "id": "joystick_mouse_control",
@@ -27,7 +27,7 @@
     "links": [
       { "label": "github", "url": "https://github.com/git-git-git-got-got-got/joystick-mouse-control" }
     ],
-    "tags": ["Abandoned ☠️"]
+    "tags": ["abandoned"]
   },
   {
     "id": "one_shot",
@@ -37,7 +37,7 @@
     "links": [
       { "label": "github", "url": "https://github.com/Leeous/one_shot" }
     ],
-    "tags": ["Abandoned ☠️"]
+    "tags": ["abandoned"]
   },
   {
     "id": "death_grips_flannel",
@@ -47,7 +47,7 @@
     "links": [
       { "label": "nexus", "url": "https://www.nexusmods.com/starfield/mods/2523?tab=description" }
     ],
-    "tags": ["Finished ✅"]
+    "tags": ["finished"]
   },
   {
     "id": "medic_kiosk",
@@ -58,7 +58,7 @@
       { "label": "steam", "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=771173724" },
       { "label": "github", "url": "https://github.com/Leeous/medic-kiosk" }
     ],
-    "tags": ["Finished ✅"]
+    "tags": ["finished"]
   },
   {
     "id": "re4_ammo_packs",
@@ -70,6 +70,6 @@
       { "label": "github", "url": "https://github.com/Leeous/re4_ammo_packs" },
       { "label": "download", "url": "https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip" }
     ],
-    "tags": ["Finished ✅"]
+    "tags": ["finished"]
   }
 ]

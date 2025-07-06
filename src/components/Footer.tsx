@@ -14,7 +14,6 @@ export default function Footer() {
         const timeSinceLastUpdate = dayjs(data[0]['commit']['author']['date']).startOf('second').fromNow()
         const lastCommitMessage = data[0]['commit']['message']
         const commitURL = data[0]['html_url'];
-        console.log(data)
         setLastUpdate([timeSinceLastUpdate, lastCommitMessage, commitURL])
       })
     }, [])
