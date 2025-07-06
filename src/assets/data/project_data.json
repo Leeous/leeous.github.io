@@ -4,90 +4,86 @@
     "date": "August 11th, 2024",
     "name": "BCBS Prefix Explorer",
     "desc": "A Chrome (and future Firefox) extension that assists Healthcare providers with BCBS carriers. ",
-    "links": {
-      "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/bcbs-prefix-explorer'>Github</a>",
-      "github_api": "https://api.github.com/repos/leeous/bcbs-prefix-explorer"
-    },
-    "tags": {
-      "WIP": "<div class='project-label WIP'>WIP 🔨</div>"
-    }
+    "links": [
+      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/bcbs-prefix-explorer'>Github</a>"
+    ],
+    "tags": [
+      "<div class='project-label WIP'>WIP 🔨</div>"
+    ]
   },
   {
     "id": "garrys_mod_addon_tool",
     "date": "December 9th, 2020",
     "name": "Garry's Mod Addon Tool",
     "desc": "An Electron app meant to make it slightly easier to update and create Garry's Mod addons.",
-    "links": {
-      "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>",
-      "github_api": "https://api.github.com/repos/leeous/gmod-addon-tool"
-    },
-    "tags": {
-      "finished": "<div class='project-label finished'>Finished ✅</div>"
-    }
+    "links": [
+      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/gmod-addon-tool'>Github</a>"
+    ],
+    "tags": [
+      "<div class='project-label finished'>Finished ✅</div>"
+    ]
   },
   {
     "id": "joystick_mouse_control",
     "date": "August 12th, 2020",
     "name": "Joystick Mouse Control",
-    "desc": "An Electron app that lets you control your cusor with gamepads.",
-    "links": {
-      "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>",
-      "github_api": "https://api.github.com/repos/git-git-git-got-got-got/joystick-mouse-control"
-    },
-    "tags": {
-      "abandoned": "<div class='project-label abandoned'>Abandoned ☠️</div>"
-    }
+    "desc": "An Electron app that lets you control your cursor with gamepads.",
+    "links": [
+      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/git-git-git-got-got-got/joystick-mouse-control'>GitHub</a>"
+    ],
+    "tags": [
+      "<div class='project-label abandoned'>Abandoned ☠️</div>"
+    ]
   },
   {
     "id": "one_shot",
     "date": "June 29th, 2023",
     "name": "One Shot",
     "desc": "A \"one in the chamber\" style gamemode for <a href='https://sbox.facepunch.com/news' target='_blank'>S&Box</a>.",
-    "links": {
-      "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/one_shot'>Github</a>"
-    },
-    "tags": {
-      "abandoned": "<div class='project-label abandoned'>Abandoned ☠️</div>"
-    }
+    "links": [
+      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/one_shot'>Github</a>"
+    ],
+    "tags": [
+      "<div class='project-label abandoned'>Abandoned ☠️</div>"
+    ]
   },
   {
     "id": "death_grips_flannel",
     "date": "September 14th, 2023",
     "name": "Death Grips Flannel",
     "desc": "Changes the Starfield flannel into the design for the DG 2023 tour jacket.",
-    "links": {
-      "nexus": "<li class='nexus project-background'><a class='project_link project_nexus' target='_blank' href='https://www.nexusmods.com/starfield/mods/2523?tab=description'>NEXUS</a>"
-    },
-    "tags": {
-      "finished": "<div class='project-label finished'>Finished ✅</div>"
-    }
+    "links": [
+      "<li class='nexus project-background'><a class='project_link project_nexus' target='_blank' href='https://www.nexusmods.com/starfield/mods/2523?tab=description'>NEXUS</a>"
+    ],
+    "tags": [
+      "<div class='project-label finished'>Finished ✅</div>"
+    ]
   },
   {
     "id": "medic_kiosk",
     "date": "June 12th, 2017",
     "name": "Medic Kiosk",
     "desc": "An addon for Garry's Mod.",
-    "links": {
-      "steam": "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
-      "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>",
-      "github_api": "https://api.github.com/repos/Leeous/medic-kiosk"
-    },
-    "tags": {
-      "finished": "<div class='project-label finished'>Finished ✅</div>"
-    }
+    "links": [
+      "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=771173724'>Steam</a>",
+      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/medic-kiosk'>Github</a>"
+    ],
+    "tags": [
+      "<div class='project-label finished'>Finished ✅</div>"
+    ]
   },
   {
     "id": "re4_ammo_packs",
     "date": "January 23th, 2020",
     "name": "RE4 Ammo Packs",
     "desc": "RE4 ammo packs modelled into Garry's Mod.",
-    "links": {
-      "steam": "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
-      "github": "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
-      "source": "<li  class='download project-background'><a class='project_link project_download' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
-    },
-    "tags": {
-      "finished": "<div class='project-label finished'>Finished ✅</div>"
-    }
+    "links": [
+      "<li class='steam project-background'><a class='project_link project_steam' target='_blank' href='https://steamcommunity.com/sharedfiles/filedetails/?id=1579926175'>Steam</a>",
+      "<li class='github project-background'><a class='project_link project_github' target='_blank' href='https://github.com/Leeous/re4_ammo_packs'>Github</a>",
+      "<li  class='download project-background'><a class='project_link project_download' target='_blank' href='https://github.com/Leeous/re4_ammo_packs/archive/refs/tags/v1.0.zip'>Download</a>"
+    ],
+    "tags": [
+      "<div class='project-label finished'>Finished ✅</div>"
+    ]
   }
 ]
