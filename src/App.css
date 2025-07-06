@@ -132,15 +132,40 @@ body {
 }
 .project h1 {
   font-size: 1.5rem;
+  margin-bottom: 0;
 }
 .project h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  margin-top: 0;
+  font-weight: 500;
+  color: grey;
 }
 .project ul {
   list-style: none;
   padding-left: 0;
 }
-.project .abandoned, .project .finished, .project .WIP {
+.project .links .link {
+  background-color: red;
+}
+.project .links .github {
+  background-color: #4078c0;
+  color: white;
+}
+.project .links .download {
+  background-color: black;
+  color: white;
+}
+.project .links .nexus {
+  background-color: #d98f40;
+  color: white;
+}
+.project .links .steam {
+  background-color: #171a21;
+  color: white;
+}
+.project .abandoned,
+.project .finished,
+.project .WIP {
   display: inline-block;
   text-align: center;
   padding: 8px;

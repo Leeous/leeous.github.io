@@ -1,11 +1,16 @@
 import React from "react";
 
+type Link = {
+  label: string;
+  url: string;
+}
+
 type ProjectProps = {
   id: string;
   name: string;
   date: string;
   description: string;
-  links: string[];
+  links: Link[];
   tags: string[];
 };
 
@@ -17,7 +22,6 @@ export default function Project({
   links,
   tags,
 }: ProjectProps) {
-  console.log(links)
   return (
     <div className="project" id={id}>
       <h1>{name}</h1>
@@ -31,10 +35,12 @@ export default function Project({
       )}
 
       {links?.length > 0 && (
-        <ul>
+        <ul className="links">
           {links.map((link, id) => (
             <li key={id}>
-              <span dangerouslySetInnerHTML={{ __html: link }} />
+              <a href={link.url} target="_blank" className={link.label + " link"} rel="noopener noreferrer">
+                {link.label.charAt(0).toUpperCase() + link.label.slice(1)}
+              </a>
             </li>
           ))}
         </ul>

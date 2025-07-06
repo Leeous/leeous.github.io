@@ -161,9 +161,13 @@ body {
   text-align: center;
   h1 {
     font-size: 1.5rem;
+    margin-bottom: 0;
   }
   h2 {
-    font-size: 1rem;
+    font-size: .9rem;
+    margin-top: 0;
+    font-weight: 500;
+    color: grey;
   }
 
   ul {
@@ -171,7 +175,32 @@ body {
     padding-left: 0;
   }
 
-  .abandoned, .finished, .WIP {
+  .links {
+    .link {
+      background-color: red;
+    }
+
+    .github {
+      background-color: #4078c0;
+      color: white;
+    }
+    .download {
+      background-color: black;
+      color: white;
+    }
+    .nexus {
+      background-color: #d98f40;
+      color: white;
+    }
+    .steam {
+      background-color: #171a21;
+      color: white;
+    }
+  }
+
+  .abandoned,
+  .finished,
+  .WIP {
     display: inline-block;
     text-align: center;
     padding: 8px;
