@@ -45,7 +45,7 @@ body {
         margin: 0.5rem;
         text-decoration: none;
         display: block;
-        transition: .2s ease-in-out all;
+        transition: 0.2s ease-in-out all;
         &.active {
           font-weight: bold;
           box-shadow: 0 2px 0 0 $color-primary;
@@ -65,7 +65,7 @@ body {
   }
 }
 
-// About page
+// About page \\
 .about-page {
   text-align: center;
 }
@@ -123,39 +123,60 @@ body {
   }
 }
 
-// Skills \\
+// Skills
 
 .skills .skill-label {
-    user-select: none;
-    text-align: left;
-    justify-content: space-between;
-    border-radius: 12px;
-    transform: translateY(-6px);
-}
-
-.skills .skill-label summary {
+  user-select: none;
+  text-align: left;
+  justify-content: space-between;
+  border-radius: 12px;
+  transform: translateY(-6px);
+  summary {
     cursor: pointer;
     padding: 10px 15px;
-    margin: .6em;
-    border: solid .1rem white;
+    margin: 0.6em;
+    border: solid 0.1rem white;
+  }
 }
 
 .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: .6em;
-    padding-left: 0;
-    justify-content: center;
-}
-
-.skill-list li {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.6em;
+  padding-left: 0;
+  justify-content: center;
+  li {
     margin: 5px;
     padding: 10px;
     display: inline-block;
     border: solid 1px white;
+  }
 }
 
-// Footer \\
-.main-footer {
+// Projects page \\
+
+.project {
+  border: $thin-border;
   margin: 1rem;
+  text-align: center;
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .abandoned, .finished, .WIP {
+    display: inline-block;
+    text-align: center;
+    padding: 8px;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    list-style: none;
+  }
 }

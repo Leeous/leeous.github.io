@@ -104,7 +104,6 @@ body {
   border-radius: 12px;
   transform: translateY(-6px);
 }
-
 .skills .skill-label summary {
   cursor: pointer;
   padding: 10px 15px;
@@ -119,7 +118,6 @@ body {
   padding-left: 0;
   justify-content: center;
 }
-
 .skill-list li {
   margin: 5px;
   padding: 10px;
@@ -127,6 +125,26 @@ body {
   border: solid 1px white;
 }
 
-.main-footer {
+.project {
+  border: solid 0.1rem white;
   margin: 1rem;
+  text-align: center;
+}
+.project h1 {
+  font-size: 1.5rem;
+}
+.project h2 {
+  font-size: 1rem;
+}
+.project ul {
+  list-style: none;
+  padding-left: 0;
+}
+.project .abandoned, .project .finished, .project .WIP {
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  list-style: none;
 }/*# sourceMappingURL=App.css.map */
