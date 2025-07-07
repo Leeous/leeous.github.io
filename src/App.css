@@ -213,6 +213,10 @@ body {
   background-color: #00722c;
 }
 
+.post {
+  margin: 1rem;
+}
+
 .wakatime {
   margin: 0.5rem;
 }/*# sourceMappingURL=App.css.map */

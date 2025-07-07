@@ -6,7 +6,7 @@ type Post = {
 
 export default function Post({title, body, date}: Post) {
   return( 
-    <article>
+    <article className="post">
       <h1>{title}</h1>
       <h2>{date}</h2>
       <section dangerouslySetInnerHTML={{__html: body}}></section>
