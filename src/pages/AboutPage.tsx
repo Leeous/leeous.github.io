@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PFP from '../assets/images/pfp.jpg';
 import BlueskyIcon from '../components/icons/BlueskyIcon';
 import EmailIcon from '../components/icons/EmailIcon';
@@ -27,7 +28,7 @@ export default function Home() {
       <section className='about-bio'>
         <h2>Bio</h2>
         <p>
-          Hey there! You can check out my projects <a href="#projects">right here</a>, as well as my dev blog. I'm super passionate about web development and the modding community.<br /><br />Feel free to shoot me a message anytime, whether it's just to chat or for business purposes.
+          Hey there! You can check out my projects <Link to="/projects">right here</Link>, as well as my dev blog. I'm super passionate about web development and the modding community.<br /><br />Feel free to shoot me a message anytime, whether it's just to chat or for business purposes.
           Email is the best way to reach me since I'm not on social media too often.<br /><br /> Right now, I'm on the hunt for an entry-level IT job and hoping to build a long-term career in the field.
         </p>
       </section>
