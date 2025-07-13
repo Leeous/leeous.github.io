@@ -9,9 +9,9 @@ import ReactMarkdown from 'react-markdown';
 export default function Post({ title, date, body }: Post) {
   return (
     <article className="post">
-      <h2>{title}</h2>
+      <h2 className='post-title'>{title}</h2>
       <p className="post-date">{date}</p>
-      <div className="post-body">
+      <section className="post-content">
         <ReactMarkdown
           components={{
             a: ({...props }) => (
@@ -21,7 +21,7 @@ export default function Post({ title, date, body }: Post) {
         >
           {body}
         </ReactMarkdown>
-      </div>
+      </section>
     </article>
   );
 }

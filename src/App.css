@@ -214,9 +214,17 @@ body {
 }
 
 .post {
-  margin: 1rem;
+  margin: 1rem 1rem 2rem 1rem;
 }
-
+.post .post-title {
+  margin-bottom: 0;
+}
+.post .post-date {
+  margin-top: 0;
+  font-size: 1rem;
+  color: grey;
+  font-weight: 500;
+}
 .wakatime {
   margin: 0.5rem;
 }/*# sourceMappingURL=App.css.map */
