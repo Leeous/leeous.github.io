@@ -267,6 +267,13 @@ body {
   .post-content {
 
   }
+
+  // Remove top margin from first post
+  &:first-child {
+    .post-title {
+      margin-top: 0;
+    }
+  }
 }
 
 // Misc

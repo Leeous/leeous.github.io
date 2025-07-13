@@ -225,6 +225,10 @@ body {
   color: grey;
   font-weight: 500;
 }
+.post:first-child .post-title {
+  margin-top: 0;
+}
+
 .wakatime {
   margin: 0.5rem;
 }/*# sourceMappingURL=App.css.map */
