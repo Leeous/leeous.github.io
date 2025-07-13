@@ -14,8 +14,8 @@ html, body {
 
 a {
   color: inherit;
-  text-decoration: none;
-
+  text-decoration: dotted;
+  text-decoration-line: underline;
   &:hover {
     text-decoration: underline;
   }

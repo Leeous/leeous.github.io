@@ -14,7 +14,8 @@ html, body {
 
 a {
   color: inherit;
-  text-decoration: dotted;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
   text-decoration-line: underline;
 }
 a:hover {
