@@ -193,24 +193,24 @@ body {
 .project .links .steam {
   background-color: #171a21;
 }
-.project .abandoned,
-.project .finished,
-.project .wip {
+.project .project-status {
   display: inline-block;
   text-align: center;
-  padding: 8px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
   margin-bottom: 1em;
   text-transform: uppercase;
   list-style: none;
+  border: solid 0.1rem white;
 }
-.project .abandoned {
+.project .project-status.abandoned {
   background-color: #2c2c2c;
 }
-.project .wip {
-  background-color: #066896;
-}
-.project .finished {
+.project .project-status.finished {
   background-color: #00722c;
+}
+.project .project-status.wip {
+  background-color: #066896;
 }
 
 .post {

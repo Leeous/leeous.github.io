@@ -34,17 +34,21 @@ body {
 .main-footer {
   margin: 1rem;
   color: grey;
+
   #powered-by {
     color: white
   }
+
   .last-commit {
     a {
       text-decoration: dotted;
       text-decoration-line: underline;
+
       &:hover {
         text-decoration: underline;
       }
     }
+
     .update-desc {
       font-size: .9rem;
     }
@@ -66,10 +70,12 @@ body {
         text-decoration: none;
         display: block;
         transition: 0.2s ease-in-out all;
+
         &.active {
           font-weight: bold;
           box-shadow: 0 2px 0 0 $color-primary;
         }
+
         &:hover {
           box-shadow: 0 2px 0 0 $color-primary;
         }
@@ -117,6 +123,7 @@ body {
     gap: 0.5rem;
     list-style: none;
     padding: 1rem;
+
     li {
       a {
         text-decoration: none;
@@ -125,10 +132,12 @@ body {
         align-items: center;
         justify-content: space-between;
         border: $thin-border;
+
         &:hover {
           // Optional hover styling
         }
       }
+
       &.span-two {
         grid-column: 1 / -1;
       }
@@ -151,6 +160,7 @@ body {
   justify-content: space-between;
   border-radius: 12px;
   transform: translateY(-6px);
+
   summary {
     cursor: pointer;
     padding: 10px 15px;
@@ -165,6 +175,7 @@ body {
   margin: 0.6em;
   padding-left: 0;
   justify-content: center;
+
   li {
     margin: 5px;
     padding: 10px;
@@ -179,10 +190,12 @@ body {
   border: $thin-border;
   margin: 1rem 1rem 0 1rem;
   text-align: center;
+
   h1 {
     font-size: 1.5rem;
     margin-bottom: 0;
   }
+
   h2 {
     font-size: .9rem;
     margin-top: 0;
@@ -196,11 +209,12 @@ body {
     margin-bottom: 0;
     width: 100%;
     display: flex;
+
     .link {
       flex: 1;
       width: 100%;
     }
-    
+
     .link a {
       transition: 0.2s ease-in-out all;
       display: block;
@@ -208,6 +222,7 @@ body {
       border-top: 2px transparent solid; // TODO: make separate classes for anchor and li
       width: 100%;
       text-decoration: none;
+
       &:hover {
         border-top: 2px $color-primary solid;
       }
@@ -216,38 +231,32 @@ body {
     .github {
       background-color: #4078c0;
     }
+
     .download {
       background-color: black;
     }
+
     .nexus {
       background-color: #d98f40;
     }
+
     .steam {
       background-color: #171a21;
     }
   }
 
-  .abandoned,
-  .finished,
-  .wip {
-    display: inline-block;
-    text-align: center;
-    padding: 8px;
-    margin-bottom: 1em;
-    text-transform: uppercase;
-    list-style: none;
-  }
-
-  .abandoned {
-    background-color: #2c2c2c;
-  }
-
-  .wip {
-    background-color: #066896;
-  }
-
-  .finished {
-    background-color: #00722c;
+  .project-status {
+      display: inline-block;
+      text-align: center;
+      padding: .2rem .4rem;
+      font-size: .8rem;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+      list-style: none;
+      border: $thin-border;
+    &.abandoned { background-color: #2c2c2c; }
+    &.finished { background-color: #00722c; }
+    &.wip { background-color: #066896; }
   }
 }
 
@@ -255,18 +264,19 @@ body {
 
 .post {
   margin: 1rem 1rem 2rem 1rem;
+
   .post-title {
     margin-bottom: 0;
   }
+
   .post-date {
     margin-top: 0;
     font-size: 1rem;
     color: grey;
     font-weight: 500;
   }
-  .post-content {
 
-  }
+  .post-content {}
 
   // Remove top margin from first post
   &:first-child {

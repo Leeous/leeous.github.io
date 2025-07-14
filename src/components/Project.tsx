@@ -11,7 +11,7 @@ type ProjectProps = {
   date: string;
   description: string;
   links: Link[];
-  tags: string[];
+  status: string[];
 };
 
 export default function Project({
@@ -20,7 +20,7 @@ export default function Project({
   date,
   description,
   links,
-  tags,
+  status,
 }: ProjectProps) {
   return (
     <div className="project" id={id}>
@@ -28,15 +28,15 @@ export default function Project({
       <h2>{date}</h2>
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
 
-      {tags?.length > 0 && (
-          tags.map((tag) => (
-              <span className={tag} id={tag}>{
-                tag === "finished" 
-                ? "Finished " + String.fromCodePoint(0x2705)
-                : tag === "wip"
-                ? "WIP " + String.fromCodePoint(0x1F528)
-                : tag ==="abandoned"
-                ? "Abandoned " + String.fromCodePoint(0x1F480) 
+      {status?.length > 0 && (
+          status.map((status) => (
+              <span className={`project-status ${status}`}>{
+                status === "finished" 
+                ? "Finished"
+                : status === "wip"
+                ? "WIP"
+                : status ==="abandoned"
+                ? "Abandoned"
                 :""}
                 </span>
           ))
