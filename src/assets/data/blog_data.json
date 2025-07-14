@@ -13,5 +13,10 @@
     "title": "New Year",
     "published_date": "December 25th, 2024",
     "content": "2024 was an interesting and busy year in my personal life. Unfortunately, that means I've not been working on much of anything outside of my current job.\n\nPart of this was getting used to working from home, and learning the many workflows that come with my current role. Since I've mostly gotten used to my current work-life balance, I should be able to prioritize working on more portfolio-type projects.\n\nAfter the new year, I'm hoping to have a couple of projects spun up, and to also complete the [BCBS Prefix Explorer](https://github.com/Leeous/bcbs-prefix-explorer).\n\nI seem to be the most motivated around the start of a new year, and hopefully can reflect that here."
+  }, 
+  {
+    "title": "BCBS Explorer & next project",
+    "published_date": "December 25th, 2024",
+    "content": "[BCBS Explorer](https://github.com/Leeous/bcbs-explorer) is finished! With the latest update, I think I'll be moving on from this project. You can now override carrier data, create custom carriers for prefixes that are reactivated, and more.\n\nAdmittedly, BCBS Explorer was more of an excuse to dive into the React workflow and structure. Needless to say, I'm a pretty big fan. No doubt it isn't perfect, but since it's a first attempt, I'm okay with it's current state.\n\n Moving on, I'm trying my hand at Qt. I've been using Linux for a little over a year now, and as a KDE user, I've always wanted to understand more about how KDE widgets work. This'll be a simple widget that embeds a window that allows you to query ChatGPT, likely in the taskbar. You can track progress here: [plasma-chatgpt](https://github.com/Leeous/plasma-chatgpt)."
   }
 ]
