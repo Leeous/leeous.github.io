@@ -1,6 +1,6 @@
 [
   {
-    "id": "bcbs_prefix_explorer",
+    "id": "plasma-chatgpt",
     "date": "July 14th, 2025",
     "name": "Plasma ChatGPT",
     "desc": "A KDE Plasma 6 widget that lets you query ChatGPT.",
@@ -18,7 +18,7 @@
     "id": "bcbs_prefix_explorer",
     "date": "August 11th, 2024",
     "name": "BCBS Prefix Explorer",
-    "desc": "A Chrome (and future Firefox) extension that assists Healthcare providers with BCBS carriers. ",
+    "desc": "A Chrome/Firefox extension that assists Healthcare providers with BCBS carriers. ",
     "links": [
       {
         "label": "github",
@@ -26,7 +26,10 @@
       }
     ],
     "status": [
-      "finished"
+      "finished",
+      "react",
+      "tool",
+      "Browser Extension"
     ]
   },
   {
@@ -41,7 +44,10 @@
       }
     ],
     "status": [
-      "finished"
+      "finished",
+      "gmod",
+      "electron",
+      "tool"
     ]
   },
   {
