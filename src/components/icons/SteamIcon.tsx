@@ -13,6 +13,7 @@ const SteamIcon = ({
     aria-hidden="true"
     width={width}
     height={height}
+    fill={"none"}
     style={style}
     strokeWidth="1.5px"
     {...props}
