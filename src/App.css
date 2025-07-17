@@ -110,7 +110,6 @@ body {
 }
 
 .about-bio p {
-  text-indent: 2rem;
   margin: 1rem;
 }
 
@@ -193,23 +192,24 @@ body {
 .project .links .steam {
   background-color: #171a21;
 }
-.project .project-status {
+.project .project-tag {
   display: inline-block;
   text-align: center;
   padding: 0.2rem 0.4rem;
-  font-size: 0.8rem;
-  margin-bottom: 1em;
+  font-size: 0.6rem;
+  margin-bottom: 0.25rem;
   text-transform: uppercase;
   list-style: none;
   border: solid 0.1rem white;
+  margin: 0.2rem;
 }
-.project .project-status.abandoned {
+.project .project-tag.abandoned {
   background-color: #2c2c2c;
 }
-.project .project-status.finished {
+.project .project-tag.finished {
   background-color: #00722c;
 }
-.project .project-status.wip {
+.project .project-tag.wip {
   background-color: #066896;
 }
 
