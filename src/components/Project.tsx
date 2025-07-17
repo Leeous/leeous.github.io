@@ -1,4 +1,7 @@
 import React from "react";
+import GitHubIcon from "./icons/GithubIcon";
+import SteamIcon from "./icons/SteamIcon";
+import DownloadIcon from "./icons/DownloadIcon";
 
 type Link = {
   label: string;
@@ -29,17 +32,21 @@ export default function Project({
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
 
       {status?.length > 0 && (
-          status.map((status) => (
-              <span className={`project-status ${status}`}>{
+        <ul style={{listStyle: "none", paddingLeft: "0", display: "flex", justifyContent: "center", maxWidth: "75%", margin: "auto", flexWrap: "wrap"}}>
+          {status.map((status) => (
+            <li>
+              <span className={`project-tag ${status}`}>{
                 status === "finished" 
                 ? "Finished"
                 : status === "wip"
                 ? "WIP"
                 : status ==="abandoned"
                 ? "Abandoned"
-                :""}
+                : status}
                 </span>
-          ))
+            </li>
+          ))}
+        </ul>
       )}
 
       {links?.length > 0 && (
@@ -47,7 +54,18 @@ export default function Project({
           {links.map((link, id) => (
             <li key={id} className="link">
               <a href={link.url} target="_blank" className={link.label} rel="noopener noreferrer">
-                {link.label.charAt(0).toUpperCase() + link.label.slice(1)}
+                {/* {link.label.charAt(0).toUpperCase() + link.label.slice(1)} */}
+
+                {
+                link.label === "github" 
+                ? <GitHubIcon />
+                : link.label === "steam"
+                ? <SteamIcon />
+                : link.label === "download"
+                ? <DownloadIcon />
+                : link.label === "nexus"
+                ? <DownloadIcon />
+                : link.label}
               </a>
             </li>
           ))}
