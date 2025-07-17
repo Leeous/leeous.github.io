@@ -6,6 +6,7 @@ import GitHubIcon from '../components/icons/GithubIcon';
 import KeyIcon from '../components/icons/KeyIcon';
 import LinkedInIcon from '../components/icons/LinkedInIcon';
 import SteamIcon from '../components/icons/SteamIcon';
+import Projects from './ProjectsPage';
 
 export default function Home() {
   return (
@@ -28,8 +29,11 @@ export default function Home() {
       <section className='about-bio'>
         <h2>Bio</h2>
         <p>
-          Hey there! You can check out my projects <Link to="/projects">right here</Link>, as well as my dev blog. I'm super passionate about web development and the modding community.<br /><br />Feel free to shoot me a message anytime, whether it's just to chat or for business purposes.
-          Email is the best way to reach me since I'm not on social media too often.<br /><br /> Right now, I'm on the hunt for an entry-level IT job and hoping to build a long-term career in the field.
+          Hey! Thanks for stopping by — <Link to={"projects"}>here</Link> you’ll find my personal projects and developer blog. I’m really passionate about web development and love contributing to the modding community.
+          <br/><br/>
+          Feel free to reach out anytime, whether you just want to chat or talk shop. I’m most responsive by email, since I’m not very active on social media.
+          <br/><br/>
+          At the moment, I’m actively looking for an entry-level role in IT and excited to kickstart a long-term career in the field.
         </p>
       </section>
       <section className='skills'>
