@@ -3,7 +3,7 @@ import Project from "../components/Project";
 import projects from "../assets/data/project_data.json";
 
 export default function Projects() {
-  // Ensure user is scrolled to the top of screeen if using <Link> to get to projects
+  // Ensure user is scrolled to the top of screen if using <Link> to get to projects
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
