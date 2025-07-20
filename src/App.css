@@ -66,14 +66,21 @@ body {
   box-shadow: 0 2.5px 0 0 #ffffff;
 }
 
+.page {
+  margin: auto;
+}
 .page .title {
   font-size: 1.5rem;
   text-align: center;
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .page {
     max-width: 60%;
-    margin: auto;
+  }
+}
+@media (min-width: 1400px) {
+  .page {
+    max-width: 25%;
   }
 }
 
