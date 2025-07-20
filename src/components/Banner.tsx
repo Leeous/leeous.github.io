@@ -1,19 +1,17 @@
-import { Children, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type BannerProps = {
   backgroundColor?: string;
   fontColor?: string;
   textAlign?: string;
   emoji?: string;
-  text: string;
   align?: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export default function Banner({
   backgroundColor = "#FFF",
   fontColor = "#000",
-  textAlign = "center",
   emoji = "",
   children
 }: BannerProps) {

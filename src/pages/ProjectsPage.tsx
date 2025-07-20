@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react"
+import { useLayoutEffect } from "react"
 import Project from "../components/Project";
 import projects from "../assets/data/project_data.json";
 

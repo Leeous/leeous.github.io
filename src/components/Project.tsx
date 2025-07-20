@@ -1,4 +1,3 @@
-import React from "react";
 import GitHubIcon from "./icons/GithubIcon";
 import SteamIcon from "./icons/SteamIcon";
 import DownloadIcon from "./icons/DownloadIcon";

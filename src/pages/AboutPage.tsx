@@ -6,7 +6,6 @@ import GitHubIcon from '../components/icons/GithubIcon';
 import KeyIcon from '../components/icons/KeyIcon';
 import LinkedInIcon from '../components/icons/LinkedInIcon';
 import SteamIcon from '../components/icons/SteamIcon';
-import Projects from './ProjectsPage';
 
 export default function Home() {
   return (
