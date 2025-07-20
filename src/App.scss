@@ -1,0 +1,348 @@
+// Variables
+$font-size-base: 16px;
+$color-primary: #ffffff;
+$color-bg: #000000;
+$thin-border: solid 0.1rem white;
+
+// Define breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Mixin for up (min-width)
+@mixin media-up($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Mixin for down (max-width)
+@mixin media-down($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Mixin for between two breakpoints
+@mixin media-between($min, $max) {
+  @media (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max)) {
+    @content;
+  }
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-primary;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "width" 100;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  background-color: $color-bg;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+}
+
+.main-footer {
+  margin: 1rem;
+  color: grey;
+
+  #powered-by {
+    color: white
+  }
+
+  .last-commit {
+    a {
+      text-decoration: dotted;
+      text-decoration-line: underline;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .update-desc {
+      font-size: .9rem;
+    }
+  }
+}
+
+.main-navigation-bar {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 0;
+
+    li {
+      a {
+        padding: 0 1rem;
+        margin: 0.5rem;
+        text-decoration: none;
+        display: block;
+        transition: 0.2s ease-in-out all;
+        border-bottom: solid .1px white;
+        
+
+        &.active {
+          font-weight: bold;
+          box-shadow: 0 2.5px 0 0 $color-primary;
+        }
+
+        &:hover {
+          box-shadow: 0 2.5px 0 0 $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.page {
+  margin: auto;
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  @include media-up(lg) {
+    max-width: 60%;
+  }
+
+  @include media-up(xxl) {
+    max-width: 25%;
+  }
+}
+
+// About page \\
+.about-page {
+  text-align: center;
+}
+
+.about {
+  .pfp {
+    width: 50%;
+    margin: auto;
+    border-radius: 50%;
+    border: $thin-border;
+  }
+
+  .name {
+    margin: 0;
+  }
+
+  .location {
+    margin-top: 0;
+    font-weight: lighter;
+  }
+}
+
+.about-socials {
+  ul {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 1rem;
+
+    li {
+      a {
+        text-decoration: none;
+        padding: 0.35rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: $thin-border;
+
+        &:hover {
+          // Optional hover styling
+        }
+      }
+
+      &.span-two {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}
+
+.about-bio {
+  p {
+    margin: 1rem;
+  }
+}
+
+// Skills
+
+.skills .skill-label {
+  user-select: none;
+  text-align: left;
+  justify-content: space-between;
+  border-radius: 12px;
+  transform: translateY(-6px);
+
+  summary {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: 0.6em;
+    border: solid 0.1rem white;
+  }
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.6em;
+  padding-left: 0;
+  justify-content: center;
+
+  li {
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+    border: solid 1px white;
+  }
+}
+
+// Projects page \\
+
+.project {
+  border: $thin-border;
+  margin: 1rem 1rem 0 1rem;
+  text-align: center;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: .9rem;
+    margin-top: 0;
+    font-weight: 500;
+    color: grey;
+  }
+
+  .links {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    width: 100%;
+    display: flex;
+
+    .link {
+      flex: 1;
+      width: 100%;
+    }
+
+    .link a {
+      transition: 0.2s ease-in-out all;
+      display: block;
+      padding: .3rem;
+      border-top: 2px transparent solid; // TODO: make separate classes for anchor and li
+      width: 100%;
+      text-decoration: none;
+
+      &:hover {
+        border-top: 2px $color-primary solid;
+      }
+    }
+
+    .github {
+      background-color: #4078c0;
+    }
+
+    .download {
+      background-color: black;
+    }
+
+    .nexus {
+      background-color: #d98f40;
+    }
+
+    .steam {
+      background-color: #171a21;
+    }
+  }
+
+  .project-tag {
+      display: inline-block;
+      text-align: center;
+      padding: .2rem .4rem;
+      font-size: .6rem;
+      margin-bottom: .25rem;
+      text-transform: uppercase;
+      list-style: none;
+      border: $thin-border;
+      margin: .2rem;
+    &.abandoned { background-color: #2c2c2c; }
+    &.finished { background-color: #00722c; }
+    &.wip { background-color: #066896; }
+  }
+}
+
+// Blog page \\
+
+.post {
+  margin: 1rem 1rem 2rem 1rem;
+
+  .post-title {
+    margin-bottom: 0;
+  }
+
+  .post-date {
+    margin-top: 0;
+    font-size: 1rem;
+    color: grey;
+    font-weight: 500;
+  }
+
+  .post-content {}
+
+  // Remove top margin from first post
+  &:first-child {
+    .post-title {
+      margin-top: 0;
+    }
+  }
+}
+
+// Misc
+
+.wakatime {
+  margin: .5rem;
+}
+
+.banner {
+  text-align: center;
+  padding: .75rem;
+  span {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.banner > p, h4 {
+  display: inline;
+}
