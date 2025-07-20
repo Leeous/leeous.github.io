@@ -4,6 +4,37 @@ $color-primary: #ffffff;
 $color-bg: #000000;
 $thin-border: solid 0.1rem white;
 
+// Define breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Mixin for up (min-width)
+@mixin media-up($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Mixin for down (max-width)
+@mixin media-down($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Mixin for between two breakpoints
+@mixin media-between($min, $max) {
+  @media (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max)) {
+    @content;
+  }
+}
+
 body {
   background-color: $color-bg;
   color: $color-primary;
@@ -70,14 +101,16 @@ body {
         text-decoration: none;
         display: block;
         transition: 0.2s ease-in-out all;
+        border-bottom: solid .1px white;
+        
 
         &.active {
           font-weight: bold;
-          box-shadow: 0 2px 0 0 $color-primary;
+          box-shadow: 0 2.5px 0 0 $color-primary;
         }
 
         &:hover {
-          box-shadow: 0 2px 0 0 $color-primary;
+          box-shadow: 0 2.5px 0 0 $color-primary;
         }
       }
     }
@@ -88,6 +121,11 @@ body {
   .title {
     font-size: 1.5rem;
     text-align: center;
+  }
+
+  @include media-up(xl) {
+    max-width: 60%;
+    margin: auto;
   }
 }
 

@@ -56,18 +56,25 @@ body {
   text-decoration: none;
   display: block;
   transition: 0.2s ease-in-out all;
+  border-bottom: solid 0.1px white;
 }
 .main-navigation-bar ul li a.active {
   font-weight: bold;
-  box-shadow: 0 2px 0 0 #ffffff;
+  box-shadow: 0 2.5px 0 0 #ffffff;
 }
 .main-navigation-bar ul li a:hover {
-  box-shadow: 0 2px 0 0 #ffffff;
+  box-shadow: 0 2.5px 0 0 #ffffff;
 }
 
 .page .title {
   font-size: 1.5rem;
   text-align: center;
+}
+@media (min-width: 1200px) {
+  .page {
+    max-width: 60%;
+    margin: auto;
+  }
 }
 
 .about-page {
