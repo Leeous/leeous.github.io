@@ -5,12 +5,15 @@ import Projects from './pages/ProjectsPage';
 import Blog from './pages/BlogPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import WIPBanner from './components/WIPBanner';
+import Banner from './components/Banner';
 
 function App() {
   return (
     <>
-      <WIPBanner emoji="🚧" backgroundColor='#1f1f1f' fontColor='#fff' text='WIP React rewrite' /> 
+      <Banner emoji="🚧" backgroundColor='#1f1f1f' fontColor='#fff'>
+        <h4>WIP:</h4>
+        <p>React Rewrite</p>
+      </Banner>
       <Header />
       <Routes>
         <Route path='/' element={<About />} />

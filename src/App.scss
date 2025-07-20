@@ -329,3 +329,16 @@ body {
 .wakatime {
   margin: .5rem;
 }
+
+.banner {
+  text-align: center;
+  padding: .75rem;
+  span {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.banner > p, h4 {
+  display: inline;
+}
