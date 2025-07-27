@@ -264,4 +264,8 @@ body {
 
 .banner div > p, h4 {
   display: inline;
+}
+
+.icon {
+  width: 32px;
 }/*# sourceMappingURL=App.css.map */
