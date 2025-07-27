@@ -337,12 +337,15 @@ body {
 .banner {
   text-align: center;
   padding: .75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   span {
-    padding: 1rem;
-    font-size: 1.5rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
   }
 }
 
-.banner > p, h4 {
+.banner div > p, h4 {
   display: inline;
 }
