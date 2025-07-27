@@ -102,8 +102,6 @@ body {
         display: block;
         transition: 0.2s ease-in-out all;
         border-bottom: solid .1px white;
-        
-
         &.active {
           font-weight: bold;
           box-shadow: 0 2.5px 0 0 $color-primary;
@@ -141,7 +139,7 @@ body {
 .about {
   .pfp {
     width: 50%;
-    margin: auto;
+    margin: 1.5rem auto;
     border-radius: 50%;
     border: $thin-border;
   }
@@ -152,6 +150,7 @@ body {
 
   .location {
     margin-top: 0;
+    margin-bottom: 16px;
     font-weight: lighter;
   }
 }
@@ -164,8 +163,8 @@ body {
     justify-content: center;
     gap: 0.5rem;
     list-style: none;
-    padding: 1rem;
-
+    padding: 0;
+    margin-top: 0;
     li {
       a {
         text-decoration: none;

@@ -90,7 +90,7 @@ body {
 
 .about .pfp {
   width: 50%;
-  margin: auto;
+  margin: 1.5rem auto;
   border-radius: 50%;
   border: solid 0.1rem white;
 }
@@ -99,6 +99,7 @@ body {
 }
 .about .location {
   margin-top: 0;
+  margin-bottom: 16px;
   font-weight: lighter;
 }
 
@@ -109,7 +110,8 @@ body {
   justify-content: center;
   gap: 0.5rem;
   list-style: none;
-  padding: 1rem;
+  padding: 0;
+  margin-top: 0;
 }
 .about-socials ul li a {
   text-decoration: none;
