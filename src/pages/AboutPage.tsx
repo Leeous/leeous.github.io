@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import PFP from '../assets/images/pfp.jpg';
-import BlueskyIcon from '../components/icons/BlueskyIcon';
-import EmailIcon from '../components/icons/EmailIcon';
-import GitHubIcon from '../components/icons/GithubIcon';
-import KeyIcon from '../components/icons/KeyIcon';
-import LinkedInIcon from '../components/icons/LinkedInIcon';
-import SteamIcon from '../components/icons/SteamIcon';
+import BlueskyIcon from '../assets/svg/butterfly.svg';
+import EmailIcon from '../assets/svg/email.svg';
+import GitHubIcon from '../assets/svg/github.svg';
+import KeyIcon from '../assets/svg/key.svg';
+import LinkedInIcon from '../assets/svg/linkedin.svg';
+import SteamIcon from '../assets/svg/steam.svg';
 
 export default function Home() {
   return (
@@ -18,12 +18,12 @@ export default function Home() {
       </section>
       <section className='about-socials'>
         <ul>
-          <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin <LinkedInIcon /></a></li>
-          <li><a href="https://github.com/Leeous" target='_blank'>Github <GitHubIcon /></a></li>
-          <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky <BlueskyIcon /></a></li>
-          <li><a href="https://steamcommunity.com/id/Leeous" target='_blank'>Steam <SteamIcon /></a></li>
-          <li><a href="mailto:contact@leeous.com" target='_blank'>Email <EmailIcon /></a></li>
-          <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <KeyIcon /></a></li>
+          <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin <img className='icon' src={LinkedInIcon} alt='LinkedIn Icon' /></a></li>
+          <li><a href="https://github.com/Leeous" target='_blank'>Github <img className='icon' src={GitHubIcon} alt='Github Icon' /></a></li>
+          <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky <img className='icon' src={BlueskyIcon} alt='Bluesky Icon' /></a></li>
+          <li><a href="https://steamcommunity.com/id/Leeous" target='_blank'>Steam <img className='icon' src={SteamIcon} alt='Steam Icon' /></a></li>
+          <li><a href="mailto:contact@leeous.com" target='_blank'>Email <img className='icon' src={EmailIcon} alt='Email Icon' /></a></li>
+          <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <img className='icon' src={KeyIcon} alt='Key Icon' /></a></li>
         </ul>
       </section>
       <section className='about-bio'>

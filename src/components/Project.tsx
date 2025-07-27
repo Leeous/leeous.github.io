@@ -1,6 +1,6 @@
-import GitHubIcon from "./icons/GithubIcon";
-import SteamIcon from "./icons/SteamIcon";
-import DownloadIcon from "./icons/DownloadIcon";
+import GitHubIcon from '../assets/svg/github.svg';
+import SteamIcon from '../assets/svg/steam.svg';
+import DownloadIcon from '../assets/svg/download.svg';
 
 type Link = {
   label: string;
@@ -57,13 +57,13 @@ export default function Project({
 
                 {
                 link.label === "github" 
-                ? <GitHubIcon />
+                ? <img src={GitHubIcon} alt='Github Icon' />
                 : link.label === "steam"
-                ? <SteamIcon />
+                ? <img src={SteamIcon} alt='Steam Icon' />
                 : link.label === "download"
-                ? <DownloadIcon />
+                ? <img src={DownloadIcon} alt='Download Icon' />
                 : link.label === "nexus"
-                ? <DownloadIcon />
+                ? <img src={DownloadIcon} alt='Download Icon' />
                 : link.label}
               </a>
             </li>

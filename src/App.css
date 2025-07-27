@@ -52,6 +52,7 @@ body {
 }
 .main-navigation-bar ul li a {
   padding: 0 1rem;
+  font-size: 1.2rem;
   margin: 0.5rem;
   text-decoration: none;
   display: block;
@@ -90,7 +91,7 @@ body {
 
 .about .pfp {
   width: 50%;
-  margin: auto;
+  margin: 1.5rem auto;
   border-radius: 50%;
   border: solid 0.1rem white;
 }
@@ -99,6 +100,7 @@ body {
 }
 .about .location {
   margin-top: 0;
+  margin-bottom: 16px;
   font-weight: lighter;
 }
 
@@ -109,7 +111,8 @@ body {
   justify-content: center;
   gap: 0.5rem;
   list-style: none;
-  padding: 1rem;
+  padding: 0;
+  margin-top: 0;
 }
 .about-socials ul li a {
   text-decoration: none;
@@ -250,12 +253,19 @@ body {
 .banner {
   text-align: center;
   padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .banner span {
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 0 1rem;
+  font-size: 1.2rem;
 }
 
-.banner > p, h4 {
+.banner div > p, h4 {
   display: inline;
+}
+
+.icon {
+  width: 32px;
 }/*# sourceMappingURL=App.css.map */
