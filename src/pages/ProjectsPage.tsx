@@ -11,7 +11,7 @@ export default function Projects() {
     <main className='projects-page page'>
       {projects.map((project) => {
         return(
-        <Project key={project.id} id={project.id} name={project.name} date={project.date} description={project.desc} links={project.links} status={project.status} />
+          <Project key={project.id} id={project.id} name={project.name} date={project.date} description={project.desc} links={project.links} status={project.status} />
         );
       })}
     </main>

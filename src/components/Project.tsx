@@ -1,6 +1,7 @@
 import GitHubIcon from '../assets/svg/github.svg';
 import SteamIcon from '../assets/svg/steam.svg';
 import DownloadIcon from '../assets/svg/download.svg';
+import NexusIcon from '../assets/svg/nexus.svg';
 
 type Link = {
   label: string;
@@ -31,18 +32,18 @@ export default function Project({
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
 
       {status?.length > 0 && (
-        <ul style={{listStyle: "none", paddingLeft: "0", display: "flex", justifyContent: "center", maxWidth: "75%", margin: "auto", flexWrap: "wrap"}}>
+        <ul style={{ listStyle: "none", paddingLeft: "0", display: "flex", justifyContent: "center", maxWidth: "75%", margin: "auto", flexWrap: "wrap" }}>
           {status.map((status) => (
             <li>
               <span className={`project-tag ${status}`}>{
-                status === "finished" 
-                ? "Finished"
-                : status === "wip"
-                ? "WIP"
-                : status ==="abandoned"
-                ? "Abandoned"
-                : status}
-                </span>
+                status === "finished"
+                  ? "Finished"
+                  : status === "wip"
+                    ? "WIP"
+                    : status === "abandoned"
+                      ? "Abandoned"
+                      : status}
+              </span>
             </li>
           ))}
         </ul>
@@ -53,18 +54,17 @@ export default function Project({
           {links.map((link, id) => (
             <li key={id} className="link">
               <a href={link.url} target="_blank" className={link.label} rel="noopener noreferrer">
-                {/* {link.label.charAt(0).toUpperCase() + link.label.slice(1)} */}
-
                 {
-                link.label === "github" 
-                ? <img src={GitHubIcon} alt='Github Icon' />
-                : link.label === "steam"
-                ? <img src={SteamIcon} alt='Steam Icon' />
-                : link.label === "download"
-                ? <img src={DownloadIcon} alt='Download Icon' />
-                : link.label === "nexus"
-                ? <img src={DownloadIcon} alt='Download Icon' />
-                : link.label}
+                  link.label === "github"
+                  ? <>Github <img className="icon" style={{ width: "24px" }} src={GitHubIcon} alt="Github Icon" /></>
+                  : link.label === "steam"
+                  ? <>Steam <img className="icon" style={{ width: "24px" }} src={SteamIcon} alt="Steam Icon" /></>
+                  : link.label === "download"
+                  ? <>Download <img className="icon" style={{ width: "24px" }} src={DownloadIcon} alt="Download Icon" /></>
+                  : link.label === "nexus"
+                  ? <>Nexus <img className="icon" style={{ width: "24px" }} src={NexusIcon} alt="Nexus Icon" /></>
+                  : link.label
+                }
               </a>
             </li>
           ))}

@@ -188,11 +188,16 @@ body {
 }
 .project .links .link a {
   transition: 0.2s ease-in-out all;
-  display: block;
-  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
   border-top: 2px transparent solid;
   width: 100%;
   text-decoration: none;
+}
+.project .links .link a img {
+  margin: 0 5px;
 }
 .project .links .link a:hover {
   border-top: 2px #ffffff solid;
@@ -268,4 +273,5 @@ body {
 
 .icon {
   width: 32px;
+  display: inline-block;
 }/*# sourceMappingURL=App.css.map */

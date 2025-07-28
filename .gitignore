@@ -26,3 +26,4 @@ dist-ssr
 # temp
 icon-attr.txt
 .directory
+.vite

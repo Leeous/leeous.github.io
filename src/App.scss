@@ -258,12 +258,16 @@ body {
 
     .link a {
       transition: 0.2s ease-in-out all;
-      display: block;
-      padding: .3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem;
       border-top: 2px transparent solid; // TODO: make separate classes for anchor and li
       width: 100%;
       text-decoration: none;
-
+      img {
+        margin: 0 5px;
+      }
       &:hover {
         border-top: 2px $color-primary solid;
       }
@@ -350,6 +354,8 @@ body {
   display: inline;
 }
 
+
 .icon {
   width: 32px;
+  display: inline-block;
 }
