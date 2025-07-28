@@ -7,7 +7,7 @@ import KeyIcon from '../assets/svg/key.svg';
 import LinkedInIcon from '../assets/svg/linkedin.svg';
 import SteamIcon from '../assets/svg/steam.svg';
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <main className='about-page page'>
       <section className='about'>

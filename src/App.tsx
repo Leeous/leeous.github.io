@@ -1,8 +1,8 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import About from './pages/AboutPage';
-import Projects from './pages/ProjectsPage';
-import Blog from './pages/BlogPage';
+import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
+import BlogPage from './pages/BlogPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
@@ -19,10 +19,11 @@ function App() {
       </Banner>
       <Header />
       <Routes>
-        <Route path='/' element={<About />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/projects' element={<Projects />} />
+        <Route path='/' element={<AboutPage />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/blog' element={<BlogPage />} />
+        {/* <Route path='/blog' element={<BlogPage />} /> */}
+        <Route path='/projects' element={<ProjectsPage />} />
       </Routes>
       <Footer/>
     </>

@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react"
 import Project from "../components/Project";
 import projects from "../assets/data/project_data.json";
 
-export default function Projects() {
+export default function ProjectsPage() {
   // Ensure user is scrolled to the top of screen if using <Link> to get to projects
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
