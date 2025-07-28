@@ -79,9 +79,14 @@ body {
     max-width: 60%;
   }
 }
+@media (min-width: 1200px) {
+  .page {
+    max-width: 40%;
+  }
+}
 @media (min-width: 1400px) {
   .page {
-    max-width: 25%;
+    max-width: 40%;
   }
 }
 
@@ -107,7 +112,7 @@ body {
 .about-socials ul {
   display: grid;
   width: 100%;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   gap: 0.5rem;
   list-style: none;
@@ -142,7 +147,7 @@ body {
 .skills .skill-label summary {
   cursor: pointer;
   padding: 10px 15px;
-  margin: 0.6em;
+  margin: 0.5rem 0;
   border: solid 0.1rem white;
 }
 
@@ -193,7 +198,6 @@ body {
   align-items: center;
   padding: 0.5rem;
   border-top: 2px transparent solid;
-  width: 100%;
   text-decoration: none;
 }
 .project .links .link a img {

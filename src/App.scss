@@ -127,8 +127,12 @@ body {
     max-width: 60%;
   }
 
+  @include media-up(xl) {
+    max-width: 40%;
+  }
+
   @include media-up(xxl) {
-    max-width: 25%;
+    max-width: 40%;
   }
 }
 
@@ -160,9 +164,9 @@ body {
   ul {
     display: grid;
     width: 100%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    gap: 0.5rem;
+    gap: .5rem;
     list-style: none;
     padding: 0;
     margin-top: 0;
@@ -205,7 +209,7 @@ body {
   summary {
     cursor: pointer;
     padding: 10px 15px;
-    margin: 0.6em;
+    margin: 0.5rem 0;
     border: solid 0.1rem white;
   }
 }
@@ -263,7 +267,6 @@ body {
       align-items: center;
       padding: .5rem;
       border-top: 2px transparent solid; // TODO: make separate classes for anchor and li
-      width: 100%;
       text-decoration: none;
       img {
         margin: 0 5px;
