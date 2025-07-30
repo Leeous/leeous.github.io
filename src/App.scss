@@ -1,3 +1,4 @@
+@use "sass:map";
 // Variables
 $font-size-base: 16px;
 $color-primary: #ffffff;
@@ -16,21 +17,21 @@ $breakpoints: (
 
 // Mixin for up (min-width)
 @mixin media-up($size) {
-  @media (min-width: map-get($breakpoints, $size)) {
+  @media (min-width: map.get($breakpoints, $size)) {
     @content;
   }
 }
 
 // Mixin for down (max-width)
 @mixin media-down($size) {
-  @media (max-width: map-get($breakpoints, $size)) {
+  @media (max-width: map.get($breakpoints, $size)) {
     @content;
   }
 }
 
 // Mixin for between two breakpoints
 @mixin media-between($min, $max) {
-  @media (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max)) {
+  @media (min-width: map.get($breakpoints, $min)) and (max-width: map.get($breakpoints, $max)) {
     @content;
   }
 }
@@ -70,7 +71,7 @@ body {
     max-width: 60%;
     text-align: left;
   }
-  #powered-by {
+  .powered-by {
     color: white
   }
 

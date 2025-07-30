@@ -35,7 +35,7 @@ body {
     text-align: left;
   }
 }
-.main-footer #powered-by {
+.main-footer .powered-by {
   color: white;
 }
 .main-footer .last-commit a {
