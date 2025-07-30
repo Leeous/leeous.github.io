@@ -63,9 +63,13 @@ body {
 }
 
 .main-footer {
-  margin: 1rem;
+  text-align: center;
   color: grey;
-
+  margin: .5rem 1rem;
+  @include media-up(lg) {
+    max-width: 60%;
+    text-align: left;
+  }
   #powered-by {
     color: white
   }

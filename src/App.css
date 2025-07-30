@@ -25,8 +25,15 @@ body {
 }
 
 .main-footer {
-  margin: 1rem;
+  text-align: center;
   color: grey;
+  margin: 0.5rem 1rem;
+}
+@media (min-width: 992px) {
+  .main-footer {
+    max-width: 60%;
+    text-align: left;
+  }
 }
 .main-footer #powered-by {
   color: white;

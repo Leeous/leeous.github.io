@@ -81,7 +81,7 @@ export default function AboutPage() {
           </ul>
         </details>
       </section>
-      <figure className='wakatime'><embed src='https://wakatime.com/share/@018cd227-4c79-474a-90a6-9837813301b4/bc8f0964-b605-4b10-95f6-7f8aa0c72d5a.svg' /></figure>
+      {/* <figure className='wakatime'><embed src='https://wakatime.com/share/@018cd227-4c79-474a-90a6-9837813301b4/bc8f0964-b605-4b10-95f6-7f8aa0c72d5a.svg' /></figure> */}
     </main>
   )
 }
