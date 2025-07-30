@@ -36,4 +36,9 @@ input, button, textarea, select {
 
 button {
   cursor: pointer;
+}
+
+h1 {
+  margin-block: 0.67em;
+  font-size: 2em;
 }/*# sourceMappingURL=index.css.map */

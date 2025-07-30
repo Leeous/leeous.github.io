@@ -16,7 +16,6 @@ export default function Banner({
   children
 }: BannerProps) {
   // const bannerContent = `${emoji} ${text} ${emoji}`.trim();
-  console.log(children)
   return (
     <div className="banner" style={{ backgroundColor: backgroundColor, color: fontColor }}>
       {emoji &&
