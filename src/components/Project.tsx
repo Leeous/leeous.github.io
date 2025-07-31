@@ -26,15 +26,15 @@ export default function Project({
   status,
 }: ProjectProps) {
   return (
-    <div className="project" id={id}>
+    <div className="project" id={id.toString()}>
       <h1>{name}</h1>
       <h2>{date}</h2>
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
 
       {status?.length > 0 && (
         <ul style={{ listStyle: "none", paddingLeft: "0", display: "flex", justifyContent: "center", maxWidth: "75%", margin: "auto", flexWrap: "wrap" }}>
-          {status.map((status) => (
-            <li>
+          {status.map((status, index) => (
+            <li key={index}>
               <span className={`project-tag ${status}`}>{
                 status === "finished"
                   ? "Finished"
