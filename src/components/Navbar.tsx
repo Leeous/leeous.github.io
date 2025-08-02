@@ -8,8 +8,8 @@ export default function Navbar() {
     <nav className='main-navigation-bar'>
       <ul>
         <li><Link to="/" className={pathname === "/" || window.location.pathname === "/about" ? "active" : ""}>About</Link></li>
-        <li><Link to="/projects" className={pathname == "/projects" ? "active" : ""}>Projects</Link></li>
-        <li><Link to="/blog" className={pathname === "/blog" ? "active" : ""}>Blog</Link></li>
+        <li><Link to="/projects" className={pathname.includes("/projects") ? "active" : ""}>Projects</Link></li>
+        <li><Link to="/blog" className={pathname.includes("/blog") ? "active" : ""}>Blog</Link></li>
       </ul>
     </nav>
   )
