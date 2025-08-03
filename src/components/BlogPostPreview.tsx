@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Discussion } from "../lib/github";
 import ReactMarkdown from "react-markdown";
+import { formatDate } from "../lib/utils";
 
 interface BlogPostPreviewProps {
   post: Discussion;
@@ -8,13 +9,12 @@ interface BlogPostPreviewProps {
 }
 
 export default function BlogPostPreview({ post, slug }: BlogPostPreviewProps) {
-  console.log(post)
   return (
-    <div className="post-preview">
-      <h1>{post.title}</h1>
-      <h2>{post.createdAt}</h2>
+    <div className="post-preview post">
+      <h1 className="post-title">{post.title}</h1>
+      <h2 className="post-date">{formatDate(post.createdAt)}</h2>
       <ReactMarkdown>
-        {post.body.slice(0, 300) + "..."}
+        {post.body.slice(0, 200) + "..."}
       </ReactMarkdown>
       <Link to={`/blog/${slug}`} className="read-more-button">
         Read more
