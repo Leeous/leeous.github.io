@@ -67,7 +67,17 @@ export default function PostPage() {
   return (
     <>
       <Helmet>
-        <title>{post.title} | Leeous</title>
+        <title>{post.title} | My Blog</title>
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.body.slice(0, 160)} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://www.leeous.com/blog/${slug}`} />
+        {/* <meta property="og:image" content={post.image || "https://www.leeous.com/default-og-image.jpg"} /> */}
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.body.slice(0, 160)} />
+        {/* <meta name="twitter:image" content={post.image || "https://www.leeous.com/default-twitter-image.jpg"} /> */}
       </Helmet>
 
       <main className="page">
