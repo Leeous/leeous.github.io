@@ -11,13 +11,6 @@ import PostPage from './pages/BlogPostPage';
 function App() {
   return (
     <>
-      <Banner emoji="🚧" backgroundColor='#1f1f1f' fontColor='#fff'>
-        <div>
-        <h4>WIP</h4>
-        <br/>
-        <p>React Rewrite</p>
-        </div>
-      </Banner>
       <Header />
       <Routes>
         <Route path='/' element={<AboutPage />} />
