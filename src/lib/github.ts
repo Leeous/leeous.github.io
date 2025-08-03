@@ -1,13 +1,4 @@
-import { graphql } from "@octokit/graphql";
-const token = import.meta.env.VITE_GITHUB_PAT;
-
-const graphqlWithAuth = graphql.defaults({
-  headers: {
-    authorization: `token ${token}`,
-  },
-});
-
-type Author = {
+export type Author = {
   login: string;
   avatarUrl: string;
 };
@@ -17,90 +8,23 @@ export type Discussion = {
   title: string;
   body: string;
   createdAt: string;
-  author?: Author;
+  author: Author;
 };
-
-type DiscussionsResponse = {
-  repository: {
-    discussions: {
-      nodes: Discussion[];
-    };
-  };
-};
-
-type SingleDiscussionResponse = {
-  repository: {
-    discussion: Discussion | null;
-  };
-};
-
-interface AllDiscussionsResponse {
-  repository: {
-    discussions: {
-      nodes: {
-        number: number;
-        title: string;
-      }[];
-    };
-  };
-}
 
 export async function fetchDiscussions(): Promise<Discussion[]> {
-  const result = await graphqlWithAuth<DiscussionsResponse>(`
-    query {
-      repository(owner: "Leeous", name: "leeous.github.io") {
-        discussions(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
-          nodes {
-            number
-            title
-            body
-            createdAt
-            author {
-              login
-              avatarUrl
-            }
-          }
-        }
-      }
-    }
-  `);
-  return result.repository.discussions.nodes;
+  const res = await fetch("/.netlify/functions/getDiscussions");
+  if (!res.ok) throw new Error("Failed to fetch discussions");
+  return await res.json();
 }
 
 export async function fetchDiscussionByNumber(number: number): Promise<Discussion | null> {
-  const result = await graphqlWithAuth<SingleDiscussionResponse>(`
-    query ($number: Int!) {
-      repository(owner: "Leeous", name: "leeous.github.io") {
-        discussion(number: $number) {
-          number
-          title
-          body
-          createdAt
-          author {
-            login
-            avatarUrl
-          }
-        }
-      }
-    }
-  `, { number });
-
-  return result.repository.discussion;
+  const res = await fetch(`/.netlify/functions/getDiscussionByNumber?number=${number}`);
+  if (!res.ok) throw new Error("Failed to fetch discussion");
+  return await res.json();
 }
 
 export async function fetchAllDiscussions(): Promise<Pick<Discussion, "number" | "title">[]> {
-  const result = await graphqlWithAuth<AllDiscussionsResponse>(`
-    query {
-      repository(owner: "Leeous", name: "leeous.github.io") {
-        discussions(first: 100) {
-          nodes {
-            number
-            title
-          }
-        }
-      }
-    }
-  `);
-
-  return result.repository.discussions.nodes;
+  const res = await fetch("/.netlify/functions/getAllDiscussions");
+  if (!res.ok) throw new Error("Failed to fetch all discussions");
+  return await res.json();
 }
