@@ -63,12 +63,13 @@ export default function PostPage() {
   const components: Components = {
     h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
     h2: ({ ...props }) => <h2 className="post-h2" {...props} />,
+    a: ({ ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>
   };
 
   return (
     <>
       <Helmet>
-        <title>{post.title} | My Blog</title>
+        <title>{post.title} | Leeous</title>
         <meta property="og:title" content={post.title + " | Leeous"} />
         <meta property="og:description" content={removeMd(post.body.slice(0, 200))} />
         <meta property="og:type" content="article" />
