@@ -72,12 +72,12 @@ export default function PostPage() {
         <meta property="og:description" content={post.body.slice(0, 160)} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://www.leeous.com/blog/${slug}`} />
-        {/* <meta property="og:image" content={post.image || "https://www.leeous.com/default-og-image.jpg"} /> */}
+        <meta property="og:image" content={"https://www.leeous.com/default-image.png"} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.body.slice(0, 160)} />
-        {/* <meta name="twitter:image" content={post.image || "https://www.leeous.com/default-twitter-image.jpg"} /> */}
+        <meta name="twitter:image" content={"https://www.leeous.com/default-image.png"} />
       </Helmet>
 
       <main className="page">
