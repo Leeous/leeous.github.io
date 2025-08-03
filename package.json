@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
-    "update-all": "npx npm-check-updates -u && npm i"
+    "update-all": "npx npm-check-updates -u && npm i",
+    "netlify:dev": "netlify dev"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
@@ -20,20 +21,24 @@
     "giscus": "^1.6.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-helmet": "^6.1.0",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.7.1",
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@netlify/functions": "^4.2.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@types/react-helmet": "^6.1.11",
     "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
+    "netlify-cli": "^23.0.0",
     "postcss-preset-env": "^10.2.4",
     "sass": "^1.89.2",
     "typescript": "~5.8.3",
