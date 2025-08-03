@@ -5,7 +5,6 @@ import ProjectsPage from './pages/ProjectsPage';
 import BlogPage from './pages/BlogPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Banner from './components/Banner';
 import PostPage from './pages/BlogPostPage';
 
 function App() {
