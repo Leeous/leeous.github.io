@@ -6,6 +6,7 @@ import BlogPage from './pages/BlogPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
+import PostPage from './pages/BlogPostPage';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path='/' element={<AboutPage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/blog' element={<BlogPage />} />
-        {/* <Route path='/blog' element={<BlogPage />} /> */}
+        <Route path="/blog/:slug" element={<PostPage />} />
         <Route path='/projects' element={<ProjectsPage />} />
       </Routes>
       <Footer/>

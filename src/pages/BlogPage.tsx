@@ -1,19 +1,35 @@
-import posts from "../assets/data/blog_data.json"
-import Post from "../components/Post";
-import { useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
+import { fetchDiscussions } from "../lib/github";
+import type { Discussion } from "../lib/github";
+import BlogPostPreview from "../components/BlogPostPreview";
+import { slugify } from "../lib/utils";
+import Spinner from "../components/Spinner";
 
 export default function BlogPage() {
-  // Ensure user is scrolled to the top of screen if using <Link> to get to blog
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  })
+  const [posts, setPosts] = useState<Discussion[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    fetchDiscussions().then(setPosts).then(() => {
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) return <Spinner/>
+
   return (
-    <main className='blog-page page'>
-      {posts.map((post) => {
-        return(
-          <Post key={post.title} title={post.title} date={post.published_date} body={post.content}/>
-        );
-      }).reverse()}
+    <main className="page">
+      {posts.length !== 0 &&
+      posts.map((post) => (
+        <BlogPostPreview
+          key={post.number}
+          post={post}
+          slug={post.title !== undefined ? slugify(post.title) : ""}
+        />
+       ))}
+      {posts.length === 0 &&
+        <p>No posts found.</p>
+      }
     </main>
-  )
+  );
 }

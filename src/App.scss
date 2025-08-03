@@ -124,7 +124,7 @@ body {
 }
 
 .page {
-  margin: auto 1rem;
+  margin: 0 1rem;
   .title {
     font-size: 1.5rem;
     text-align: center;
@@ -132,18 +132,18 @@ body {
 
   @include media-up(lg) {
     max-width: 60%;
-    margin: auto;
+    margin: 0 auto;
   }
 
   @include media-up(xl) {
     max-width: 40%;
-    margin: auto;
+    margin: 0 auto;
 
   }
 
   @include media-up(xxxl) {
     max-width: 25%;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 
