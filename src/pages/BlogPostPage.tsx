@@ -71,14 +71,14 @@ export default function PostPage() {
       <Helmet>
         <title>{post.title} | Leeous</title>
         <meta property="og:title" content={post.title + " | Leeous"} />
-        <meta property="og:description" content={removeMd(post.body.slice(0, 200))} />
+        <meta property="og:description" content={removeMd(post.body.slice(0, 200)) + "..."} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://www.leeous.com/blog/${slug}`} />
         <meta property="og:image" content={"https://www.leeous.com/default-image.png"} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title + " | Leeous"} />
-        <meta name="twitter:description" content={removeMd(post.body.slice(0, 200))} />
+        <meta name="twitter:description" content={removeMd(post.body.slice(0, 200)) + "..."} />
         <meta name="twitter:image" content={"https://www.leeous.com/default-image.png"} />
       </Helmet>
 

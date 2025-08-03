@@ -20,7 +20,7 @@ export default function BlogPostPreview({ post, slug }: BlogPostPreviewProps) {
       <h1 className="post-title">{post.title}</h1>
       <h2 className="post-date">{formatDate(post.createdAt)}</h2>
       <ReactMarkdown components={components}>
-        {post.body.slice(0, 200) + "..."}
+        {post.body.slice(0, 300) + "..."}
       </ReactMarkdown>
       <Link to={`/blog/${slug}`} className="read-more-button">
         Read more
