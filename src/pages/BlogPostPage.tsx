@@ -9,6 +9,7 @@ import { formatDate, slugify } from "../lib/utils";
 import Spinner from "../components/Spinner";
 import GiscusComment from "../components/GiscusComments";
 import { Helmet } from "react-helmet";
+import removeMd from "remove-markdown";
 
 export default function PostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -69,14 +70,14 @@ export default function PostPage() {
       <Helmet>
         <title>{post.title} | My Blog</title>
         <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.body.slice(0, 160)} />
+        <meta property="og:description" content={removeMd(post.body.slice(0, 200))} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://www.leeous.com/blog/${slug}`} />
         <meta property="og:image" content={"https://www.leeous.com/default-image.png"} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.body.slice(0, 160)} />
+        <meta name="twitter:description" content={removeMd(post.body.slice(0, 200))} />
         <meta name="twitter:image" content={"https://www.leeous.com/default-image.png"} />
       </Helmet>
 
