@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchDiscussions } from "../lib/github";
 import type { Discussion } from "../lib/github";
-import BlogPostPreview from "../components/BlogPostPreview";
+import BlogPostPreview from "../components/PostPreview";
 import { slugify } from "../lib/utils";
 import Spinner from "../components/Spinner";
 

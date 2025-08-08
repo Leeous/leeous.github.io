@@ -47,10 +47,10 @@ export const handler: Handler = async () => {
       statusCode: 200,
       body: JSON.stringify(result.repository.discussions.nodes),
     };
-  } catch (err) {
+  } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to fetch discussions', details: err }),
+      body: JSON.stringify({ error: 'Failed to fetch discussions', details: error }),
     };
   }
 };
