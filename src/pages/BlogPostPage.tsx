@@ -10,6 +10,7 @@ import Spinner from "../components/Spinner";
 import GiscusComment from "../components/GiscusComments";
 import { Helmet } from "react-helmet";
 import removeMd from "remove-markdown";
+import BackButton from "../components/BackButton";
 
 export default function PostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -83,6 +84,7 @@ export default function PostPage() {
       </Helmet>
 
       <main className="page">
+        <BackButton/>
         <div className="post">
           <h1 className="post-title">{post.title}</h1>
           <h2 className="post-date">{formatDate(post.createdAt)}</h2>

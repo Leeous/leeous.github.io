@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 import removeMd from "remove-markdown";
 import { useParams } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
+import BackButton from "../components/BackButton";
 
 export default function ProjectPage() {
   const { slug } = useParams<{slug: string}>();
@@ -45,7 +46,7 @@ export default function ProjectPage() {
   if (loading) return <Spinner />;
 
   // // On error
-  if (error) return <main className="page"><p style={{ textAlign: 'center', marginTop: '2rem' }}>{error}</p></main>;
+  if (error) return <main className="page"><BackButton/><p style={{ textAlign: 'center', marginTop: '2rem' }}>{error}</p></main>;
 
   if (!project) return null; // fallback, should rarely happen
 
@@ -73,6 +74,7 @@ export default function ProjectPage() {
       */}
       
       <main className="page">
+        <BackButton/>
         <div className="post">
           <ReactMarkdown components={components} rehypePlugins={[rehypeRaw]}>
             {project}
