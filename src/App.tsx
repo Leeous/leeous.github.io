@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import PostPage from './pages/BlogPostPage';
 import ProjectPage from './pages/ProjectPage';
 import Banner from './components/Banner';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/blog/:slug" element={<PostPage />} />
         <Route path="/projects/:slug" element={<ProjectPage />} />
         <Route path='/projects' element={<ProjectsPage />} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
       <Footer />
     </>
