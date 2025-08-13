@@ -381,3 +381,14 @@ body {
   width: 32px;
   display: inline-block;
 }
+
+.back-button {
+  display: flex;
+  font-size: 1.1rem;
+  border: var($thin-border);
+  img {
+    display: inline-block;
+    width: 16px;
+    margin: 5px;
+  }
+}
