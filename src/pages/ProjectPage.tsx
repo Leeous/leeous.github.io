@@ -31,6 +31,7 @@ export default function ProjectPage() {
         setProject(projectData)
       } catch ( error ) {
         if (error instanceof Error) {
+          console.log(error)
           setError(error.message);
         } else {
           setError("An unknown error occurred.")
@@ -58,20 +59,18 @@ export default function ProjectPage() {
 
   return (
     <>
-      {/* <Helmet>
-        <title>{post.title} | Leeous</title>
-        <meta property="og:title" content={post.title + " | Leeous"} />
-        <meta property="og:description" content={removeMd(post.body.slice(0, 200)) + "..."} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.leeous.com/blog/${slug}`} />
-        <meta property="og:image" content={"https://www.leeous.com/default-image.png"} />
+      <Helmet>
+        <title>Projects | Leeous</title>
+        <meta property="og:description" content="All of my projects, pulled from my Github." />
+        {/* <meta property="og:type" content="article" /> */}
+        {/* <meta property="og:url" content={`https://www.leeous.com/blog/${slug}`} /> */}
+        {/* <meta property="og:image" content={"https://www.leeous.com/default-image.png"} /> */}
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title + " | Leeous"} />
-        <meta name="twitter:description" content={removeMd(post.body.slice(0, 200)) + "..."} />
-        <meta name="twitter:image" content={"https://www.leeous.com/default-image.png"} />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
+        {/* <meta name="twitter:title" content={post.title + " | Leeous"} /> */}
+        {/* <meta name="twitter:description" content={removeMd(post.body.slice(0, 200)) + "..."} /> */}
+        {/* <meta name="twitter:image" content={"https://www.leeous.com/default-image.png"} /> */}
       </Helmet>
-      */}
       
       <main className="page">
         <BackButton/>

@@ -22,7 +22,7 @@ function App() {
       </Banner>
       <Header />
       <Routes>
-        <Route path='/' element={<AboutPage />} />
+        <Route index element={<AboutPage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/blog' element={<BlogPage />} />
         <Route path="/blog/:slug" element={<PostPage />} />

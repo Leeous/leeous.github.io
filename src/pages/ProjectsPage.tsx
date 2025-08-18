@@ -7,6 +7,7 @@ import Spinner from "../components/Spinner";
 import ProjectComp from "../components/Project";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from 'rehype-raw';
+import { Helmet } from "react-helmet";
 
 export default function ProjectsPage() {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,9 @@ export default function ProjectsPage() {
 
   return(
     <main className='projects-page page'>
+      <Helmet>
+        <title>Projects | Leeous</title>
+      </Helmet>
       {/* going to map projects here <Project> component */}
       {projects.map((project) => {
         return(
