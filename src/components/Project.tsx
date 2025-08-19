@@ -9,7 +9,6 @@ import dayjs from "dayjs";
 import commitIcon from "../assets/svg/commit.svg";
 
 export default function Project(props: Project) {
-  console.log(props);
   return (
     <div className="project">
       <h1 className="project-name">{props.name}</h1>

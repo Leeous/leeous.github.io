@@ -39,6 +39,7 @@ export const handler: Handler = async () => {
           user(login: "Leeous") {
             repositories(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
               nodes {
+                id
                 name
                 description
                 url
