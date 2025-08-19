@@ -53,6 +53,7 @@ export default function ProjectsPage() {
         }
 
         case "totalCommits":
+          console.log((b.defaultBranchRef?.target.history.totalCount ?? 0) -  (a.defaultBranchRef?.target.history.totalCount ?? 0))
           comparison = (b.defaultBranchRef?.target.history.totalCount ?? 0) -  (a.defaultBranchRef?.target.history.totalCount ?? 0);
           break;
 
@@ -66,6 +67,8 @@ export default function ProjectsPage() {
 
   if (loading) return <Spinner/>;
 
+  console.log(sortedProjects)
+
   return(
     <main className='projects-page page'>
       <Helmet>
@@ -78,8 +81,8 @@ export default function ProjectsPage() {
           <option value="stars:asc">Stars ↑</option>
           <option value="lastCommit:desc">Last Commit ↓</option>
           <option value="lastCommit:asc">Last Commit ↑</option>
-          <option value="commitCount:desc">Commits ↓</option>
-          <option value="commitCount:asc">Commits ↑</option>
+          <option value="totalCommits:desc">Commits ↓</option>
+          <option value="totalCommits:asc">Commits ↑</option>
         </select>
       </label>
       {/* going to map projects here <Project> component */}
