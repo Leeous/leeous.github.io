@@ -37,7 +37,6 @@ export const handler: Handler = async (event) => {
           }
         }
       `, { repo_name });
-      console.log(result)
       return {
         statusCode: 200,
         body: JSON.stringify(result.repository.object.text ?? ""),

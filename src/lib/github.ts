@@ -46,9 +46,28 @@ export type Project = {
   updatedAt: string;
   stargazerCount: number;
   topics: string[];
-  language: {
+  primaryLanguage: {
     name: string;
     color: string;
+  } | null;
+  defaultBranchRef: {
+    target: {
+      history: {
+        totalCount: number;
+      }
+      committedDate: string;
+      message: string;
+      oid: string;
+      url: string;
+      author: {
+        name: string | null;
+        email: string | null;
+        user: {
+          login: string;
+          avatarUrl: string;
+        } | null;
+      } | null;
+    }
   } | null;
 };
 

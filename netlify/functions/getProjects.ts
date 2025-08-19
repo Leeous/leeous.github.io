@@ -45,16 +45,38 @@ export const handler: Handler = async () => {
                 createdAt
                 updatedAt
                 stargazerCount
-                repositoryTopics(first: 5) {
-                  nodes {
-                    topic {
-                      name
+                  repositoryTopics(first: 5) {
+                    nodes {
+                      topic {
+                        name
+                      }
                     }
                   }
-                }
-                primaryLanguage {
-                  name
-                  color
+                  primaryLanguage {
+                    name
+                    color
+                  }
+                  defaultBranchRef {
+                    name
+                    target {
+                      ... on Commit {
+                        history {
+                          totalCount
+                        }
+                        committedDate
+                        message
+                        oid
+                        url
+                        author {
+                          name
+                          email
+                          user {
+                            login
+                            avatarUrl
+                          }
+                        }
+                      }
+                  }
                 }
               }
             }
