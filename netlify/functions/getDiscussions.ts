@@ -28,7 +28,7 @@ export const handler: Handler = async () => {
     const result = await graphqlWithAuth<DiscussionsResponse>(`
       query {
         repository(owner: "Leeous", name: "leeous.github.io") {
-          discussions(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+          discussions(first: 20, categoryId: "DIC_kwDOCuzFls4CtgKV" orderBy: {field: CREATED_AT, direction: DESC}) {
             nodes {
               number
               title
