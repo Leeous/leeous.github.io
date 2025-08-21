@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { fetchAllDiscussions, fetchDiscussionByNumber, fetchReadme } from "../lib/github";
-import type { Discussion } from "../lib/github";
+import { useEffect, useState } from "react";
+import { fetchReadme } from "../lib/github";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import Spinner from "../components/Spinner";
-import GiscusComment from "../components/GiscusComments";
 import { Helmet } from "react-helmet";
-import removeMd from "remove-markdown";
 import { useParams } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 import BackButton from "../components/BackButton";
+import GiscusComments from "../components/GiscusComments";
 
 export default function ProjectPage() {
   const { slug } = useParams<{slug: string}>();
@@ -23,15 +22,12 @@ export default function ProjectPage() {
     setError(null);
     setProject(null);
 
-    console.log(slug);
-
     (async () => {
       try {
         const projectData = await fetchReadme(slug); 
         setProject(projectData)
       } catch ( error ) {
         if (error instanceof Error) {
-          console.log(error)
           setError(error.message);
         } else {
           setError("An unknown error occurred.")
@@ -54,13 +50,19 @@ export default function ProjectPage() {
   const components: Components = {
     h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
     h2: ({ ...props }) => <h2 className="post-h2" {...props} />,
-    a: ({ ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>
+    a: ({ ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>,
+    table: ({ ...props }) => <table className="post-table" {...props}>{props.children}</table>,
+    thead: ({ ...props }) => <thead className="post-table-header" {...props}>{props.children}</thead>,
+    tr: ({ ...props }) => <tr className="post-table-row" {...props}>{props.children}</tr>,
+    th: ({ ...props }) => <th className="post-table-row-header" {...props}>{props.children}</th>,
+    td: ({ ...props }) => <td className="post-table-value" {...props}>{props.children}</td>,
   };
 
   return (
     <>
       <Helmet>
-        <title>Projects | Leeous</title>
+        <title>{slug} | Leeous</title>
+        <meta property="og:title" content={slug} />
         <meta property="og:description" content="All of my projects, pulled from my Github." />
         {/* <meta property="og:type" content="article" /> */}
         {/* <meta property="og:url" content={`https://www.leeous.com/blog/${slug}`} /> */}
@@ -75,9 +77,10 @@ export default function ProjectPage() {
       <main className="page">
         <BackButton/>
         <div className="post">
-          <ReactMarkdown components={components} rehypePlugins={[rehypeRaw]}>
+          <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {project}
           </ReactMarkdown>
+          <GiscusComments projectName={slug} />
         </div>
       </main> 
     </>
