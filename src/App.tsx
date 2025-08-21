@@ -7,19 +7,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import PostPage from './pages/BlogPostPage';
 import ProjectPage from './pages/ProjectPage';
-import Banner from './components/Banner';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
     <>
-      <Banner emoji="🚧" backgroundColor='#1f1f1f' fontColor='#fff'>
-        <div>
-          <h4>WIP</h4>
-          <br />
-          <p>React Rewrite</p>
-        </div>
-      </Banner>
       <Header />
       <Routes>
         <Route index element={<AboutPage />} />
