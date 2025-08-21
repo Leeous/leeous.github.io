@@ -1,76 +1,30 @@
-import GitHubIcon from '../assets/svg/github.svg';
-import SteamIcon from '../assets/svg/steam.svg';
-import DownloadIcon from '../assets/svg/download.svg';
-import NexusIcon from '../assets/svg/nexus.svg';
+// import GitHubIcon from '../assets/svg/github.svg';
+// import SteamIcon from '../assets/svg/steam.svg';
+// import DownloadIcon from '../assets/svg/download.svg';
+// import NexusIcon from '../assets/svg/nexus.svg';
+import { Link } from "react-router-dom";
+import type { Project } from "../lib/github";
+import { formatDate } from "../lib/utils";
+import dayjs from "dayjs";
+import commitIcon from "../assets/svg/commit.svg";
 
-type Link = {
-  label: string;
-  url: string;
-}
-
-type ProjectProps = {
-  id: string;
-  name: string;
-  date: string;
-  description: string;
-  links: Link[];
-  status: string[];
-};
-
-export default function Project({
-  id,
-  name,
-  date,
-  description,
-  links,
-  status,
-}: ProjectProps) {
+export default function Project(props: Project) {
   return (
-    <div className="project" id={id.toString()}>
-      <h1>{name}</h1>
-      <h2>{date}</h2>
-      <p dangerouslySetInnerHTML={{ __html: description }}></p>
-
-      {status?.length > 0 && (
-        <ul style={{ listStyle: "none", paddingLeft: "0", display: "flex", justifyContent: "center", maxWidth: "75%", margin: "auto", flexWrap: "wrap" }}>
-          {status.map((status, index) => (
-            <li key={index}>
-              <span className={`project-tag ${status}`}>{
-                status === "finished"
-                  ? "Finished"
-                  : status === "wip"
-                    ? "WIP"
-                    : status === "abandoned"
-                      ? "Abandoned"
-                      : status}
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {links?.length > 0 && (
-        <ul className="links">
-          {links.map((link, id) => (
-            <li key={id} className="link">
-              <a href={link.url} target="_blank" className={link.label} rel="noopener noreferrer">
-                {
-                  link.label === "github"
-                  ? <>Github <img className="icon" style={{ width: "24px" }} src={GitHubIcon} alt="Github Icon" /></>
-                  : link.label === "steam"
-                  ? <>Steam <img className="icon" style={{ width: "24px" }} src={SteamIcon} alt="Steam Icon" /></>
-                  : link.label === "download"
-                  ? <>Download <img className="icon" style={{ width: "24px" }} src={DownloadIcon} alt="Download Icon" /></>
-                  : link.label === "nexus"
-                  ? <>Nexus <img className="icon" style={{ width: "24px" }} src={NexusIcon} alt="Nexus Icon" /></>
-                  : link.label
-                }
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
-
+    <div className="project">
+      <h1 className="project-name">{props.name}</h1>
+      <h2 className="project-created-at">{formatDate(props.createdAt)}</h2>
+      <p className="project-desc">{props.description}</p>
+      <p className="project-last-commit">{props.defaultBranchRef?.target.message} - <a target="_blank" href={props.defaultBranchRef?.target.url}>{dayjs(props.defaultBranchRef?.target.committedDate).fromNow()}</a></p>
+      <div className="project-stats">
+          {props.primaryLanguage?.name && 
+            <p style={props.primaryLanguage.name === "Lua" ? {color: "#0070ff"} : {color: props.primaryLanguage.color} } className="project-language">{props.primaryLanguage.name}</p>
+          }
+          <p className="project-stargazer-count">{props.stargazerCount} ⭐</p>
+          <p className="project-stargazer-count" style={{display: "flex", alignItems: "center"}}>{props.defaultBranchRef?.target.history.totalCount} <img width="24px" style={{margin: "0 10px", display: "inline-block"}} src={commitIcon} alt="Commit Icon" /></p>
+      </div>
+      <Link to={`/projects/${props.name}`} className="read-more-button">
+        View README
+      </Link>
     </div>
   );
 }

@@ -6,10 +6,15 @@ import GitHubIcon from '../assets/svg/github.svg';
 import KeyIcon from '../assets/svg/key.svg';
 import LinkedInIcon from '../assets/svg/linkedin.svg';
 import SteamIcon from '../assets/svg/steam.svg';
+import { Helmet } from 'react-helmet';
 
 export default function AboutPage() {
   return (
     <main className='about-page page'>
+      <Helmet>
+        <title>About | Leeous</title>
+        {/* <meta property="og:description" content="All of my projects, pulled from my Github." /> */}
+      </Helmet>
       <section className='about'>
         <h1 className='name'>Cody Fields</h1>
         <h4 className='location'>North Carolina, USA</h4>

@@ -6,19 +6,23 @@ import BlogPage from './pages/BlogPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PostPage from './pages/BlogPostPage';
+import ProjectPage from './pages/ProjectPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<AboutPage />} />
+        <Route index element={<AboutPage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/blog' element={<BlogPage />} />
         <Route path="/blog/:slug" element={<PostPage />} />
+        <Route path="/projects/:slug" element={<ProjectPage />} />
         <Route path='/projects' element={<ProjectsPage />} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   )
 }

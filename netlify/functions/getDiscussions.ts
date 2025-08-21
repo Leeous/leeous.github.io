@@ -28,7 +28,7 @@ export const handler: Handler = async () => {
     const result = await graphqlWithAuth<DiscussionsResponse>(`
       query {
         repository(owner: "Leeous", name: "leeous.github.io") {
-          discussions(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+          discussions(first: 20, categoryId: "DIC_kwDOCuzFls4CtgKV" orderBy: {field: CREATED_AT, direction: DESC}) {
             nodes {
               number
               title
@@ -47,10 +47,10 @@ export const handler: Handler = async () => {
       statusCode: 200,
       body: JSON.stringify(result.repository.discussions.nodes),
     };
-  } catch (err) {
+  } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to fetch discussions', details: err }),
+      body: JSON.stringify({ error: 'Failed to fetch discussions', details: error }),
     };
   }
 };

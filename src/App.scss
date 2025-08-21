@@ -244,19 +244,46 @@ body {
 
 .project {
   border: $thin-border;
-  margin: 1rem 1rem 0 1rem;
+  margin: 1rem 0;
+  padding: .3rem;
   text-align: center;
 
-  h1 {
-    font-size: 1.5rem;
+  .project-name {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0;
   }
-
-  h2 {
+  
+  .project-created-at {
     font-size: .9rem;
     margin-top: 0;
     font-weight: 500;
     color: grey;
+  }
+
+  .project-desc {
+  }
+
+  .project-last-commit {
+    color: grey;
+    font-size: .9rem;
+  }
+
+  .project-language {
+    font-size: .9rem;
+    margin: .5rem;
+    font-weight: 300;
+    display: inline-block;
+    padding: .25rem;
+  }
+
+  .project-stats {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    user-select: none;
   }
 
   .links {
@@ -325,7 +352,7 @@ body {
 .post {
   margin: 1rem 1rem 2rem 1rem;
 
-  .post-title {
+  .post-h1 {
     margin-bottom: 0;
   }
 
@@ -338,6 +365,27 @@ body {
 
   .post-content {
   }
+
+  .post-table {
+
+  }
+
+  .post-table {
+    border-collapse: collapse;
+    width: 100%;
+    .post-table-row-header {
+      border: $thin-border;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .post-table-value {
+      border: $thin-border;
+      padding: 5px;
+      text-align: left;
+    }
+  }
+
 
   // Remove top margin from first post
   &:first-child {
@@ -380,4 +428,15 @@ body {
 .icon {
   width: 32px;
   display: inline-block;
+}
+
+.back-button {
+  display: flex;
+  font-size: 1.1rem;
+  border: var($thin-border);
+  img {
+    display: inline-block;
+    width: 16px;
+    margin: 5px;
+  }
 }

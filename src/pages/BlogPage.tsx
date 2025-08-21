@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchDiscussions } from "../lib/github";
 import type { Discussion } from "../lib/github";
-import BlogPostPreview from "../components/BlogPostPreview";
+import BlogPostPreview from "../components/PostPreview";
 import { slugify } from "../lib/utils";
 import Spinner from "../components/Spinner";
+import { Helmet } from "react-helmet";
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<Discussion[]>([]);
@@ -19,6 +20,9 @@ export default function BlogPage() {
 
   return (
     <main className="page">
+      <Helmet>
+        <title>Blog | Leeous</title>
+      </Helmet>
       {posts.length !== 0 &&
       posts.map((post) => (
         <BlogPostPreview
