@@ -1,12 +1,10 @@
 import { useEffect, useLayoutEffect, useMemo, useState } from "react"
 // import Project from "../components/Project";
 // import projects from "../assets/data/project_data.json";
-import { fetchProjects, fetchReadme } from "../lib/github";
+import { fetchProjects } from "../lib/github";
 import type { Project } from "../lib/github";
 import Spinner from "../components/Spinner";
 import ProjectComp from "../components/Project";
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from 'rehype-raw';
 import { Helmet } from "react-helmet";
 
 type SortField = "stars" | "lastCommit" | "totalCommits";
@@ -53,7 +51,6 @@ export default function ProjectsPage() {
         }
 
         case "totalCommits":
-          console.log((b.defaultBranchRef?.target.history.totalCount ?? 0) -  (a.defaultBranchRef?.target.history.totalCount ?? 0))
           comparison = (b.defaultBranchRef?.target.history.totalCount ?? 0) -  (a.defaultBranchRef?.target.history.totalCount ?? 0);
           break;
 
@@ -66,8 +63,6 @@ export default function ProjectsPage() {
   }, [projects, sortBy, sortDirection]);
 
   if (loading) return <Spinner/>;
-
-  console.log(sortedProjects)
 
   return(
     <main className='projects-page page'>
@@ -88,7 +83,7 @@ export default function ProjectsPage() {
       {/* going to map projects here <Project> component */}
       {sortedProjects.map((project) => {
         return(
-          <ProjectComp key={project.id} {...project} />
+          <ProjectComp  key={project.id} {...project} />
         )
       })}
     </main>

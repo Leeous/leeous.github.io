@@ -16,8 +16,6 @@ interface ProjectReadmeResponse {
 
 export const handler: Handler = async (event) => {
   const repo_name = event.queryStringParameters?.repo;
-  console.log(repo_name)
-
   if (!repo_name) {
     return {
       statusCode: 400,
