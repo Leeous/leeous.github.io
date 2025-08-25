@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import PFP from '../assets/images/pfp.jpg';
 import BlueskyIcon from '../assets/svg/butterfly.svg';
 import EmailIcon from '../assets/svg/email.svg';
 import GitHubIcon from '../assets/svg/github.svg';
@@ -18,7 +17,7 @@ export default function AboutPage() {
       <section className='about'>
         <h1 className='name'>Cody Fields</h1>
         <h4 className='location'>North Carolina, USA</h4>
-        <img src={PFP} className='pfp' alt="A photo of Cody sitting in the woods." />
+        <img src="/images/pfp.jpg" className='pfp' alt="A photo of Cody sitting in the woods." />
         {/* TODO: need to precache pfp */}
       </section>
       <section className='about-socials'>
