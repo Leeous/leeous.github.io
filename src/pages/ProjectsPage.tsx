@@ -64,6 +64,7 @@ export default function ProjectsPage() {
 
   if (loading) return <Spinner/>;
 
+  console.log(projects);
   return(
     <main className='projects-page page'>
       <Helmet>
@@ -72,10 +73,10 @@ export default function ProjectsPage() {
       <label>
         Sort by:{" "}
         <select onChange={handleSortChange} value={`${sortBy}:${sortDirection}`}>
-          <option value="stars:desc">Stars ↓</option>
-          <option value="stars:asc">Stars ↑</option>
           <option value="lastCommit:desc">Last Commit ↓</option>
           <option value="lastCommit:asc">Last Commit ↑</option>
+          <option value="stars:desc">Stars ↓</option>
+          <option value="stars:asc">Stars ↑</option>
           <option value="totalCommits:desc">Commits ↓</option>
           <option value="totalCommits:asc">Commits ↑</option>
         </select>
