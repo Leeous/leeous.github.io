@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Discussion } from "../lib/github";
+import type { Discussion } from "../lib/github/api";
 import ReactMarkdown, { type Components } from "react-markdown";
 import { formatDate } from "../lib/utils";
 

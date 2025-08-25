@@ -2,6 +2,7 @@
 // Variables
 $font-size-base: 16px;
 $color-primary: #ffffff;
+$color-secondary: #303030;
 $color-bg: #000000;
 $thin-border: solid 0.1rem white;
 
@@ -245,7 +246,7 @@ body {
 .project {
   border: $thin-border;
   margin: 1rem 0;
-  padding: .3rem;
+  padding: 1rem;
   text-align: center;
 
   .project-name {
@@ -254,6 +255,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
+    margin-top: 0;
   }
   
   .project-created-at {
@@ -264,6 +266,19 @@ body {
   }
 
   .project-desc {
+  }
+
+  .project-topic-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    .project-topic {
+      padding: .25rem;
+      margin: .5rem;
+      background-color: $color-secondary;
+    }
   }
 
   .project-last-commit {

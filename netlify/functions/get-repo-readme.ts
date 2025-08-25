@@ -13,7 +13,6 @@ interface ProjectReadmeResponse {
   }
 }
 
-
 export const handler: Handler = async (event) => {
   const repo_name = event.queryStringParameters?.repo;
   if (!repo_name) {

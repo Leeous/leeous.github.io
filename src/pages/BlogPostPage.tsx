@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchAllDiscussions, fetchDiscussionByNumber } from "../lib/github";
-import type { Discussion } from "../lib/github";
+import { fetchAllDiscussions, fetchDiscussionByNumber } from "../lib/github/api";
+import type { Discussion } from "../lib/github/api";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -26,7 +26,7 @@ export default function PostPage() {
 
     (async () => {
       try {
-        const discussions = await fetchAllDiscussions(); 
+        const discussions = await fetchAllDiscussions();
         const matched = discussions.find(d => slugify(d.title) === slug);
 
         if (!matched) {

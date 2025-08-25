@@ -1,8 +1,6 @@
-import { useEffect, useLayoutEffect, useMemo, useState } from "react"
-// import Project from "../components/Project";
-// import projects from "../assets/data/project_data.json";
-import { fetchProjects } from "../lib/github";
-import type { Project } from "../lib/github";
+import { useEffect, useMemo, useState } from "react"
+import { fetchProjects } from "../lib/github/api";
+import type { SimplifiedRepo } from "../lib/github/types";
 import Spinner from "../components/Spinner";
 import ProjectComp from "../components/Project";
 import { Helmet } from "react-helmet";
@@ -14,12 +12,7 @@ export default function ProjectsPage() {
   const [loading, setLoading] = useState(true);
   const [sortBy, setSortBy] = useState<SortField>("lastCommit");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
-  const [projects, setProjects] = useState<Project[]>([])
-
-  // Ensure user is scrolled to the top of screen if using <Link> to get to projects
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  })
+  const [projects, setProjects] = useState<SimplifiedRepo[]>([])
 
   // Load & place repos
   useEffect(() => {
@@ -40,18 +33,18 @@ export default function ProjectsPage() {
 
       switch(sortBy) {
         case "stars":
-          comparison = b.stargazerCount - a.stargazerCount;
+          comparison = b.stars - a.stars;
           break;
 
         case "lastCommit": {
-          const dateA = a.defaultBranchRef?.target.committedDate ? new Date(a.defaultBranchRef.target.committedDate).getTime() : 0;
-          const dateB = b.defaultBranchRef?.target.committedDate ? new Date(b.defaultBranchRef.target.committedDate).getTime() : 0;
+          const dateA = a.latestCommit?.date ? new Date(a.latestCommit.date).getTime() : 0;
+          const dateB = b.latestCommit?.date ? new Date(b.latestCommit?.date).getTime() : 0;
           comparison = dateB - dateA;
           break;
         }
 
         case "totalCommits":
-          comparison = (b.defaultBranchRef?.target.history.totalCount ?? 0) -  (a.defaultBranchRef?.target.history.totalCount ?? 0);
+          comparison = (b.commitCount ?? 0) -  (a.commitCount ?? 0);
           break;
 
         default:
@@ -64,7 +57,6 @@ export default function ProjectsPage() {
 
   if (loading) return <Spinner/>;
 
-  console.log(projects);
   return(
     <main className='projects-page page'>
       <Helmet>
@@ -81,7 +73,6 @@ export default function ProjectsPage() {
           <option value="totalCommits:asc">Commits ↑</option>
         </select>
       </label>
-      {/* going to map projects here <Project> component */}
       {sortedProjects.map((project) => {
         return(
           <ProjectComp  key={project.id} {...project} />

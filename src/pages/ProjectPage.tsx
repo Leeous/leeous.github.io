@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchReadme } from "../lib/github";
+import { fetchReadme } from "../lib/github/api";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import Spinner from "../components/Spinner";

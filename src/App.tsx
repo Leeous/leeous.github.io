@@ -8,10 +8,12 @@ import Footer from './components/Footer';
 import PostPage from './pages/BlogPostPage';
 import ProjectPage from './pages/ProjectPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
   return (
     <>
+      <ScrollToTop/>
       <Header />
       <Routes>
         <Route index element={<AboutPage />} />
