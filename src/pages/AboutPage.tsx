@@ -19,8 +19,17 @@ export default function AboutPage() {
   useEffect(() => {
     (async () => {
       try {
-        const bioMarkdown = await fetchReadme("Leeous"); 
-        setBio(bioMarkdown)
+        let filteredBioMarkdown = await fetchReadme("Leeous"); 
+        // TODO: this feels quick and dirty, maybe revisit at a later point
+        filteredBioMarkdown = filteredBioMarkdown.replace(
+          /### 🌐 Connect with Me[\s\S]*?---\n?/g,
+          ""
+        );
+        filteredBioMarkdown = filteredBioMarkdown.replace(
+          /^# hi, my name is leeous/m,
+          "## Bio"
+        );
+        setBio(filteredBioMarkdown);
       } catch ( error ) {
         if (error instanceof Error) {
           console.error(error.message);
