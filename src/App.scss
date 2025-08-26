@@ -204,8 +204,9 @@ body {
 }
 
 .about-bio {
-  p {
-    margin: 1rem;
+  text-align: left;
+  .post-h1 {
+    text-align: center;
   }
 }
 

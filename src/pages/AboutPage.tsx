@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import ReactMarkdown, { type Components } from 'react-markdown';
 import BlueskyIcon from '../assets/svg/butterfly.svg';
 import EmailIcon from '../assets/svg/email.svg';
 import GitHubIcon from '../assets/svg/github.svg';
@@ -6,8 +6,46 @@ import KeyIcon from '../assets/svg/key.svg';
 import LinkedInIcon from '../assets/svg/linkedin.svg';
 import SteamIcon from '../assets/svg/steam.svg';
 import { Helmet } from 'react-helmet';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import { useEffect, useState } from 'react';
+import Spinner from '../components/Spinner';
+import { fetchReadme } from '../lib/github/api';
 
 export default function AboutPage() {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [bio, setBio] = useState<string | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const bioMarkdown = await fetchReadme("Leeous"); 
+        setBio(bioMarkdown)
+      } catch ( error ) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        } else {
+          console.error("An unknown error occurred.")
+        }
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const components: Components = {
+    h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
+    h2: ({ ...props }) => <h2 className="post-h2" {...props} />,
+    a: ({ ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>,
+    table: ({ ...props }) => <table className="post-table" {...props}>{props.children}</table>,
+    thead: ({ ...props }) => <thead className="post-table-header" {...props}>{props.children}</thead>,
+    tr: ({ ...props }) => <tr className="post-table-row" {...props}>{props.children}</tr>,
+    th: ({ ...props }) => <th className="post-table-row-header" {...props}>{props.children}</th>,
+    td: ({ ...props }) => <td className="post-table-value" {...props}>{props.children}</td>,
+  };
+
+  if (loading) return <Spinner />;
+
   return (
     <main className='about-page page'>
       <Helmet>
@@ -31,14 +69,9 @@ export default function AboutPage() {
         </ul>
       </section>
       <section className='about-bio'>
-        <h2>Bio</h2>
-        <p>
-          Hey! Thanks for stopping by — <Link to={"projects"}>here</Link> you’ll find my personal projects and developer blog. I’m really passionate about web development and love contributing to the modding community.
-          <br/><br/>
-          Feel free to reach out anytime, whether you just want to chat or talk shop. I’m most responsive by email, since I’m not very active on social media.
-          <br/><br/>
-          At the moment, I’m actively looking for an entry-level role in IT and excited to kickstart a long-term career in the field.
-        </p>
+        <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+          {bio}
+        </ReactMarkdown>
       </section>
       <section className='skills'>
         <h2>Skills</h2>
