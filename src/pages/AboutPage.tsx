@@ -10,7 +10,8 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { useEffect, useState } from 'react';
 import Spinner from '../components/Spinner';
-import { fetchReadme } from '../lib/github/api';
+import bioMD from '../assets/data/bio.md?raw';
+import PFP from '../../public/images/pfp.jpg';
 
 export default function AboutPage() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -18,29 +19,10 @@ export default function AboutPage() {
 
   useEffect(() => {
     (async () => {
-      try {
-        let filteredBioMarkdown = await fetchReadme("Leeous"); 
-        // TODO: this feels quick and dirty, maybe revisit at a later point
-        filteredBioMarkdown = filteredBioMarkdown.replace(
-          /### 🌐 Connect with Me[\s\S]*?---\n?/g,
-          ""
-        );
-        filteredBioMarkdown = filteredBioMarkdown.replace(
-          /^# hi, my name is leeous/m,
-          "## Bio"
-        );
-        setBio(filteredBioMarkdown);
-      } catch ( error ) {
-        if (error instanceof Error) {
-          console.error(error.message);
-        } else {
-          console.error("An unknown error occurred.")
-        }
-      } finally {
+        setBio(bioMD);
         setLoading(false);
-      }
     })();
-  }, []);
+  });
 
   const components: Components = {
     h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
@@ -64,7 +46,7 @@ export default function AboutPage() {
       <section className='about'>
         <h1 className='name'>Cody Fields</h1>
         <h4 className='location'>North Carolina, USA</h4>
-        <img src="/images/pfp.jpg" className='pfp' alt="A photo of Cody sitting in the woods." />
+        <img src={PFP} className='pfp' alt="A photo of Cody sitting in the woods." />
         {/* TODO: need to precache pfp */}
       </section>
       <section className='about-socials'>

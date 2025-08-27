@@ -26,8 +26,8 @@ export default function Project(props: SimplifiedRepo) {
         {props.language?.name &&
           <p style={props.language.name === "Lua" ? { color: "#0070ff" } : { color: props.language.color }} className="project-language">{props.language.name}</p>
         }
-        <p className="project-stargazer-count">{props.stars} ⭐</p>
-        <p className="project-stargazer-count" style={{ display: "flex", alignItems: "center" }}>{props.commitCount} <img width="24px" style={{ margin: "0 10px", display: "inline-block" }} src={commitIcon} alt="Commit Icon" /></p>
+        <p className="project-stargazer-count">⭐ {props.stars}</p>
+        <p className="project-stargazer-count" style={{ display: "flex", alignItems: "center" }}><img width="24px" style={{ margin: "0 10px", display: "inline-block" }} src={commitIcon} alt="Commit Icon" /> {props.commitCount}</p>
       </div>
 
       <Link to={`/projects/${props.name}`} className="read-more-button">
