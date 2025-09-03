@@ -39,7 +39,7 @@ export async function fetchProjects(): Promise<SimplifiedRepo[]> {
 
 export async function fetchReadme(repo_name: string): Promise<string> {
   const res = await fetch(`/.netlify/functions/get-repo-readme?repo=${repo_name}`);
-  if (res.status === 404) throw new Error("Project not found. (404)");
+  if (res.status === 404) throw new Error("Project has no README. (404)");
   if (res.status === 500) throw new Error("Internal Server Error. (500)");
   if (!res.ok) throw new Error(`Fetch failed with status ${res.status}`);
   return await res.json();
