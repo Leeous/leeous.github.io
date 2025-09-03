@@ -14,14 +14,14 @@ export default function Project(props: SimplifiedRepo) {
       <h1 className="project-name">{props.name}</h1>
       <h2 className="project-created-at">{formatDate(props.createdAt)}</h2>
       <p className="project-desc">{props.description}</p>
+      <p className="project-last-commit">{props.latestCommit?.message} - <a target="_blank" href={props.latestCommit?.url}>{dayjs(props.latestCommit?.date).fromNow()}</a></p>
       {props.topics.length !== 0 &&
         <ul className="project-topic-list">
           {props.topics.map(topic => {
-            return (<li className="project-topic">{topic}</li>)
+            return (<li key={topic} className="project-topic">{topic}</li>)
           })}
         </ul>
       }
-      <p className="project-last-commit">{props.latestCommit?.message} - <a target="_blank" href={props.latestCommit?.url}>{dayjs(props.latestCommit?.date).fromNow()}</a></p>
       <div className="project-stats">
         {props.language?.name &&
           <p style={props.language.name === "Lua" ? { color: "#0070ff" } : { color: props.language.color }} className="project-language">{props.language.name}</p>
