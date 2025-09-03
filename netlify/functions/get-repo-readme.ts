@@ -34,14 +34,24 @@ export const handler: Handler = async (event) => {
           }
         }
       `, { repo_name });
+      
+      // Repo exists but no README.md
+      if (!result.repository.object) {
+        return {
+          statusCode: 404,
+          body: JSON.stringify({ hasReadme: false, content: null }),
+        };
+      }
+
       return {
         statusCode: 200,
         body: JSON.stringify(result.repository.object.text ?? ""),
       }
   } catch (error) {
+    console.log(error)
     return {
       statusCode: 500,
-      body: JSON.stringify({error: "Failed to fetch project README.md.", details: error})
+      body: JSON.stringify({error: "Failed to fetch project README.md."})
     }
 
   }
