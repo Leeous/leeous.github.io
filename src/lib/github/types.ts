@@ -3,6 +3,7 @@ export interface RawGitHubRepoData {
     repositories: {
       nodes: {
         name: string;
+        isArchived: boolean;
         description?: string | null;
         url: string;
         createdAt: string;
@@ -30,9 +31,10 @@ export interface RawGitHubRepoData {
   };
 }
 
-export interface SimplifiedRepo {
+export interface RawGitHubRepoData {
   id: string;
   name: string;
+  isArchived: boolean;
   description: string | null;
   url: string;
   createdAt: string;

@@ -20,6 +20,7 @@ export function simplifyRepos(raw: RawGitHubRepoData): SimplifiedRepo[] {
     return {
       id: node.name,
       name: node.name,
+      isArchived: node.isArchived,
       description: node.description ?? null,
       url: node.url,
       createdAt: node.createdAt,
