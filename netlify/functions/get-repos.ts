@@ -14,7 +14,7 @@ export const handler: Handler = async () => {
       query {
         user(login: "Leeous") {
           repositories(first: 20, orderBy: { field: CREATED_AT, direction: DESC }) {
-            nodes { name description url createdAt updatedAt stargazerCount repositoryTopics(first: 10) { nodes { topic { name } } } primaryLanguage { name color } defaultBranchRef { target { ... on Commit { message committedDate url history { totalCount } } } } }
+            nodes { name isArchived description url createdAt updatedAt stargazerCount repositoryTopics(first: 10) { nodes { topic { name } } } primaryLanguage { name color } defaultBranchRef { target { ... on Commit { message committedDate url history { totalCount } } } } }
           }
         }
       }
@@ -25,11 +25,10 @@ export const handler: Handler = async () => {
       statusCode: 200,
       body: JSON.stringify(repos),
     };
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: err.message }),
+      body: JSON.stringify({ error: error.message }),
     };
   }
 };
