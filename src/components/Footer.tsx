@@ -19,7 +19,7 @@ export default function Footer() {
     }, [])
   return (
     <footer className="main-footer">
-      <p><span className="powered-by">Powered by creatine <span className="creatine">&#9749;</span></span></p>
+      <p><span className="powered-by">Powered by creatine <span className="creatine">&#127834;</span></span></p>
       {lastUpdate.length != 0 &&
         <p className="last-commit">
           page last updated <a href={lastUpdate[2]} target="_blank">{lastUpdate[0]}</a><br />
