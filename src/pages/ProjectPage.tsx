@@ -9,6 +9,7 @@ import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import BackButton from "../components/BackButton";
 import GiscusComments from "../components/GiscusComments";
+import GitHubIcon from '../assets/svg/github.svg';
 
 export default function ProjectPage() {
   const { slug } = useParams<{slug: string}>();
@@ -75,7 +76,10 @@ export default function ProjectPage() {
       </Helmet>
       
       <main className="page">
-        <BackButton/>
+        <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+          <BackButton/>
+          <a style={{ display: "flex", alignItems: "center" }} target="_blank" href={`https://github.com/Leeous/${slug}`}>View on Github <img className='icon' src={GitHubIcon} style={{width: "24px", marginLeft: "4px"}} alt='Github Icon' /></a>
+        </div>
         <div className="post">
           <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {project}
