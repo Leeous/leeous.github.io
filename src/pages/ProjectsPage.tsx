@@ -13,6 +13,7 @@ export default function ProjectsPage() {
   const [sortBy, setSortBy] = useState<SortField>("lastCommit");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [projects, setProjects] = useState<SimplifiedRepo[]>([])
+  const hiddenProjects = ["Leeous", "leeous.github.io"];
 
   // Load & place repos
   useEffect(() => {
@@ -27,8 +28,12 @@ export default function ProjectsPage() {
     setSortDirection(direction);
   }
 
+  const visibleProjects = useMemo(() => {
+    return projects.filter(p => !hiddenProjects.includes(p.name))
+  });
+
   const sortedProjects = useMemo(() => {
-    return [...projects].sort((a, b) => {
+    return [...visibleProjects].sort((a, b) => {
       let comparison = 0;
 
       switch(sortBy) {
@@ -53,7 +58,7 @@ export default function ProjectsPage() {
 
       return sortDirection === "asc" ? comparison * -1 : comparison;
     })
-  }, [projects, sortBy, sortDirection]);
+  }, [visibleProjects, sortBy, sortDirection]);
 
   if (loading) return <Spinner/>;
 
