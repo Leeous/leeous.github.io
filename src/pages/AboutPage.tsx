@@ -11,7 +11,7 @@ import remarkGfm from 'remark-gfm';
 import { useEffect, useState } from 'react';
 import Spinner from '../components/Spinner';
 import bioMD from '../assets/data/bio.md?raw';
-import PFP from '../../public/images/pfp.jpg';
+import PFP from '/images/pfp.jpg?url';
 
 export default function AboutPage() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -109,7 +109,7 @@ export default function AboutPage() {
           </ul>
         </details>
       </section>
-      {/* <figure className='wakatime'><embed src='https://wakatime.com/share/@018cd227-4c79-474a-90a6-9837813301b4/bc8f0964-b605-4b10-95f6-7f8aa0c72d5a.svg' /></figure> */}
+      <figure><embed src="https://wakatime.com/share/@Leeous/1dac96b0-6af3-4d96-aef7-5d26f5e9a823.svg"></embed></figure>
     </main>
   )
 }
