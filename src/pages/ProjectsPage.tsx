@@ -30,7 +30,7 @@ export default function ProjectsPage() {
 
   const visibleProjects = useMemo(() => {
     return projects.filter(p => !hiddenProjects.includes(p.name))
-  });
+  }, [hiddenProjects, projects]);
 
   const sortedProjects = useMemo(() => {
     return [...visibleProjects].sort((a, b) => {
