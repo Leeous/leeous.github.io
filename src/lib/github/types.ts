@@ -31,7 +31,7 @@ export interface RawGitHubRepoData {
   };
 }
 
-export interface RawGitHubRepoData {
+export interface SimplifiedRepo {
   id: string;
   name: string;
   isArchived: boolean;
