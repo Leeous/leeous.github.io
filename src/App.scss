@@ -369,8 +369,10 @@ body {
 
 .post {
   margin: 1rem 1rem 2rem 1rem;
-
-  .post-h1 {
+  padding: 1.5rem 1.5rem;
+  background-color: $color-secondary;
+  .post-title {
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -401,14 +403,6 @@ body {
       border: $thin-border;
       padding: 5px;
       text-align: left;
-    }
-  }
-
-
-  // Remove top margin from first post
-  &:first-child {
-    .post-title {
-      margin-top: 0;
     }
   }
 
