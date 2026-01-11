@@ -1,33 +1,36 @@
 export interface RawGitHubRepoData {
-  user: {
-    repositories: {
-      nodes: {
+  name: string;
+  isArchived: boolean;
+  description: string | null;
+  url: string;
+  createdAt: string;   // ISO date
+  updatedAt: string;   // ISO date
+  stargazerCount: number;
+
+  repositoryTopics: {
+    nodes: {
+      topic: {
         name: string;
-        isArchived: boolean;
-        description?: string | null;
-        url: string;
-        createdAt: string;
-        updatedAt: string;
-        stargazerCount: number;
-        repositoryTopics?: {
-          nodes: { topic: { name: string; } }[]
-        }
-        primaryLanguage?: {
-          name: string;
-          color: string;
-        } | null;
-        defaultBranchRef?: {
-          target?: {
-            url: string;
-            message: string;
-            committedDate: string;
-            history: {
-              totalCount: number;
-            }
-          }
-        }
-      }[];
-    };
+      };
+    }[];
+  };
+
+  primaryLanguage: {
+    name: string;
+    color: string | null;
+  } | null;
+
+  defaultBranchRef: {
+    target: Commit;
+  } | null;
+}
+
+export interface Commit {
+  message: string;
+  committedDate: string; // ISO date
+  url: string;
+  history: {
+    totalCount: number;
   };
 }
 
@@ -51,4 +54,5 @@ export interface SimplifiedRepo {
     url: string;
   } | null;
   commitCount: number | null;
+  error?: string;
 }
