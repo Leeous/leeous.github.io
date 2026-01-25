@@ -1,9 +1,8 @@
-import type { SimplifiedRepo } from "./types";
-import type { RawGitHubRepoData } from "./types";
+import type { SimplifiedRepo, RawGitHubRepoData, RepositoryNode } from "./types";
 
 export function simplifyRepos(raw: RawGitHubRepoData): SimplifiedRepo[] {
-  return raw.user.repositories.nodes.map((node) => {
-    const topics = node.repositoryTopics?.nodes?.map((n) => n.topic.name) ?? [];
+  return raw.user.repositories.nodes.map((node: RepositoryNode) => {
+    const topics = node.repositoryTopics?.nodes?.map((n: { topic: { name: string } }) => n.topic.name) ?? [];
     const language = node.primaryLanguage
       ? { name: node.primaryLanguage.name, color: node.primaryLanguage.color }
       : null;

@@ -1,4 +1,4 @@
-export interface RawGitHubRepoData {
+export interface RepositoryNode {
   name: string;
   isArchived: boolean;
   description: string | null;
@@ -25,6 +25,14 @@ export interface RawGitHubRepoData {
   } | null;
 }
 
+export interface RawGitHubRepoData {
+  user: {
+    repositories: {
+      nodes: RepositoryNode[];
+    };
+  };
+}
+
 export interface Commit {
   message: string;
   committedDate: string; // ISO date
@@ -46,7 +54,7 @@ export interface SimplifiedRepo {
   topics: string[];
   language: {
     name: string;
-    color: string;
+    color: string | null;
   } | null;
   latestCommit: {
     message: string;
