@@ -15,6 +15,7 @@ function App() {
     <>
       <ScrollToTop/>
       <Header />
+      <div style={{display: "flex", justifyContent: "center", flexShrink: 0, flexGrow: 1}}>
       <Routes>
         <Route index element={<AboutPage />} />
         <Route path='/about' element={<AboutPage />} />
@@ -24,6 +25,7 @@ function App() {
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path="*" element={<NotFoundPage/>} />
       </Routes>
+      </div>
       <Footer />
     </>
   )
