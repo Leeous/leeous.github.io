@@ -24,7 +24,7 @@ export default function Project(props: SimplifiedRepo) {
       }
       <div className="project-stats">
         {props.language?.name &&
-          <p style={props.language.name === "Lua" ? { color: "#0070ff" } : { color: props.language.color }} className="project-language">{props.language.name}</p>
+          <p style={props.language.name === "Lua" ? { color: "#0070ff" } : { color: props.language.color ?? undefined }} className="project-language">{props.language.name}</p>
         }
         <p className="project-stargazer-count">⭐ {props.stars}</p>
         <p className="project-stargazer-count" style={{ display: "flex", alignItems: "center" }}><img width="24px" style={{ margin: "0 10px", display: "inline-block" }} src={commitIcon} alt="Commit Icon" /> {props.commitCount}</p>
