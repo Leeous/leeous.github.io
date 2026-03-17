@@ -67,22 +67,26 @@ export default function ProjectsPage() {
       <Helmet>
         <title>Projects | Leeous</title>
       </Helmet>
-      <label>
-        Sort by:{" "}
-        <select onChange={handleSortChange} value={`${sortBy}:${sortDirection}`}>
-          <option value="lastCommit:desc">Last Commit ↓</option>
-          <option value="lastCommit:asc">Last Commit ↑</option>
-          <option value="stars:desc">Stars ↓</option>
-          <option value="stars:asc">Stars ↑</option>
-          <option value="totalCommits:desc">Commits ↓</option>
-          <option value="totalCommits:asc">Commits ↑</option>
-        </select>
-      </label>
+      <div className="projects-sort-selector">
+        <label>
+          Sort by
+          <select onChange={handleSortChange} value={`${sortBy}:${sortDirection}`}>
+            <option value="lastCommit:desc">Latest Commit ↓</option>
+            <option value="lastCommit:asc">Latest Commit ↑</option>
+            <option value="stars:desc">Stars ↓</option>
+            <option value="stars:asc">Stars ↑</option>
+            <option value="totalCommits:desc">Total Commits ↓</option>
+            <option value="totalCommits:asc">Total Commits ↑</option>
+          </select>
+        </label>
+      </div>
+      <div className="project-list">
       {sortedProjects.map((project) => {
         return(
           <ProjectComp  key={project.id} {...project} />
         )
       })}
+      </div>
     </main>
   )
 }

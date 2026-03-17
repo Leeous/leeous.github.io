@@ -14,7 +14,7 @@ $breakpoints: (
   lg: 992px,
   xl: 1200px,
   xxl: 1400px,
-  xxxl: 2000px, // Ultra-wide
+  xxxl: 1900px
 );
 
 // Mixin for up (min-width)
@@ -36,6 +36,10 @@ $breakpoints: (
   @media (min-width: map.get($breakpoints, $min)) and (max-width: map.get($breakpoints, $max)) {
     @content;
   }
+}
+
+body, html, * {
+  box-sizing: border-box;
 }
 
 body {
@@ -68,7 +72,7 @@ body {
 .main-footer {
   text-align: center;
   color: grey;
-  margin: .5rem 1rem;
+  margin: 5rem 1rem .5rem 1rem;
   @include media-up(lg) {
     max-width: 60%;
     text-align: left;
@@ -143,7 +147,7 @@ body {
   }
 
   @include media-up(xxxl) {
-    max-width: 25%;
+    max-width: 45%;
     margin: 0 auto;
   }
 }
@@ -245,123 +249,163 @@ body {
 
 // Projects page \\
 
-.project {
-  border: $thin-border;
-  margin: 1rem 0;
-  padding: 1rem;
-  text-align: center;
+.projects-page {
 
-  .project-name {
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-  
-  .project-created-at {
-    font-size: .9rem;
-    margin-top: 0;
-    font-weight: 500;
-    color: grey;
-  }
+  @include media-up(xxxl) {
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .5rem; 
 
-  .project-desc {
-  }
-
-  .project-topic-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    justify-content: center;
-    flex-wrap: wrap;
-    .project-topic {
-      padding: .25rem .5rem;
-      margin: .25rem;
-      font-size: .75rem;
-      background-color: $color-secondary;
+      .project {
+        margin: 0;
+      }
     }
   }
 
-  .project-last-commit {
-    color: grey;
-    font-size: .9rem;
-  }
-
-  .project-language {
-    font-size: .9rem;
-    margin: .5rem;
-    font-weight: 300;
-    display: inline-block;
-    padding: .25rem;
-  }
-
-  .project-stats {
+  .projects-sort-selector {
+    margin-bottom: 1rem;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    user-select: none;
-  }
-
-  .links {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
+    flex-direction: column;
     width: 100%;
-    display: flex;
-
-    .link {
-      flex: 1;
+    label:not(select) {
+      font-weight: bold;
+      display: block;
+    }
+    
+    select {
+      margin-top: .3rem;
       width: 100%;
-    }
-
-    .link a {
-      transition: 0.2s ease-in-out all;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: .5rem;
-      border-top: 2px transparent solid; // TODO: make separate classes for anchor and li
-      text-decoration: none;
-      img {
-        margin: 0 5px;
-      }
+      padding: 0.50rem;
+      font-weight: 500;
+      background-color: transparent;
+      color: $color-primary;
+      border: solid 0.1rem white;
+      cursor: pointer;
       &:hover {
-        border-top: 2px $color-primary solid;
+        background-color: $color-secondary;
       }
-    }
-
-    .github {
-      background-color: #4078c0;
-    }
-
-    .download {
-      background-color: black;
-    }
-
-    .nexus {
-      background-color: #d98f40;
-    }
-
-    .steam {
-      background-color: #171a21;
     }
   }
 
-  .project-tag {
-      display: inline-block;
-      text-align: center;
-      padding: .2rem .4rem;
-      font-size: .6rem;
-      margin-bottom: .25rem;
-      text-transform: uppercase;
+  .project {
+    border: $thin-border;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+
+    .project-name {
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    
+    .project-created-at {
+      font-size: .9rem;
+      margin-top: 0;
+      font-weight: 500;
+      color: grey;
+    }
+
+    .project-desc {
+    }
+
+    .project-topic-list {
+      display: flex;
       list-style: none;
-      border: $thin-border;
-      margin: .2rem;
-    &.abandoned { background-color: #2c2c2c; }
-    &.finished { background-color: #00722c; }
-    &.wip { background-color: #066896; }
+      padding: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      .project-topic {
+        padding: .25rem .5rem;
+        margin: .25rem;
+        font-size: .75rem;
+        background-color: $color-secondary;
+      }
+    }
+
+    .project-last-commit {
+      color: grey;
+      font-size: .9rem;
+    }
+
+    .project-language {
+      font-size: .9rem;
+      margin: .5rem;
+      font-weight: 300;
+      display: inline-block;
+      padding: .25rem;
+    }
+
+    .project-stats {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      user-select: none;
+    }
+
+    .links {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      width: 100%;
+      display: flex;
+
+      .link {
+        flex: 1;
+        width: 100%;
+      }
+
+      .link a {
+        transition: 0.2s ease-in-out all;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem;
+        border-top: 2px transparent solid; // TODO: make separate classes for anchor and li
+        text-decoration: none;
+        img {
+          margin: 0 5px;
+        }
+        &:hover {
+          border-top: 2px $color-primary solid;
+        }
+      }
+
+      .github {
+        background-color: #4078c0;
+      }
+
+      .download {
+        background-color: black;
+      }
+
+      .nexus {
+        background-color: #d98f40;
+      }
+
+      .steam {
+        background-color: #171a21;
+      }
+    }
+
+    .project-tag {
+        display: inline-block;
+        text-align: center;
+        padding: .2rem .4rem;
+        font-size: .6rem;
+        margin-bottom: .25rem;
+        text-transform: uppercase;
+        list-style: none;
+        border: $thin-border;
+        margin: .2rem;
+      &.abandoned { background-color: #2c2c2c; }
+      &.finished { background-color: #00722c; }
+      &.wip { background-color: #066896; }
+    }
   }
 }
 
