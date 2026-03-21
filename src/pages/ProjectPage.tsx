@@ -19,7 +19,7 @@ export default function ProjectPage() {
 
   useEffect(() => {
     if (!slug) return;
-    setLoading(true);w
+    setLoading(true);
     setError(null);
     setProject(null);
 
