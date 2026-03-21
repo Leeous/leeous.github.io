@@ -9,22 +9,46 @@ interface BlogPostPreviewProps {
 }
 
 const components: Components = {
-  h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
-  h2: ({ ...props }) => <h2 className="post-h2" {...props} />,
-  a: ({ ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>
+  p: ({ className, ...props }) => (
+    <p {...props} className={[className, "post-content"].filter(Boolean).join(" ")} />
+  ),
+  blockquote: ({ className, ...props }) => (
+    <blockquote {...props} className={[className, "post-blockquote"].filter(Boolean).join(" ")} />
+  ),
+  a: ({ href = "", className, children, ...props }) => {
+    const mergedClassName = [className, href.startsWith("/") ? "read-more" : ""]
+      .filter(Boolean)
+      .join(" ");
+
+    if (href.startsWith("/")) {
+      return (
+        <Link to={href} className={mergedClassName}>
+          {children}
+        </Link>
+      );
+    }
+
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props} className={mergedClassName}>
+        {children}
+      </a>
+    );
+  }
 };
 
 export default function BlogPostPreview({ post, slug }: BlogPostPreviewProps) {
   return (
     <div className="post-preview post">
-      <h1 className="post-title">{post.title}</h1>
+      <h1 className="post-title">
+        <Link to={`/blog/${slug}`}>
+          {post.title}
+        </Link>
+      </h1>
       <h2 className="post-date">{formatDate(post.createdAt)}</h2>
       <ReactMarkdown components={components}>
-        {post.body.slice(0, 300) + "..."}
+        {`${post.body.slice(0, 300)}... [Read more](/blog/${slug})`}
       </ReactMarkdown>
-      <Link to={`/blog/${slug}`} className="read-more-button">
-        Read more
-      </Link>
+      
     </div>
   );
 }

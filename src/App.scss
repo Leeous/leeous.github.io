@@ -135,11 +135,6 @@ body {
     text-align: center;
   }
 
-  @include media-up(lg) {
-    max-width: 60%;
-    margin: 0 auto;
-  }
-
   @include media-up(xl) {
     max-width: 40%;
     margin: 0 auto;
@@ -255,7 +250,7 @@ body {
     .project-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: .5rem; 
+      gap: 1rem; 
 
       .project {
         margin: 0;
@@ -411,16 +406,34 @@ body {
 
 // Blog page \\
 
+.blog-page {  
+  @include media-up(xxxl) {
+    .blog-list {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 1rem; 
+    }
+
+    .blog-list .post {
+      margin: 0;
+    }
+  }
+  .post {
+    border: $thin-border;
+  }
+}
+
 .post {
   margin: 1rem 1rem 2rem 1rem;
-  padding: 1.5rem 1.5rem;
-  background-color: $color-secondary;
+  display: inline-block;
   .post-title {
     margin-top: 0;
     margin-bottom: 0;
+    padding: 1rem 1rem 0 1rem;
   }
 
   .post-date {
+    padding: .2rem 0 0 1rem;
     margin-top: 0;
     font-size: 1rem;
     color: grey;
@@ -428,6 +441,7 @@ body {
   }
 
   .post-content {
+    padding: .2rem 0 0 1rem;
   }
 
   .post-table {
@@ -450,14 +464,22 @@ body {
     }
   }
 
-  blockquote p {
+  .read-more-button {
+    background-color: #00722c;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .post-blockquote {
     background-color: rgb(17, 17, 17);
-    padding: 5px 5px 5px 10px;
+    padding: .5rem .5rem .5rem .5rem;
     font-size: .9rem;
     border-left: solid 5px rgb(29, 29, 29);
+    p {
+      margin: 0;
+    }
   }
 }
-
 // Misc
 
 .wakatime {

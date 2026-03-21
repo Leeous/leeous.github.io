@@ -62,9 +62,29 @@ export default function PostPage() {
   if (!post) return null; // fallback, should rarely happen
 
   const components: Components = {
-    h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
-    h2: ({ ...props }) => <h2 className="post-h2" {...props} />,
-    a: ({ ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>
+    h1: ({ className, ...props }) => (
+      <h1 {...props} className={[className, "post-h1"].filter(Boolean).join(" ")} />
+    ),
+    h2: ({ className, ...props }) => (
+      <h2 {...props} className={[className, "post-h2"].filter(Boolean).join(" ")} />
+    ),
+    p: ({ className, ...props }) => (
+      <p {...props} className={[className, "post-content"].filter(Boolean).join(" ")} />
+    ),
+    blockquote: ({ className, ...props }) => (
+      <blockquote
+        {...props}
+        className={[className, "post-blockquote"].filter(Boolean).join(" ")}
+      />
+    ),
+    a: ({ className, ...props }) => (
+      <a
+        {...props}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={[className, "post-link"].filter(Boolean).join(" ")}
+      />
+    )
   };
 
   return (

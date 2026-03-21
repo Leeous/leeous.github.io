@@ -19,21 +19,23 @@ export default function BlogPage() {
   if (loading) return <Spinner/>
 
   return (
-    <main className="page">
+    <main className="blog-page page">
       <Helmet>
         <title>Blog | Leeous</title>
       </Helmet>
-      {posts.length !== 0 &&
-      posts.map((post) => (
-        <BlogPostPreview
+      <div className="blog-list">
+        {posts.length !== 0 &&
+        posts.map((post) => (
+          <BlogPostPreview
           key={post.number}
           post={post}
           slug={post.title !== undefined ? slugify(post.title) : ""}
-        />
-       ))}
-      {posts.length === 0 &&
-        <p>No posts found.</p>
-      }
+          />
+        ))}
+        {posts.length === 0 &&
+          <p>No posts found.</p>
+        }
+      </div>
     </main>
   );
 }
