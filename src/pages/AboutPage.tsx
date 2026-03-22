@@ -43,72 +43,74 @@ export default function AboutPage() {
         <title>About | Leeous</title>
         {/* <meta property="og:description" content="All of my projects, pulled from my Github." /> */}
       </Helmet>
-      <section className='about'>
-        <h1 className='name'>Cody Fields</h1>
-        <h4 className='location'>North Carolina, USA</h4>
-        <img src={PFP} className='pfp' alt="A photo of Cody sitting in the woods." />
-        {/* TODO: need to precache pfp */}
-      </section>
-      <section className='about-socials'>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin <img className='icon' src={LinkedInIcon} alt='LinkedIn Icon' /></a></li>
-          <li><a href="https://github.com/Leeous" target='_blank'>Github <img className='icon' src={GitHubIcon} alt='Github Icon' /></a></li>
-          <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky <img className='icon' src={BlueskyIcon} alt='Bluesky Icon' /></a></li>
-          <li><a href="https://steamcommunity.com/id/Leeous" target='_blank'>Steam <img className='icon' src={SteamIcon} alt='Steam Icon' /></a></li>
-          <li><a href="mailto:contact@leeous.com" target='_blank'>Email <img className='icon' src={EmailIcon} alt='Email Icon' /></a></li>
-          <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <img className='icon' src={KeyIcon} alt='Key Icon' /></a></li>
-        </ul>
-      </section>
-      <section className='about-bio'>
-        <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-          {bio}
-        </ReactMarkdown>
-      </section>
-      <section className='skills'>
-        <h2>Skills</h2>
-        <details className="skill-label">
-          <summary>Modding & Game Tools</summary>
-          <ul className='skill-list'>
-            <li>Server Management/Hosting</li>
-            <li>Source Engine</li>
-            <li>User Management</li>
-            <li>Hammer Editor</li>
-            <li>Mod Development (Lua, C#)</li>
-            <li>Forum Moderation/Hosting</li>
+      <div className='about-columns'>
+        <section className='about'>
+          <h1 className='name'>Cody Fields</h1>
+          <h4 className='location'>North Carolina, USA</h4>
+          <img src={PFP} className='pfp' alt="A photo of Cody sitting in the woods." />
+          {/* TODO: need to precache pfp */}
+        </section>
+        <section className='about-socials'>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin <img className='icon' src={LinkedInIcon} alt='LinkedIn Icon' /></a></li>
+            <li><a href="https://github.com/Leeous" target='_blank'>Github <img className='icon' src={GitHubIcon} alt='Github Icon' /></a></li>
+            <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky <img className='icon' src={BlueskyIcon} alt='Bluesky Icon' /></a></li>
+            <li><a href="https://steamcommunity.com/id/Leeous" target='_blank'>Steam <img className='icon' src={SteamIcon} alt='Steam Icon' /></a></li>
+            <li><a href="mailto:contact@leeous.com" target='_blank'>Email <img className='icon' src={EmailIcon} alt='Email Icon' /></a></li>
+            <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <img className='icon' src={KeyIcon} alt='Key Icon' /></a></li>
           </ul>
-        </details>
-        <details className='skill-label'>
-          <summary>IT</summary>
-          <ul className='skill-list'>
-            <li>General Documentation</li>
-            <li>Full-stack Web development</li>
-            <li>Blender</li>
-            <li>Ubuntu Server</li>
-            <li>HPE server management</li>
-            <li>Windows</li>
-            <li>SecOps awareness</li>
-            <li>PC building/repair</li>
-            <li>Mobile device repair</li>
-            <li>UX optimization</li>
-            <li>Photoshop/Gimp</li>
-          </ul>
-        </details>
-        <details className='skill-label'>
-          <summary>Other</summary>
-          <ul className='skill-list'>
-            <li>Cash/check management</li>
-            <li>Team Management</li>
-            <li>Bank deposits</li>
-            <li>Photo lab</li>
-            <li>Stocking Logistics</li>
-            <li>CCTV operation</li>
-            <li>Insurance Agent</li>
-            <li>Product Advertisement</li>
-            <li>Customer Relations</li>
-            <li>Fraud Prevention</li>
-          </ul>
-        </details>
-      </section>
+        </section>
+        <section className='about-bio'>
+          <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+            {bio}
+          </ReactMarkdown>
+        </section>
+        <section className='skills'>
+          <h2>Skills</h2>
+          <details className="skill-label">
+            <summary>Modding & Game Tools</summary>
+            <ul className='skill-list'>
+              <li>Server Management/Hosting</li>
+              <li>Source Engine</li>
+              <li>User Management</li>
+              <li>Hammer Editor</li>
+              <li>Mod Development (Lua, C#)</li>
+              <li>Forum Moderation/Hosting</li>
+            </ul>
+          </details>
+          <details className='skill-label'>
+            <summary>IT</summary>
+            <ul className='skill-list'>
+              <li>General Documentation</li>
+              <li>Full-stack Web development</li>
+              <li>Blender</li>
+              <li>Ubuntu Server</li>
+              <li>HPE server management</li>
+              <li>Windows</li>
+              <li>SecOps awareness</li>
+              <li>PC building/repair</li>
+              <li>Mobile device repair</li>
+              <li>UX optimization</li>
+              <li>Photoshop/Gimp</li>
+            </ul>
+          </details>
+          <details className='skill-label'>
+            <summary>Other</summary>
+            <ul className='skill-list'>
+              <li>Cash/check management</li>
+              <li>Team Management</li>
+              <li>Bank deposits</li>
+              <li>Photo lab</li>
+              <li>Stocking Logistics</li>
+              <li>CCTV operation</li>
+              <li>Insurance Agent</li>
+              <li>Product Advertisement</li>
+              <li>Customer Relations</li>
+              <li>Fraud Prevention</li>
+            </ul>
+          </details>
+        </section>
+      </div>
       <figure><embed src="https://wakatime.com/share/@Leeous/1dac96b0-6af3-4d96-aef7-5d26f5e9a823.svg"></embed></figure>
     </main>
   )

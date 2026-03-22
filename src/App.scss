@@ -136,13 +136,13 @@ body {
   }
 
   @include media-up(xl) {
-    max-width: 40%;
+    max-width: 55%;
     margin: 0 auto;
 
   }
 
   @include media-up(xxxl) {
-    max-width: 45%;
+    max-width: 55%;
     margin: 0 auto;
   }
 }
@@ -150,11 +150,40 @@ body {
 // About page \\
 .about-page {
   text-align: center;
+
+  .about-columns {
+    display: grid;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  @include media-up(xl) {
+    .about-columns {
+      grid-template-columns: minmax(18rem, 0.85fr) minmax(0, 1.4fr);
+      grid-template-areas:
+        "about about-bio"
+        "about-socials about-bio"
+        "skills skills";
+    }
+  }
+
+  @include media-up(xxxl) {
+    max-width: min(92vw, 100rem);
+
+    .about-columns {
+      grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr) minmax(18rem, 0.9fr);
+      grid-template-areas:
+        "about about-bio skills"
+        "about-socials about-bio skills";
+    }
+  }
 }
 
 .about {
+  grid-area: about;
+
   .pfp {
-    width: 50%;
+    width: min(50%, 15rem);
     margin: 1.5rem auto;
     border-radius: 50%;
     border: $thin-border;
@@ -172,6 +201,8 @@ body {
 }
 
 .about-socials {
+  grid-area: about-socials;
+
   ul {
     display: grid;
     width: 100%;
@@ -189,10 +220,6 @@ body {
         align-items: center;
         justify-content: space-between;
         border: $thin-border;
-
-        &:hover {
-          // Optional hover styling
-        }
       }
 
       &.span-two {
@@ -203,6 +230,7 @@ body {
 }
 
 .about-bio {
+  grid-area: about-bio;
   text-align: left;
 
   .post-h2 {
@@ -211,6 +239,10 @@ body {
 }
 
 // Skills
+
+.skills {
+  grid-area: skills;
+}
 
 .skills .skill-label {
   user-select: none;
@@ -242,16 +274,27 @@ body {
   }
 }
 
+.about,
+.about-socials,
+.about-bio,
+.skills {
+  padding: 1rem;
+  border: $thin-border;
+}
+
+.about-page figure {
+  margin: 2rem 0 0;
+}
+
 // Projects page \\
 
 .projects-page {
 
-  @include media-up(xxxl) {
+  @include media-up(xxl) {
     .project-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem; 
-
       .project {
         margin: 0;
       }
@@ -510,11 +553,17 @@ body {
 
 .back-button {
   display: flex;
-  font-size: 1.1rem;
-  border: var($thin-border);
+  font-size: 1.2rem;
+  border: $thin-border;
+  padding: .5rem 1rem;
+  align-items: center;
+  gap: .8rem;
   img {
     display: inline-block;
-    width: 16px;
-    margin: 5px;
+    width: 24px;
+    margin: 5px 5px 5px 5px;
+  }
+  &:hover {
+    background-color: $color-secondary;
   }
 }
