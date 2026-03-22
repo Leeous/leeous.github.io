@@ -253,10 +253,19 @@ body {
 
   .post-h2 {
     text-align: center;
+    @include media-up(xxxl) {
+      margin-top: 0;
+    }
   }
 }
 
 // Skills
+
+.skills h2 {
+  @include media-up(xxxl) {
+    margin-top: 0;
+  }
+}
 
 .skills .skill-label {
   user-select: none;
