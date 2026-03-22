@@ -58,6 +58,7 @@ export default function AboutPage() {
       </Helmet>
       <div className='about-columns'>
         <div className='about-sidebar'>
+          <div className='about-sidebar-inner'>
           <section className='about'>
             <h1 className='name'>Cody Fields</h1>
             <h4 className='location'>North Carolina, USA</h4>
@@ -74,6 +75,7 @@ export default function AboutPage() {
               <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <img className='icon' src={KeyIcon} alt='Key Icon' /></a></li>
             </ul>
           </section>
+          </div>
         </div>
         <section className='about-bio'>
           <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
