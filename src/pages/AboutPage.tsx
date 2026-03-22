@@ -9,14 +9,39 @@ import { Helmet } from 'react-helmet';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import Spinner from '../components/Spinner';
 import bioMD from '../assets/data/bio.md?raw';
 import PFP from '/images/pfp.jpg?url';
+
+dayjs.extend(relativeTime);
+
+type RecentTrack = {
+  name: string;
+  artist: string;
+  albumArt?: string | null;
+  playedAt?: string | null;
+  addedAt?: string | null;
+  url?: string | null;
+};
+
+type RecentTracksResponse = {
+  data?: {
+    recentTracks?: RecentTrack[];
+    playlistTracks?: RecentTrack[];
+  };
+  errors?: Array<{
+    message: string;
+  }>;
+};
 
 export default function AboutPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [bio, setBio] = useState<string | null>(null);
   const [isXxxl, setIsXxxl] = useState<boolean>(false);
+  const [tracksLoading, setTracksLoading] = useState<boolean>(true);
+  const [recentTracks, setRecentTracks] = useState<RecentTrack[]>([]);
 
   useEffect(() => {
     setBio(bioMD);
@@ -34,6 +59,66 @@ export default function AboutPage() {
 
     return () => {
       mediaQuery.removeEventListener('change', onChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadRecentTracks = async () => {
+      try {
+        const response = await fetch('/.netlify/functions/spotify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query: `
+              query PlaylistTracks($playlistId: String!) {
+                playlistTracks(playlistId: $playlistId) {
+                  name
+                  artist
+                  albumArt
+                  addedAt
+                  url
+                }
+              }
+            `,
+            variables: {
+              playlistId: '35WuGFVDeikWUJo4KEXRYr',
+            },
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Spotify request failed: ${response.status}`);
+        }
+
+        const payload = (await response.json()) as RecentTracksResponse;
+
+        if (payload.errors?.length) {
+          throw new Error(payload.errors[0].message);
+        }
+
+        if (isMounted) {
+          setRecentTracks(payload.data?.playlistTracks ?? []);
+        }
+      } catch (error) {
+        console.error('Failed to load recent Spotify tracks:', error);
+        if (isMounted) {
+          setRecentTracks([]);
+        }
+      } finally {
+        if (isMounted) {
+          setTracksLoading(false);
+        }
+      }
+    };
+
+    loadRecentTracks();
+
+    return () => {
+      isMounted = false;
     };
   }, []);
 
@@ -75,12 +160,49 @@ export default function AboutPage() {
               <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <img className='icon' src={KeyIcon} alt='Key Icon' /></a></li>
             </ul>
           </section>
+             
           </div>
         </div>
         <section className='about-bio'>
           <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {bio}
           </ReactMarkdown>
+        </section>
+        <section className='about-spotify'>
+          <h2>Recently Played</h2>
+          {tracksLoading && <p>Loading tracks...</p>}
+          {!tracksLoading && recentTracks.length === 0 && <p>No recent tracks found.</p>}
+          {!tracksLoading && recentTracks.length > 0 && (
+            <ul className='spotify-track-list'>
+              {recentTracks.map((track, index) => (
+                <li key={`${track.name}-${track.artist}-${track.playedAt}`}>
+                  <a href={track.url ?? '#'} target='_blank' rel='noopener noreferrer'>
+                    <span className={`spotify-vinyl${index === 0 ? ' spotify-vinyl--spinning' : ''}`}>
+                      {track.albumArt ? (
+                        <img
+                          className='spotify-album-art'
+                          src={track.albumArt}
+                          alt={`${track.name} album artwork`}
+                          loading='lazy'
+                        />
+                      ) : (
+                        <span className='spotify-album-fallback' aria-hidden='true'>♪</span>
+                      )}
+                    </span>
+                    <span className='spotify-track-content'>
+                      <span className='spotify-track-name'>{track.name}</span>
+                      <span className='spotify-track-artist'>{track.artist}</span>
+                        {(track.addedAt ?? track.playedAt) && (
+                          <span className='spotify-track-time'>
+                            {track.addedAt ? `Added ${dayjs(track.addedAt).fromNow()}` : `Played ${dayjs(track.playedAt).fromNow()}`}
+                          </span>
+                      )}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
         <section className='skills'>
           <h2>Skills</h2>
