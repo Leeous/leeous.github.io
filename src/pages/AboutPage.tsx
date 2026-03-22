@@ -16,13 +16,26 @@ import PFP from '/images/pfp.jpg?url';
 export default function AboutPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [bio, setBio] = useState<string | null>(null);
+  const [isXxxl, setIsXxxl] = useState<boolean>(false);
 
   useEffect(() => {
-    (async () => {
-        setBio(bioMD);
-        setLoading(false);
-    })();
-  });
+    setBio(bioMD);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const mediaQuery = window.matchMedia('(min-width: 1900px)');
+    const onChange = (event: MediaQueryListEvent) => setIsXxxl(event.matches);
+
+    setIsXxxl(mediaQuery.matches);
+    mediaQuery.addEventListener('change', onChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', onChange);
+    };
+  }, []);
 
   const components: Components = {
     h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
@@ -44,22 +57,24 @@ export default function AboutPage() {
         {/* <meta property="og:description" content="All of my projects, pulled from my Github." /> */}
       </Helmet>
       <div className='about-columns'>
-        <section className='about'>
-          <h1 className='name'>Cody Fields</h1>
-          <h4 className='location'>North Carolina, USA</h4>
-          <img src={PFP} className='pfp' alt="A photo of Cody sitting in the woods." />
-          {/* TODO: need to precache pfp */}
-        </section>
-        <section className='about-socials'>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin <img className='icon' src={LinkedInIcon} alt='LinkedIn Icon' /></a></li>
-            <li><a href="https://github.com/Leeous" target='_blank'>Github <img className='icon' src={GitHubIcon} alt='Github Icon' /></a></li>
-            <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky <img className='icon' src={BlueskyIcon} alt='Bluesky Icon' /></a></li>
-            <li><a href="https://steamcommunity.com/id/Leeous" target='_blank'>Steam <img className='icon' src={SteamIcon} alt='Steam Icon' /></a></li>
-            <li><a href="mailto:contact@leeous.com" target='_blank'>Email <img className='icon' src={EmailIcon} alt='Email Icon' /></a></li>
-            <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <img className='icon' src={KeyIcon} alt='Key Icon' /></a></li>
-          </ul>
-        </section>
+        <div className='about-sidebar'>
+          <section className='about'>
+            <h1 className='name'>Cody Fields</h1>
+            <h4 className='location'>North Carolina, USA</h4>
+            <img src={PFP} className='pfp' alt="A photo of Cody sitting in the woods." />
+            {/* TODO: need to precache pfp */}
+          </section>
+          <section className='about-socials'>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/leeous/" target='_blank'>Linkedin <img className='icon' src={LinkedInIcon} alt='LinkedIn Icon' /></a></li>
+              <li><a href="https://github.com/Leeous" target='_blank'>Github <img className='icon' src={GitHubIcon} alt='Github Icon' /></a></li>
+              <li><a href="https://bsky.app/profile/leeous.com" target='_blank'>Bluesky <img className='icon' src={BlueskyIcon} alt='Bluesky Icon' /></a></li>
+              <li><a href="https://steamcommunity.com/id/Leeous" target='_blank'>Steam <img className='icon' src={SteamIcon} alt='Steam Icon' /></a></li>
+              <li><a href="mailto:contact@leeous.com" target='_blank'>Email <img className='icon' src={EmailIcon} alt='Email Icon' /></a></li>
+              <li><a href="https://keys.openpgp.org/search?q=contact%40leeous.com" target='_blank'>PGP Key <img className='icon' src={KeyIcon} alt='Key Icon' /></a></li>
+            </ul>
+          </section>
+        </div>
         <section className='about-bio'>
           <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {bio}
@@ -67,7 +82,7 @@ export default function AboutPage() {
         </section>
         <section className='skills'>
           <h2>Skills</h2>
-          <details className="skill-label">
+          <details className="skill-label" open={isXxxl}>
             <summary>Modding & Game Tools</summary>
             <ul className='skill-list'>
               <li>Server Management/Hosting</li>
@@ -78,7 +93,7 @@ export default function AboutPage() {
               <li>Forum Moderation/Hosting</li>
             </ul>
           </details>
-          <details className='skill-label'>
+          <details className='skill-label' open={isXxxl}>
             <summary>IT</summary>
             <ul className='skill-list'>
               <li>General Documentation</li>
@@ -94,7 +109,7 @@ export default function AboutPage() {
               <li>Photoshop/Gimp</li>
             </ul>
           </details>
-          <details className='skill-label'>
+          <details className='skill-label' open={isXxxl}>
             <summary>Other</summary>
             <ul className='skill-list'>
               <li>Cash/check management</li>

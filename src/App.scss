@@ -100,17 +100,21 @@ body {
 .main-navigation-bar {
   ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(100%, 24rem);
+    margin: 0 auto;
+    gap: 0.25rem;
     padding-left: 0;
     margin-top: 0;
     li {
       a {
-        padding: 0 1rem;
+        padding: 0.5rem 0;
         font-size: 1.2rem;
-        margin: 0.5rem;
+        margin: 0;
         text-decoration: none;
         display: block;
+        text-align: center;
         transition: 0.2s ease-in-out all;
         border-bottom: solid .1px white;
         opacity: .6;
@@ -150,6 +154,9 @@ body {
 // About page \\
 .about-page {
   text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
   .about-columns {
     display: grid;
@@ -161,9 +168,20 @@ body {
     .about-columns {
       grid-template-columns: minmax(18rem, 0.85fr) minmax(0, 1.4fr);
       grid-template-areas:
-        "about about-bio"
-        "about-socials about-bio"
+        "about-sidebar about-bio"
         "skills skills";
+    }
+
+    .about-sidebar {
+      grid-area: about-sidebar;
+    }
+
+    .about-bio {
+      grid-area: about-bio;
+    }
+
+    .skills {
+      grid-area: skills;
     }
   }
 
@@ -171,17 +189,20 @@ body {
     max-width: min(92vw, 100rem);
 
     .about-columns {
-      grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr) minmax(18rem, 0.9fr);
+      grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.2fr) minmax(18rem, 0.9fr);
       grid-template-areas:
-        "about about-bio skills"
-        "about-socials about-bio skills";
+        "about-sidebar about-bio skills";
     }
   }
 }
 
-.about {
-  grid-area: about;
+.about-sidebar {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
 
+.about {
   .pfp {
     width: min(50%, 15rem);
     margin: 1.5rem auto;
@@ -201,8 +222,6 @@ body {
 }
 
 .about-socials {
-  grid-area: about-socials;
-
   ul {
     display: grid;
     width: 100%;
@@ -230,7 +249,6 @@ body {
 }
 
 .about-bio {
-  grid-area: about-bio;
   text-align: left;
 
   .post-h2 {
@@ -239,10 +257,6 @@ body {
 }
 
 // Skills
-
-.skills {
-  grid-area: skills;
-}
 
 .skills .skill-label {
   user-select: none;
@@ -279,11 +293,17 @@ body {
 .about-bio,
 .skills {
   padding: 1rem;
-  border: $thin-border;
 }
 
 .about-page figure {
   margin: 2rem 0 0;
+
+  embed {
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 
 // Projects page \\
@@ -452,8 +472,8 @@ body {
 .blog-page {  
   @include media-up(xxxl) {
     .blog-list {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem; 
     }
 
