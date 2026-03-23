@@ -148,7 +148,6 @@ export default function AboutPage() {
             <h1 className='name'>Cody Fields</h1>
             <h4 className='location'>North Carolina, USA</h4>
             <img src={PFP} className='pfp' alt="A photo of Cody sitting in the woods." />
-            {/* TODO: need to precache pfp */}
           </section>
           <section className='about-socials'>
             <ul>
