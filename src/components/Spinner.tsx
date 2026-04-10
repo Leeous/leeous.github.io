@@ -1,6 +1,10 @@
 export default function Spinner() {
   return (
-    <div style={{ textAlign: "center", padding: "2rem"}}>
+    <div style={{
+      padding: "2rem",
+      display: "flex",
+      alignItems: "center"
+     }}>
       <div className="spinner">
       <style>{`
         .spinner {
