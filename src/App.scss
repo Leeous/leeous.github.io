@@ -185,6 +185,9 @@ body {
 
     .about-bio {
       grid-area: about-bio;
+      .post-h2 {
+        margin-top: 0;
+      }
     }
 
     .skills {
