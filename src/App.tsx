@@ -9,6 +9,7 @@ import PostPage from './pages/BlogPostPage';
 import ProjectPage from './pages/ProjectPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ScrollToTop from './components/utils/ScrollToTop';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Header />
       <div style={{display: "flex", justifyContent: "center", flexShrink: 0, flexGrow: 1}}>
       <Routes>
-        <Route index element={<AboutPage />} />
+        <Route index element={<HomePage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/blog' element={<BlogPage />} />
         <Route path="/blog/:slug" element={<PostPage />} />
