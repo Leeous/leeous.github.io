@@ -5,5 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/',
   plugins: [react()],
-  assetsInclude: ['**/*.md']
+  assetsInclude: ['**/*.md'],
+  server: {
+    allowedHosts: ['localhost', 'devserver-preview--leeous.netlify.app', 'leeous.com', 'www.leeous.com'],
+  },
 })
