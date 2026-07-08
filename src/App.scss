@@ -401,9 +401,21 @@ body {
   text-align: left;
 
   .post-h2 {
+    margin: auto;
     text-align: center;
     @include media-up(xxl) {
       margin-top: 0;
+    }
+  }
+  .post-subscript {
+    font-style: italic;
+    text-align: center;
+    margin-top: 0;
+    sub {
+      padding: 0 1rem;
+      font-size: 1rem;
+      display: inline-block;
+      border-top: $thin-border;
     }
   }
 }
@@ -705,6 +717,7 @@ body {
     }
   }
 }
+
 // Misc
 
 .wakatime {
