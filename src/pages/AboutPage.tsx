@@ -124,13 +124,14 @@ export default function AboutPage() {
 
   const components: Components = {
     h1: ({ ...props }) => <h1 className="post-h1" {...props} />,
-    h2: ({ ...props }) => <h2 className="post-h2" {...props} />,
+    h2: ({ ...props }) => <h2 className="post-h2" style={{marginBottom: 0}} {...props} />,
     a: ({ ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>,
     table: ({ ...props }) => <table className="post-table" {...props}>{props.children}</table>,
     thead: ({ ...props }) => <thead className="post-table-header" {...props}>{props.children}</thead>,
     tr: ({ ...props }) => <tr className="post-table-row" {...props}>{props.children}</tr>,
     th: ({ ...props }) => <th className="post-table-row-header" {...props}>{props.children}</th>,
     td: ({ ...props }) => <td className="post-table-value" {...props}>{props.children}</td>,
+    sub: ({ ...props }) => <sub>{props.children}</sub>,
   };
 
   if (loading) return <Spinner />;
