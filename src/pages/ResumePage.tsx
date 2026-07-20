@@ -115,7 +115,7 @@ export default function ResumePage() {
 						</section>
 					</section>
 					<section>
-						<h2 className="section-header">Skills & Interests</h2>
+						<h2 className="section-header">Skills</h2>
 						<section className="sub-section additional">
               <div className="skills-column">
                 <h3>Engineering & AI</h3>
@@ -158,7 +158,7 @@ export default function ResumePage() {
               </div>
 
               <div className="skills-column">
-                <h3>Healthcare Ops & Interests</h3>
+                <h3>Healthcare Ops</h3>
                 <ul>
                   <li>Claims Denials</li>
                   <li>Appeals Management</li>
