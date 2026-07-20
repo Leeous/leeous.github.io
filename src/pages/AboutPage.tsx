@@ -206,6 +206,21 @@ export default function AboutPage() {
         </section>
         <section className='skills'>
           <h2>Skills</h2>
+            <details className="skill-label" open={isXxxl}>
+            <summary>Healthcare Ops</summary>
+            <ul className='skill-list'>
+              <li>Claims Denials</li>
+              <li>Appeals Management</li>
+              <li>Insurance Benefit Verification</li>
+              <li>HIPAA Compliance</li>
+              <li>EHR / EMR Platforms & Proficiency</li>
+              <li>Payer Relations</li>
+              <li>Payer Portals</li>
+              <li>Provider Express</li>
+              <li>Availity</li>
+              <li>CAQH</li>
+            </ul>
+          </details>
           <details className="skill-label" open={isXxxl}>
             <summary>Modding & Game Tools</summary>
             <ul className='skill-list'>
@@ -215,6 +230,26 @@ export default function AboutPage() {
               <li>Hammer Editor</li>
               <li>Mod Development (Lua, C#)</li>
               <li>Forum Moderation/Hosting</li>
+            </ul>
+          </details>
+          <details className='skill-label' open={isXxxl}>
+            <summary>Technical Ops & Support</summary>
+            <ul className='skill-list'>
+              <li>Technical Support</li>
+              <li>Customer Service</li>
+              <li>Issue Tracking & Root Cause Analysis</li>
+              <li>API / JSON Validation</li>
+              <li>Slack</li>
+              <li>Problem Solving</li>
+              <li>Confluence</li>
+              <li>Technical Documentation</li>
+              <li>Jira</li>
+              <li>Palantir Foundry & Looker</li>
+              <li>Trello</li>
+              <li>Office 365 / G Suite</li>
+              <li>Zendesk</li>
+              <li>Discord</li>
+              <li>Teams</li>
             </ul>
           </details>
           <details className='skill-label' open={isXxxl}>
@@ -231,6 +266,19 @@ export default function AboutPage() {
               <li>Mobile device repair</li>
               <li>UX optimization</li>
               <li>Photoshop/Gimp</li>
+              <li>JavaScript / TypeScript</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Python</li>
+              <li>HTML5 / CSS3</li>
+              <li>SQL & PostgreSQL</li>
+              <li>Lua</li>
+              <li>Docker</li>
+              <li>AI-Assisted Development</li>
+              <li>Git</li>
+              <li>AI Contextual Prompting</li>
+              <li>GitHub</li>
+              <li>Prompt Engineering</li>
             </ul>
           </details>
           <details className='skill-label' open={isXxxl}>
