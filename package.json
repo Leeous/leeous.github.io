@@ -10,7 +10,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npx netlify deploy --prod",
     "update-all": "npx npm-check-updates -u && npm i",
     "netlify:dev": "netlify dev",
     "netlify:build": "netlify link && netlify build"
