@@ -429,39 +429,61 @@ body {
 
 // Skills
 
-.skills h2 {
-	@include media-up(xxl) {
-		margin-top: 0;
+.skills {
+	h2 {
+		@include media-up(xxl) {
+			margin-top: 0;
+		}
 	}
-}
 
-.skills .skill-label {
-	user-select: none;
-	text-align: left;
-	justify-content: space-between;
-	border-radius: 12px;
-	transform: translateY(-6px);
+	.skill-label {
+		user-select: none;
+		text-align: left;
+		justify-content: space-between;
+		border-radius: 12px;
+		transform: translateY(-6px);
+		summary {
+			cursor: pointer;
+			padding: 10px 15px;
+			margin: 0.5rem 0;
+			border: solid 0.1rem white;
+			list-style: none;
 
-	summary {
-		cursor: pointer;
-		padding: 10px 15px;
-		margin: 0.5rem 0;
-		border: solid 0.1rem white;
-	}
-}
+			&::-webkit-details-marker {
+				display: none;
+			}
 
-.skill-list {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0.6em;
-	padding-left: 0;
-	justify-content: center;
+			&::before {
+				content: "➤";
+				display: inline-block;
+				margin-right: 8px;
+				--open-angle: 0deg;
+				--hover-angle: 0deg;
+				transform: rotate(calc(var(--open-angle) + var(--hover-angle)));
+				transition: transform 0.2s ease-in-out;
+			}
+		}
 
-	li {
-		margin: 5px;
-		padding: 10px;
-		display: inline-block;
-		border: solid 1px white;
+		&[open] {
+			summary::before {
+				--open-angle: 90deg;
+			}
+		}
+
+		.skill-list {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0.6em;
+			padding-left: 0;
+			justify-content: center;
+
+			li {
+				margin: 5px;
+				padding: 10px;
+				display: inline-block;
+				border: solid 1px white;
+			}
+		}
 	}
 }
 
@@ -762,23 +784,25 @@ body {
 		display: none !important;
 	}
 
-  #resume {
-    h1, h2, h3 {
-      margin: 0;
-    }
+	#resume {
+		h1,
+		h2,
+		h3 {
+			margin: 0;
+		}
 
-    .section-header {
-		  font-size: 16pt;
-		  margin: 0 0 3pt 0;
-		  border-bottom: solid 2.5px rgb(0, 0, 0) !important;
-	  }
+		.section-header {
+			font-size: 16pt;
+			margin: 0 0 3pt 0;
+			border-bottom: solid 2.5px rgb(0, 0, 0) !important;
+		}
 
-    .skills-column {
-      ul {
-        text-wrap: balance;
-      }
-    }
-  }
+		.skills-column {
+			ul {
+				text-wrap: balance;
+			}
+		}
+	}
 }
 
 #resume {
@@ -797,7 +821,7 @@ body {
 			font-size: 12pt;
 			font-weight: normal;
 			margin: 0;
-      
+
 			span {
 				background: $color-secondary;
 				color: white;
@@ -826,30 +850,30 @@ body {
 			padding: 0;
 			list-style: none;
 			display: flex;
-      align-content: flex-start;
+			align-content: flex-start;
 			flex-wrap: wrap;
 			h3 {
 				display: inline-block;
-        margin: 0;
-        padding: 0;
-        font-size: 12pt;
+				margin: 0;
+				padding: 0;
+				font-size: 12pt;
 			}
 			ul {
 				margin-top: 0;
 				margin-bottom: 3pt;
-        padding: 0;
+				padding: 0;
 				font-size: 10pt;
-        list-style-type: none;
-        display: flex;
-        flex-wrap: wrap;
-        text-wrap: balance;
-        li {
-				  background: $color-secondary;
-				  color: white;
-				  margin: 1.5pt;
-				  padding: 3pt 5pt;
-				  font-size: 10pt;
-			  }
+				list-style-type: none;
+				display: flex;
+				flex-wrap: wrap;
+				text-wrap: balance;
+				li {
+					background: $color-secondary;
+					color: white;
+					margin: 1.5pt;
+					padding: 3pt 5pt;
+					font-size: 10pt;
+				}
 			}
 			&.interests-seperator {
 				margin-top: 12px;
@@ -858,10 +882,10 @@ body {
 			}
 		}
 	}
-  ul {
-    padding-left: 15pt;
-    margin: 0;
-  }
+	ul {
+		padding-left: 15pt;
+		margin: 0;
+	}
 }
 
 // Misc
