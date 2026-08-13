@@ -9,12 +9,18 @@ import commitIcon from "../assets/svg/commit.svg";
 import type { SimplifiedRepo } from "../lib/github/types";
 
 export default function Project(props: SimplifiedRepo) {
+  const latestCommitMessage = props.latestCommit?.message
+    ? props.latestCommit.message.length > 100
+      ? `${props.latestCommit.message.slice(0, 97)}...`
+      : props.latestCommit.message
+    : "";
+
   return (
     <div className="project">
       <h1 className="project-name">{props.name}</h1>
       <h2 className="project-created-at">{formatDate(props.createdAt)}</h2>
       <p className="project-desc">{props.description}</p>
-      <p className="project-last-commit">{props.latestCommit?.message} - <a target="_blank" href={props.latestCommit?.url}>{dayjs(props.latestCommit?.date).fromNow()}</a></p>
+      <p className="project-last-commit">{latestCommitMessage} - <a target="_blank" href={props.latestCommit?.url}>{dayjs(props.latestCommit?.date).fromNow()}</a></p>
       {props.topics.length !== 0 &&
         <ul className="project-topic-list">
           {props.topics.map(topic => {

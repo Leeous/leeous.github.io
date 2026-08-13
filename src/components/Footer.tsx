@@ -12,7 +12,13 @@ export default function Footer() {
       .then(response => response.json())
       .then(data => {
         const timeSinceLastUpdate = dayjs(data[0]['commit']['author']['date']).startOf('second').fromNow()
-        const lastCommitMessage = data[0]['commit']['message']
+        let lastCommitMessage = data[0]['commit']['message'];
+
+        // Trim commit message if > 150 char long
+        if (lastCommitMessage.length > 150) {
+          lastCommitMessage = lastCommitMessage.slice(0, 150) + "...";
+        }
+
         const commitURL = data[0]['html_url'];
         setLastUpdate([timeSinceLastUpdate, lastCommitMessage, commitURL])
       })
