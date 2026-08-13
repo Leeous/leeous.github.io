@@ -57,6 +57,13 @@ export default function ProjectPage() {
     tr: ({ ...props }) => <tr className="post-table-row" {...props}>{props.children}</tr>,
     th: ({ ...props }) => <th className="post-table-row-header" {...props}>{props.children}</th>,
     td: ({ ...props }) => <td className="post-table-value" {...props}>{props.children}</td>,
+    img: ({ src, ...props }) => {
+      if (src?.startsWith("https://img.shields.io") || src?.startsWith("https://api.netlify.com")) {
+        return <img src={src} className="post-badge" {...props} />;
+      }
+
+      return <img src={src} {...props} />
+    }
   };
 
   return (
