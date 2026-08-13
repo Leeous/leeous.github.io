@@ -3,7 +3,7 @@ import { fetchProjects } from "../lib/github/api";
 import type { SimplifiedRepo } from "../lib/github/types";
 import Spinner from "../components/Spinner";
 import ProjectComp from "../components/Project";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 type SortField = "stars" | "lastCommit" | "totalCommits";
 type SortDirection = "asc" | "desc";

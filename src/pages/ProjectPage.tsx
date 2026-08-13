@@ -3,7 +3,7 @@ import { fetchReadme } from "../lib/github/api";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import Spinner from "../components/Spinner";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";

@@ -4,7 +4,7 @@ import type { Discussion } from "../lib/github/api";
 import BlogPostPreview from "../components/PostPreview";
 import { slugify } from "../lib/utils";
 import Spinner from "../components/Spinner";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<Discussion[]>([]);

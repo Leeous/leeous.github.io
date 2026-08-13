@@ -5,7 +5,7 @@ import GitHubIcon from '../assets/svg/github.svg';
 import KeyIcon from '../assets/svg/key.svg';
 import LinkedInIcon from '../assets/svg/linkedin.svg';
 import SteamIcon from '../assets/svg/steam.svg';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { useEffect, useState } from 'react';

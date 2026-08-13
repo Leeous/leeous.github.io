@@ -8,7 +8,7 @@ import remarkGfm from "remark-gfm";
 import { formatDate, slugify } from "../lib/utils";
 import Spinner from "../components/Spinner";
 import GiscusComment from "../components/GiscusComments";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import removeMd from "remove-markdown";
 import BackButton from "../components/BackButton";
 
