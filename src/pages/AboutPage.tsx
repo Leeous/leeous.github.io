@@ -132,6 +132,7 @@ export default function AboutPage() {
     th: ({ ...props }) => <th className="post-table-row-header" {...props}>{props.children}</th>,
     td: ({ ...props }) => <td className="post-table-value" {...props}>{props.children}</td>,
     sub: ({ ...props }) => <sub>{props.children}</sub>,
+    blockquote: ({ ...props }) => <blockquote className='post-blockquote'>{props.children}</blockquote>
   };
 
   if (loading) return <Spinner />;
@@ -164,9 +165,11 @@ export default function AboutPage() {
           </div>
         </div>
         <section className='about-bio'>
+          <div className='post'>
           <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {bio}
           </ReactMarkdown>
+          </div>
         </section>
         <section className='about-spotify'>
           <h2>Recently Played</h2>
