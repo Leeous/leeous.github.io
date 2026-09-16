@@ -29,11 +29,8 @@ I'm a talkative, self-taught **Full Stack Web Developer & Designer** passionate 
 
 ### 🌟 Featured Projects
 
-#### [react-ehr-platform](https://github.com/Leeous/react-ehr-platform)
->  A mock EHR platform written in React+TS
-
-#### [TrashCompactor](https://github.com/Leeous/TrashCompactor)
->  A reimaging of the Trash Compactor gamemode from Garry's Mod in Source 2. 
+#### [open_beam](https://github.com/Leeous/open_beam)
+> A lightweight Flutter app that runs on Windows, Linux, and Android to control Smart TVs on your local network. Currently works with Vizio and Roku TVs, with more to be added.
 
 #### [bcbs-explorer](https://github.com/Leeous/bcbs-explorer)
 > A browser (Chrome, Firefox, etc.) extension that assists Healthcare providers with BCBS carriers.
